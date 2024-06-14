@@ -17,7 +17,7 @@
     {
         "id": "2c32c57ee0c89b2b",
         "type": "tab",
-        "label": "Network Analysis",
+        "label": "Domain / URL Analysis",
         "disabled": false,
         "info": "",
         "env": []
@@ -1149,18 +1149,18 @@
         "type": "function",
         "z": "adaa3f44094f3fb5",
         "name": "Malware Variable Setup",
-        "func": "// Setting up directory path of the file upload\nmsg.config = {};\nmsg.config.start = msg.filedirname;\n\n// Setting up vars to handle archive decompress operations\nvar malware = msg.filename.toLowerCase();\n//var malware = msg.filename.split(\".\")[0].toLowerCase();\n\n// Creating a Timestamp\nmsg.tstamp = new Date().toISOString().substring(0, 19).replace(/-/g, \"\").replace(/:/g, \"\");\n\n// Creating a File Name\nvar newMalware = malware;\n\n// Assigning the new filename to msg.plasofname\nmsg.malware = newMalware;\n\nreturn msg;\n",
+        "func": "// Setting up directory path of the file upload\nmsg.config = {};\nmsg.config.start = msg.filedirname;\n\n// Setting up vars to handle archive decompress operations\nvar malware = msg.filename.toLowerCase();\n//var malware = msg.filename.split(\".\")[0].toLowerCase();\n\n// Creating a Timestamp\nmsg.tstamp = new Date().toISOString().substring(0, 19).replace(/-/g, \"\").replace(/:/g, \"\");\n\n// Creating a File Name\nvar newMalware = malware;\n\n// Assigning the new filename to msg.newMalware\nmsg.malware = newMalware;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
+        "x": 710,
         "y": 360,
         "wires": [
             [
-                "9cbe181f6ab5a8af"
+                "d415ee434b1fea30"
             ]
         ]
     },
@@ -1176,31 +1176,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 460,
+        "x": 320,
+        "y": 380,
         "wires": [
             [
                 "dad7f195c5be795b"
-            ]
-        ]
-    },
-    {
-        "id": "9cbe181f6ab5a8af",
-        "type": "function",
-        "z": "adaa3f44094f3fb5",
-        "name": "Capa Malware Analysis Params",
-        "func": "var malwaredir = \"/cases/malware/\";\n//var malwarefname = msg.malware.replace('processor', 'malware');\nvar malwaretxt = msg.malware.replace(\"exe\", \"txt\");\nmsg.capa = \"/opt/capa/./capa\" + \" \" + msg.malware + \" \" + \">>\" + \" \" + malwaretxt;\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 830,
-        "y": 460,
-        "wires": [
-            [
-                "6695eee14b943191"
             ]
         ]
     },
@@ -1219,9 +1199,15 @@
         "x": 1140,
         "y": 460,
         "wires": [
-            [],
-            [],
-            []
+            [
+                "948989701c6b53a7"
+            ],
+            [
+                "948989701c6b53a7"
+            ],
+            [
+                "948989701c6b53a7"
+            ]
         ]
     },
     {
@@ -1229,7 +1215,7 @@
         "type": "watch-directory",
         "z": "adaa3f44094f3fb5",
         "folder": "/cases/malware/",
-        "recursive": "1",
+        "recursive": "0",
         "typeEvent": "create",
         "ignoreInitial": true,
         "ignoredFiles": "",
@@ -1244,24 +1230,81 @@
         ]
     },
     {
-        "id": "4440a12ba308150a",
-        "type": "comment",
+        "id": "948989701c6b53a7",
+        "type": "function",
         "z": "adaa3f44094f3fb5",
-        "name": "https://github.com/mandiant/flare-floss",
-        "info": "",
-        "x": 730,
-        "y": 100,
-        "wires": []
+        "name": "ClamScan Analysis Params",
+        "func": "var malwaredir = \"/cases/malware/\";\nvar malwareresults = \"/cases/malware/results/\";\n\n// Extract the filename from msg.malware\nvar malwarefilename = msg.malware.split('/').pop().replace(/\\.(exe|dll|bin)$/, \".txt\");\nvar malwaretxt = malwareresults + malwarefilename;\nmsg.clam = \"--quiet --verbose --infected -r -z -i --bell \" + msg.malware + \" --log=\" + malwaretxt;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 620,
+        "wires": [
+            [
+                "f97575bd23bfd3ad"
+            ]
+        ]
     },
     {
-        "id": "a8baf99a2bb99007",
-        "type": "comment",
+        "id": "f97575bd23bfd3ad",
+        "type": "exec",
         "z": "adaa3f44094f3fb5",
-        "name": "https://github.com/Neo23x0/Fenrir",
-        "info": "",
-        "x": 720,
-        "y": 160,
-        "wires": []
+        "command": "clamscan",
+        "addpay": "clam",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Capa Process",
+        "x": 1140,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            [
+                "d415ee434b1fea30"
+            ]
+        ]
+    },
+    {
+        "id": "d415ee434b1fea30",
+        "type": "simple-queue",
+        "z": "adaa3f44094f3fb5",
+        "name": "Queue Files",
+        "count": "1",
+        "unique_check": "",
+        "x": 430,
+        "y": 540,
+        "wires": [
+            [
+                "9cbe181f6ab5a8af"
+            ]
+        ]
+    },
+    {
+        "id": "9cbe181f6ab5a8af",
+        "type": "function",
+        "z": "adaa3f44094f3fb5",
+        "name": "Capa Malware Analysis Params",
+        "func": "var malwaredir = \"/cases/malware/\";\nvar malwareresults = \"/cases/malware/results/\";\n\n// Extract the filename from msg.malware\nvar malwarefilename = msg.malware.split('/').pop().replace(/\\.(exe|dll|bin)$/, \".txt\");\nvar malwaretxt = malwareresults + malwarefilename;\n\n// Construct the command with the correct paths\nmsg.capa = \"/opt/capa/./capa \" + msg.malware + \" >> \" + malwaretxt;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "6695eee14b943191"
+            ]
+        ]
     },
     {
         "id": "00d7490ddc0f3e90",
@@ -1272,6 +1315,147 @@
         "x": 730,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "22f20f4ad197f359",
+        "type": "watch-directory",
+        "z": "2c32c57ee0c89b2b",
+        "folder": "",
+        "recursive": 0,
+        "typeEvent": "create",
+        "ignoreInitial": true,
+        "ignoredFiles": "",
+        "ignoredFilesType": "re",
+        "name": "",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed7130869ca109cd",
+        "type": "file in",
+        "z": "2c32c57ee0c89b2b",
+        "name": "",
+        "filename": "",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 260,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "357aacfaa5c4a2b1",
+        "type": "split",
+        "z": "2c32c57ee0c89b2b",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 370,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "923f2c158999dfe0",
+        "type": "function",
+        "z": "2c32c57ee0c89b2b",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65d52cd6f95c0ef8",
+        "type": "exec",
+        "z": "2c32c57ee0c89b2b",
+        "command": "",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 970,
+        "y": 580,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e10e07d941af72f0",
+        "type": "simple-queue",
+        "z": "2c32c57ee0c89b2b",
+        "name": "",
+        "count": 4,
+        "unique_check": "",
+        "x": 540,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d2f6b07beca7a27",
+        "type": "trigger",
+        "z": "610fd5cf8138bd6d",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b72a72cc3b3d8ab6",
+        "type": "pythonshell in",
+        "z": "610fd5cf8138bd6d",
+        "name": "",
+        "pyfile": "",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4a312f7b0984b364",
@@ -1778,38 +1962,10 @@
         "y": 460,
         "wires": [
             [
-                "2e01b9631735c86c",
                 "759b33a1f760e6a4",
                 "4a637e84a8bf980d"
             ],
             []
-        ]
-    },
-    {
-        "id": "2e01b9631735c86c",
-        "type": "exec",
-        "z": "44cf1917690496d8",
-        "command": "timesketch_importer",
-        "addpay": "chainsaw_ts",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "Ingest Chainsaw data",
-        "x": 1300,
-        "y": 500,
-        "wires": [
-            [
-                "d03f70ebe08e48eb"
-            ],
-            [
-                "d03f70ebe08e48eb"
-            ],
-            [
-                "669139136ac1b7d4",
-                "d03f70ebe08e48eb"
-            ]
         ]
     },
     {
@@ -1844,7 +2000,7 @@
         "type": "function",
         "z": "44cf1917690496d8",
         "name": "KAPE Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.kape = msg.dirname + '/C/Windows/System32/winevt/logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection;\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.kape = msg.dirname + '/C/Windows/System32/winevt/logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection + '-chainsaw';\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1921,27 +2077,11 @@
         "wires": []
     },
     {
-        "id": "d03f70ebe08e48eb",
-        "type": "debug",
-        "z": "44cf1917690496d8",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1680,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "a0545953c85952cf",
         "type": "function",
         "z": "44cf1917690496d8",
         "name": "VR Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.collection = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection;\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.collection = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection + '-chainsaw';\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,

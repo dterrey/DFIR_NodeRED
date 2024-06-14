@@ -70,6 +70,7 @@ sudo mkdir $EVTXPROC
 sudo mkdir $CAPA
 sudo mkdir $APTHUNTER
 sudo mkdir $MALWARE
+sudo mkdir $RESULTS
 sudo chmod -R 777 $CASES_DIR
 sudo chmod -R 777 $DATA_DIR
 
@@ -130,24 +131,10 @@ sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/mast
 sudo docker-compose exec timesketch-web tsctl create-user $USER1_NAME --password $USER1_PASSWORD
 
 
-# Install Poetry 
-#sudo curl -sSL https://install.python-poetry.org | python3 -
-#echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-#source ~/.bashrc
-#sudo apt install python3-poetry -y
-
-# Install dftimewolf
-#sudo mkdir /opt/dftimewolf
-#sudo chmod 777 -R /opt/
-#cd /opt
-#sudo git clone https://github.com/log2timeline/dftimewolf.git
-#cd dftimewolf
-#sudo curl -sSL https://install.python-poetry.org | python3 -
-#echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-#echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> ~/.bashrc
-#source ~/.bashrc
-#pip install poetry
-#poetry install
+# Install ClamAV
+sudo apt install clamav
+sudo mkdir /cases/malware/results
+sudo chmod 777 -R $OPT
 
 
 

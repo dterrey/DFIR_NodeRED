@@ -1,4 +1,4 @@
-# AllthingsTimesketch
+# DFIR_NodeRED
 # Purpose
 Processing of host triage packages is always a challenge when dealing with incidents involving large number of hosts. 
 This repository contains 
