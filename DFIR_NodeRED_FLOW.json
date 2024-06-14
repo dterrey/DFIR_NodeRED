@@ -15,6 +15,14 @@
         "env": []
     },
     {
+        "id": "661e7f7a151d4072",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "2c32c57ee0c89b2b",
         "type": "tab",
         "label": "Domain / URL Analysis",
@@ -1156,8 +1164,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 360,
+        "x": 730,
+        "y": 220,
         "wires": [
             [
                 "d415ee434b1fea30"
@@ -1176,8 +1184,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 380,
+        "x": 400,
+        "y": 220,
         "wires": [
             [
                 "dad7f195c5be795b"
@@ -1196,8 +1204,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Capa Process",
-        "x": 1140,
-        "y": 460,
+        "x": 1380,
+        "y": 320,
         "wires": [
             [
                 "948989701c6b53a7"
@@ -1221,8 +1229,8 @@
         "ignoredFiles": "",
         "ignoredFilesType": "re",
         "name": "Watch for Triage Archives",
-        "x": 170,
-        "y": 300,
+        "x": 130,
+        "y": 160,
         "wires": [
             [
                 "b9cf924273e30e00"
@@ -1234,15 +1242,15 @@
         "type": "function",
         "z": "adaa3f44094f3fb5",
         "name": "ClamScan Analysis Params",
-        "func": "var malwaredir = \"/cases/malware/\";\nvar malwareresults = \"/cases/malware/results/\";\n\n// Extract the filename from msg.malware\nvar malwarefilename = msg.malware.split('/').pop().replace(/\\.(exe|dll|bin)$/, \".txt\");\nvar malwaretxt = malwareresults + malwarefilename;\nmsg.clam = \"--quiet --verbose --infected -r -z -i --bell \" + msg.malware + \" --log=\" + malwaretxt;\nreturn msg;",
+        "func": "var malwaredir = \"/cases/malware/\";\nvar malwareresults = \"/cases/malware/results/\";\n\n// Extract the filename from msg.malware\nvar malwarefilename = msg.malware.split('/').pop().replace(/\\.(exe|dll|bin)$/, \".txt\");\nvar malwaretxt = malwareresults + malwarefilename;\nmsg.malwarehash = malwaretxt\nmsg.clam = \"--quiet --verbose --infected -r -z -i --bell \" + msg.malware + \" --log=\" + malwaretxt;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 620,
+        "x": 500,
+        "y": 580,
         "wires": [
             [
                 "f97575bd23bfd3ad"
@@ -1261,8 +1269,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Capa Process",
-        "x": 1140,
-        "y": 620,
+        "x": 880,
+        "y": 580,
         "wires": [
             [],
             [],
@@ -1278,11 +1286,11 @@
         "name": "Queue Files",
         "count": "1",
         "unique_check": "",
-        "x": 430,
-        "y": 540,
+        "x": 330,
+        "y": 380,
         "wires": [
             [
-                "9cbe181f6ab5a8af"
+                "423d6d17ae8921c2"
             ]
         ]
     },
@@ -1298,11 +1306,102 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 460,
+        "x": 1110,
+        "y": 280,
         "wires": [
             [
                 "6695eee14b943191"
+            ]
+        ]
+    },
+    {
+        "id": "423d6d17ae8921c2",
+        "type": "function",
+        "z": "adaa3f44094f3fb5",
+        "name": "SHA256 Extract Params",
+        "func": "var malwaredir = \"/cases/malware/\";\nvar malwareresults = \"/cases/malware/results/\";\n\n// Extract the filename from msg.malware\nvar malwarefilename = msg.malware.split('/').pop().replace(/\\.(exe|dll|bin)$/, \".txt\");\nvar malwaretxt = malwareresults + malwarefilename;\nmsg.malwarehash = malwaretxt\nmsg.sha256 = msg.malware + \" >> /cases/malware/results/sha256.txt\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "87717fdc6d7e61f5"
+            ]
+        ]
+    },
+    {
+        "id": "87717fdc6d7e61f5",
+        "type": "exec",
+        "z": "adaa3f44094f3fb5",
+        "command": "sha256sum",
+        "addpay": "sha256",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA256 Process",
+        "x": 830,
+        "y": 360,
+        "wires": [
+            [],
+            [],
+            [
+                "9cbe181f6ab5a8af"
+            ]
+        ]
+    },
+    {
+        "id": "5269571a.2b1298",
+        "type": "watch-directory",
+        "z": "661e7f7a151d4072",
+        "folder": "/cases/malware",
+        "recursive": 0,
+        "typeEvent": "create",
+        "ignoreInitial": true,
+        "ignoredFiles": "",
+        "ignoredFilesType": "re",
+        "name": "Checksum",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "f54e5b63de4137f2"
+            ]
+        ]
+    },
+    {
+        "id": "34e67b91.f43f24",
+        "type": "debug",
+        "z": "661e7f7a151d4072",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f54e5b63de4137f2",
+        "type": "hash sha256",
+        "z": "661e7f7a151d4072",
+        "name": "",
+        "x": 530,
+        "y": 360,
+        "wires": [
+            [
+                "34e67b91.f43f24"
             ]
         ]
     },
