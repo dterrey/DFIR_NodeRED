@@ -103,14 +103,6 @@
         "env": []
     },
     {
-        "id": "25f311019f0d6662",
-        "type": "tab",
-        "label": "Slack Notifications",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "1f05e4b7e53a7b3c",
         "type": "global-config",
         "name": "global-config",
@@ -128,8 +120,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 780,
+        "x": 460,
+        "y": 920,
         "wires": [
             [
                 "da0236f64e679945"
@@ -148,8 +140,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Log2timeline Process",
-        "x": 860,
-        "y": 780,
+        "x": 720,
+        "y": 920,
         "wires": [
             [],
             [],
@@ -170,8 +162,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Timesketch Import Process",
-        "x": 1220,
-        "y": 960,
+        "x": 940,
+        "y": 1120,
         "wires": [
             [],
             [],
@@ -192,8 +184,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 960,
+        "x": 630,
+        "y": 1120,
         "wires": [
             [
                 "2b3a6c9be610f3ec"
@@ -213,18 +205,18 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1810,
-        "y": 1000,
+        "x": 1530,
+        "y": 1120,
         "wires": []
     },
     {
         "id": "c40feb7825e478d4",
         "type": "comment",
         "z": "f8d31b3f79add29b",
-        "name": "Monitored Directory /cases/processor",
+        "name": "1) Monitored Directory /cases/processor (ZIP/Image)",
         "info": "",
-        "x": 170,
-        "y": 260,
+        "x": 270,
+        "y": 180,
         "wires": []
     },
     {
@@ -233,8 +225,8 @@
         "z": "f8d31b3f79add29b",
         "name": "Double click on Queue Zips to the adjust bulk processing value",
         "info": "Tweak the value to configure how many archives to process at any given time",
-        "x": 860,
-        "y": 260,
+        "x": 1780,
+        "y": 80,
         "wires": []
     },
     {
@@ -243,8 +235,8 @@
         "z": "f8d31b3f79add29b",
         "name": "Change Log2timeline params here",
         "info": "",
-        "x": 660,
-        "y": 740,
+        "x": 2060,
+        "y": 840,
         "wires": []
     },
     {
@@ -253,8 +245,8 @@
         "z": "f8d31b3f79add29b",
         "name": "Change Timesketch CLI params here",
         "info": "",
-        "x": 950,
-        "y": 920,
+        "x": 630,
+        "y": 1080,
         "wires": []
     },
     {
@@ -277,17 +269,15 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1520,
-        "y": 980,
+        "x": 1240,
+        "y": 1120,
         "wires": [
             [
-                "0abb6da646da8e2a",
-                "c2df1a428cd94263"
+                "0abb6da646da8e2a"
             ],
             [
                 "97c8951a9e7c5bec",
-                "0abb6da646da8e2a",
-                "8a7ad3746fdfc178"
+                "0abb6da646da8e2a"
             ]
         ]
     },
@@ -303,8 +293,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Delete Decompressed Dir",
-        "x": 1350,
-        "y": 780,
+        "x": 1210,
+        "y": 940,
         "wires": [
             [],
             [],
@@ -333,17 +323,15 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 260,
-        "y": 420,
+        "x": 240,
+        "y": 380,
         "wires": [
             [
-                "562bd891136c7a22",
                 "1ce9ab81db8fa381"
             ],
             [
                 "a8c0e026d01fe67f",
-                "0abb6da646da8e2a",
-                "d3ad201a6345ec44"
+                "0abb6da646da8e2a"
             ]
         ]
     },
@@ -360,8 +348,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 440,
+        "x": 470,
+        "y": 460,
         "wires": []
     },
     {
@@ -370,8 +358,8 @@
         "z": "f8d31b3f79add29b",
         "name": "READ ME FIRST! Double Click",
         "info": "**CURRENT CONFIG OF THE AUTOMATION DO NOT PROCESS NESTED ZIPS OF HOSTS.FOR EXAMPLE, YOU CANNOT UPLOAD A SINGLE ZIP CONTAINING TRIAGE ARCHIVES OF N DIFFERENT HOSTS.**\n\n**Following folders need to be created beforehand**\n/cases/processor - this is where archives will need to be copied to. Note that the original archives copied here will be retained indefinitely.\n/cases/plaso - this is where plaso files be stored after log2timeline completes its processing.\n/cases/evtxproc/ -processed hayabusa csvs will be stored here.\n\n**Hayabusa Evtx Processing***\nThis is currently configured for KAPE triage configurations, where the evtx is expected like below\nunzipped directory/C/Windows/System32/winevt/. You can change the path by updating the path in Hayabusa Process Variables node. You must change the timesketch username and password information in the same node. Otherwise it will fail to ingest to Timesketch\n\n***Slack notifications***\nYou must set the slack webhook and username configuration within the \"Notification to Slack\" node within \"Slack Notifications\" flow \n\nMake sure Node-RED can read and write to all folders under /cases.\n\n**Compression utility must be pre-installed on the Linux host prior running the workflow**\nThis automation is configured to detect Zip, RAR, Tar GZ & BZ2, 7z archives.\n\n** \"Variable Setup\" node** \nThis node contains the key commandline parameters used for archive tools and other variables required for automation.\n\n**You need the following Node-RED nodes installed via the Node-RED palette**\n\n-node-red-contrib-fs \n-node-red-contrib-fs-ops \n-node-red-contrib-simple-queue \n-node-red-contrib-watchdirectory\n-node-red-contrib-slack-files\n\n**Change the Log2Timeline CLI Parameters and Timesketch CLI Parameters**\nYou should review the CLI parameters used for Log2timeline and Timesketch in their respective nodes. \n\n\n**FYI Only**\nNode-RED has a default memory cap of 2GB. You can increase this through the use of environment variables. Add the following to your bash.rc of the user in which Node-RED runs. Size is in MB.\n\nNODE_OPTIONS=--max_old_space_size=4096",
-        "x": 190,
-        "y": 40,
+        "x": 150,
+        "y": 80,
         "wires": []
     },
     {
@@ -394,17 +382,15 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1600,
-        "y": 780,
+        "x": 1440,
+        "y": 960,
         "wires": [
             [
-                "a1ed6bf3ca374590",
-                "c7d1af60f74efd2f"
+                "a1ed6bf3ca374590"
             ],
             [
                 "0abb6da646da8e2a",
-                "cbe146b403c6aec0",
-                "81fe69036c81c53d"
+                "cbe146b403c6aec0"
             ]
         ]
     },
@@ -421,8 +407,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1280,
-        "y": 700,
+        "x": 1220,
+        "y": 880,
         "wires": []
     },
     {
@@ -438,8 +424,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1840,
-        "y": 800,
+        "x": 1740,
+        "y": 940,
         "wires": []
     },
     {
@@ -452,8 +438,8 @@
             "bb4beaa62a0d33db",
             "a8d477a02835a411"
         ],
-        "x": 805,
-        "y": 360,
+        "x": 1185,
+        "y": 300,
         "wires": []
     },
     {
@@ -464,7 +450,7 @@
         "links": [
             "3a6757a824d0b781"
         ],
-        "x": 895,
+        "x": 595,
         "y": 360,
         "wires": [
             [
@@ -484,8 +470,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 360,
+        "x": 1000,
+        "y": 300,
         "wires": [
             [
                 "b6ecf5f15136a82b"
@@ -501,8 +487,8 @@
         "links": [
             "5fd92537b38314b0"
         ],
-        "x": 1475,
-        "y": 360,
+        "x": 1115,
+        "y": 440,
         "wires": []
     },
     {
@@ -513,8 +499,8 @@
         "links": [
             "e8aed768bff52623"
         ],
-        "x": 95,
-        "y": 420,
+        "x": 65,
+        "y": 380,
         "wires": [
             [
                 "1a3f028824bd9f13"
@@ -541,136 +527,17 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1080,
-        "y": 780,
+        "x": 960,
+        "y": 920,
         "wires": [
             [
-                "c223eba39864f63e",
-                "929888b23686884c"
+                "c223eba39864f63e"
             ],
             [
                 "0abb6da646da8e2a",
-                "8b62e0d85a31d638",
-                "50851a2aa40d6716"
+                "8b62e0d85a31d638"
             ]
         ]
-    },
-    {
-        "id": "d3ad201a6345ec44",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Decompression Failure",
-        "mode": "link",
-        "links": [
-            "b43ee8044209a3aa"
-        ],
-        "x": 455,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "562bd891136c7a22",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Decompression Success",
-        "mode": "link",
-        "links": [
-            "edcac73c6d2f1fd4"
-        ],
-        "x": 465,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "929888b23686884c",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Plaso-Success",
-        "mode": "link",
-        "links": [
-            "a05e730349905e6d"
-        ],
-        "x": 1175,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "50851a2aa40d6716",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Plaso Failure",
-        "mode": "link",
-        "links": [
-            "bc9fb963b0687733"
-        ],
-        "x": 1175,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "c2df1a428cd94263",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Timesketch Ingestion Success",
-        "mode": "link",
-        "links": [
-            "a20fe85e7f1585f9"
-        ],
-        "x": 1705,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "8a7ad3746fdfc178",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Timesketch Ingestion Failure",
-        "mode": "link",
-        "links": [
-            "e1b089d27626665d"
-        ],
-        "x": 1695,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "62e7086b962f93fe",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Queue Release",
-        "mode": "link",
-        "links": [
-            "75769f870091de80"
-        ],
-        "x": 1055,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "c7d1af60f74efd2f",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Folder Deletion Success",
-        "mode": "link",
-        "links": [
-            "8f9d6c75a332b924"
-        ],
-        "x": 1715,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "81fe69036c81c53d",
-        "type": "link out",
-        "z": "f8d31b3f79add29b",
-        "name": "Notification-OUT-Folder Deletion Failure",
-        "mode": "link",
-        "links": [
-            "0975b2e8606a7c44"
-        ],
-        "x": 1715,
-        "y": 840,
-        "wires": []
     },
     {
         "id": "e4e7063f519ed216",
@@ -684,8 +551,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 640,
+        "x": 380,
+        "y": 620,
         "wires": [
             [
                 "52415c7bb8e16c3a",
@@ -702,8 +569,8 @@
         "links": [
             "2397e77a3c79fda3"
         ],
-        "x": 525,
-        "y": 520,
+        "x": 705,
+        "y": 680,
         "wires": []
     },
     {
@@ -714,28 +581,10 @@
         "links": [
             "04540ea77b74e085"
         ],
-        "x": 225,
-        "y": 780,
+        "x": 235,
+        "y": 880,
         "wires": [
             [
-                "e8c9dac0b45ce024"
-            ]
-        ]
-    },
-    {
-        "id": "4899ea50dd83351a",
-        "type": "link in",
-        "z": "f8d31b3f79add29b",
-        "name": "Hayabusa Process Failed",
-        "links": [
-            "8f28d8c8efda634d"
-        ],
-        "x": 665,
-        "y": 600,
-        "wires": [
-            [
-                "0abb6da646da8e2a",
-                "4c62df5220200fdf",
                 "e8c9dac0b45ce024"
             ]
         ]
@@ -753,8 +602,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 600,
+        "x": 1820,
+        "y": 540,
         "wires": []
     },
     {
@@ -765,8 +614,8 @@
         "links": [
             "168748d31fb17282"
         ],
-        "x": 585,
-        "y": 620,
+        "x": 1665,
+        "y": 600,
         "wires": [
             [
                 "0abb6da646da8e2a",
@@ -788,17 +637,17 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 680,
+        "x": 1900,
+        "y": 600,
         "wires": []
     },
     {
         "id": "846701cdbfb12f64",
         "type": "comment",
         "z": "f8d31b3f79add29b",
-        "name": "Hayabusa specific config here",
+        "name": "KAPE Zips Hayabusa specific config here",
         "info": "",
-        "x": 360,
+        "x": 400,
         "y": 580,
         "wires": []
     },
@@ -811,8 +660,8 @@
         "links": [
             "84d7cd3a2988674f"
         ],
-        "x": 645,
-        "y": 60,
+        "x": 825,
+        "y": 80,
         "wires": []
     },
     {
@@ -827,8 +676,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 280,
+        "x": 790,
+        "y": 300,
         "wires": [
             [
                 "3b18ad5734fc996b"
@@ -877,7 +726,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 460,
+        "x": 580,
         "y": 140,
         "wires": [
             [
@@ -906,8 +755,8 @@
         "links": [
             "236dcee18367a244"
         ],
-        "x": 645,
-        "y": 100,
+        "x": 825,
+        "y": 120,
         "wires": []
     },
     {
@@ -919,8 +768,8 @@
         "links": [
             "abc43a287b554b44"
         ],
-        "x": 645,
-        "y": 140,
+        "x": 825,
+        "y": 160,
         "wires": []
     },
     {
@@ -932,8 +781,8 @@
         "links": [
             "1896b282f8d5a850"
         ],
-        "x": 645,
-        "y": 180,
+        "x": 825,
+        "y": 200,
         "wires": []
     },
     {
@@ -947,8 +796,8 @@
         "ignoredFiles": "",
         "ignoredFilesType": "re",
         "name": "Watch for Triage Archives",
-        "x": 130,
-        "y": 360,
+        "x": 230,
+        "y": 220,
         "wires": [
             [
                 "5b48534e1cd703c5"
@@ -962,12 +811,11 @@
         "name": "Queue Zips",
         "count": "1",
         "unique_check": "",
-        "x": 1110,
-        "y": 360,
+        "x": 750,
+        "y": 420,
         "wires": [
             [
-                "4f821c6d2c595ac8",
-                "62e7086b962f93fe"
+                "4f821c6d2c595ac8"
             ]
         ]
     },
@@ -984,8 +832,8 @@
         "mode": "777",
         "fullpath": "dirname",
         "fullpathType": "msg",
-        "x": 1340,
-        "y": 360,
+        "x": 980,
+        "y": 420,
         "wires": [
             [
                 "f1ea48448bbde595"
@@ -1016,8 +864,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 90,
-        "y": 640,
+        "x": 110,
+        "y": 620,
         "wires": [
             [
                 "e4e7063f519ed216"
@@ -1033,15 +881,15 @@
         "type": "function",
         "z": "f8d31b3f79add29b",
         "name": "VR Hayabusa Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.collection = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.hayabusa_job = msg.plasofname + '-hayabusa';\nmsg.hayabusa_out = '/cases/evtxproc/' + msg.hayabusa_job;\nmsg.hayabusa_exec =  'csv-timeline -d ' +msg.collection+ ' --RFC-3339 -o ' + msg.hayabusa_out + '.csv' + ' -p timesketch-verbose -U --no-wizard'\nmsg.hayabusa_ts = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name \" + msg.hayabusa_job + \" --sketch_id \" + \"1 \" + msg.hayabusa_out + '.csv';\nreturn msg;",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.hayabusa_job = msg.plasofname + '-hayabusa';\nmsg.hayabusa_out = '/cases/evtxproc/' + msg.hayabusa_job;\nmsg.hayabusa_exec =  'csv-timeline -d ' +msg.vr+ ' --RFC-3339 -o ' + msg.hayabusa_out + '.csv' + ' -p timesketch-verbose -U --no-wizard'\nmsg.hayabusa_ts = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name \" + msg.hayabusa_job + \" --sketch_id \" + \"1 \" + msg.hayabusa_out + '.csv';\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 680,
+        "x": 370,
+        "y": 720,
         "wires": [
             [
                 "52415c7bb8e16c3a",
@@ -1062,25 +910,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 210,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "430a7da8abd665c9",
-        "type": "debug",
-        "z": "f8d31b3f79add29b",
-        "name": "KAPE Hayabusa Processing",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 220,
-        "y": 960,
+        "x": 250,
+        "y": 1040,
         "wires": []
     },
     {
@@ -1096,8 +927,113 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 210,
-        "y": 920,
+        "x": 250,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "430a7da8abd665c9",
+        "type": "debug",
+        "z": "f8d31b3f79add29b",
+        "name": "KAPE Hayabusa Processing",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "c4bd1b58179b163d",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "2) Switch depending on filetype",
+        "info": "",
+        "x": 590,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "86fdc3d9fad03c8f",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "3) Zip File Flow",
+        "info": "",
+        "x": 800,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "bdfe1daacead68e6",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "4) Decompress Zip",
+        "info": "",
+        "x": 250,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "54a1be89f3f94d2f",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "5) Queue of multiple zip files and create zip directory",
+        "info": "",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5e1cded5289b04c9",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "Velociraptor Zips Hayabusa specific config here",
+        "info": "",
+        "x": 420,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4899ea50dd83351a",
+        "type": "link in",
+        "z": "f8d31b3f79add29b",
+        "name": "Hayabusa Process Failed",
+        "links": [
+            "8f28d8c8efda634d"
+        ],
+        "x": 1665,
+        "y": 540,
+        "wires": [
+            [
+                "0abb6da646da8e2a",
+                "4c62df5220200fdf",
+                "e8c9dac0b45ce024"
+            ]
+        ]
+    },
+    {
+        "id": "025f1504becd08b8",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "ADD BSTRINGS to extract all IOCS to files",
+        "info": "",
+        "x": 1620,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "1f8dc4580ce97362",
+        "type": "comment",
+        "z": "f8d31b3f79add29b",
+        "name": "ADD BSTRINGS to extract all IOCS to files",
+        "info": "",
+        "x": 1620,
+        "y": 240,
         "wires": []
     },
     {
@@ -1229,7 +1165,7 @@
         "ignoredFiles": "",
         "ignoredFilesType": "re",
         "name": "Watch for Triage Archives",
-        "x": 130,
+        "x": 170,
         "y": 160,
         "wires": [
             [
@@ -1357,6 +1293,16 @@
         ]
     },
     {
+        "id": "1ead982e86fc6ca2",
+        "type": "comment",
+        "z": "adaa3f44094f3fb5",
+        "name": "Monitored Directory /cases/malware (Files)",
+        "info": "",
+        "x": 220,
+        "y": 100,
+        "wires": []
+    },
+    {
         "id": "5269571a.2b1298",
         "type": "watch-directory",
         "z": "661e7f7a151d4072",
@@ -1367,8 +1313,8 @@
         "ignoredFiles": "",
         "ignoredFilesType": "re",
         "name": "Checksum",
-        "x": 300,
-        "y": 340,
+        "x": 320,
+        "y": 360,
         "wires": [
             [
                 "f54e5b63de4137f2"
@@ -1604,12 +1550,10 @@
         "wires": [
             [
                 "bf88463397855b7a",
-                "a1b64661a3ee175c",
                 "88bbb0dccda88902"
             ],
             [
-                "8f28d8c8efda634d",
-                "0974be28f22e530d"
+                "8f28d8c8efda634d"
             ]
         ]
     },
@@ -1678,8 +1622,7 @@
                 "5e7cd7a03f986367"
             ],
             [
-                "168748d31fb17282",
-                "c47ba0bd5dd540ee"
+                "168748d31fb17282"
             ]
         ]
     },
@@ -1707,65 +1650,6 @@
         ],
         "x": 1325,
         "y": 260,
-        "wires": []
-    },
-    {
-        "id": "0974be28f22e530d",
-        "type": "link out",
-        "z": "44cf1917690496d8",
-        "name": "Notification-OUT-Hayabusa Process Failure",
-        "mode": "link",
-        "links": [
-            "3a52eeecb5988857"
-        ],
-        "x": 795,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "a1b64661a3ee175c",
-        "type": "link out",
-        "z": "44cf1917690496d8",
-        "name": "Notification-OUT-Hayabusa Process Success",
-        "mode": "link",
-        "links": [
-            "63dc4d0d295180ee"
-        ],
-        "x": 795,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "123e51f7f0621161",
-        "type": "comment",
-        "z": "44cf1917690496d8",
-        "name": "Slack notification nodes",
-        "info": "",
-        "x": 740,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "c47ba0bd5dd540ee",
-        "type": "link out",
-        "z": "44cf1917690496d8",
-        "name": "Notification-OUT-Hayabusa Timesketch Ingestion Failure",
-        "mode": "link",
-        "links": [
-            "3f4ad6eb73e91522"
-        ],
-        "x": 1315,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "80297e36a05a7d75",
-        "type": "comment",
-        "z": "44cf1917690496d8",
-        "name": "Slack notification nodes",
-        "info": "",
-        "x": 1280,
-        "y": 60,
         "wires": []
     },
     {
@@ -1827,16 +1711,11 @@
         "x": 890,
         "y": 940,
         "wires": [
-            [
-                "e05031cf8d470d50"
-            ],
-            [
-                "e05031cf8d470d50"
-            ],
+            [],
+            [],
             [
                 "9330a0840c187491",
-                "4ceb2f8e309e5dac",
-                "e05031cf8d470d50"
+                "4ceb2f8e309e5dac"
             ]
         ]
     },
@@ -1917,7 +1796,9 @@
         "y": 840,
         "wires": [
             [],
-            []
+            [
+                "04540ea77b74e085"
+            ]
         ]
     },
     {
@@ -1936,8 +1817,7 @@
         "y": 780,
         "wires": [
             [
-                "3bc476f26a853220",
-                "e05031cf8d470d50"
+                "3bc476f26a853220"
             ]
         ]
     },
@@ -1957,7 +1837,6 @@
         "y": 840,
         "wires": [
             [
-                "e05031cf8d470d50",
                 "6992cc02c66368f1"
             ]
         ]
@@ -2071,6 +1950,7 @@
         "id": "669139136ac1b7d4",
         "type": "switch",
         "z": "44cf1917690496d8",
+        "d": true,
         "name": "Chainsaw Out to Timesketch",
         "property": "payload.code",
         "propertyType": "msg",
@@ -2099,7 +1979,7 @@
         "type": "function",
         "z": "44cf1917690496d8",
         "name": "KAPE Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.kape = msg.dirname + '/C/Windows/System32/winevt/logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection + '-chainsaw';\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.kape = msg.dirname + '/C/Windows/System32/winevt/logs/';\nmsg.chainsaw_job = + msg.plasofname + '-chainsaw';\nmsg.chainsaw_dir = msg.plasofname;\nmsg.chainsaw_files = '/cases/evtxproc/chainsaw/' + msg.plasofname + '/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.chainsaw_dir;\n//msg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.kape + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 ---timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-hainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 ---timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 ---timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_tampering.csv\";\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2150,19 +2030,6 @@
         ]
     },
     {
-        "id": "829a105eb6642804",
-        "type": "link out",
-        "z": "44cf1917690496d8",
-        "name": "Notification-OUT-Hayabusa Timesketch Ingestion Success",
-        "mode": "link",
-        "links": [
-            "190cbf4e80bfdd18"
-        ],
-        "x": 1645,
-        "y": 780,
-        "wires": []
-    },
-    {
         "id": "04540ea77b74e085",
         "type": "link out",
         "z": "44cf1917690496d8",
@@ -2172,7 +2039,7 @@
             "c07a0968fd953921"
         ],
         "x": 1645,
-        "y": 880,
+        "y": 840,
         "wires": []
     },
     {
@@ -2180,7 +2047,7 @@
         "type": "function",
         "z": "44cf1917690496d8",
         "name": "VR Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.collection = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.collection + '-chainsaw';\nmsg.chainsaw_exec = 'hunt -q ' + msg.collection + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_job = + msg.plasofname + '-chainsaw';\nmsg.chainsaw_dir = msg.plasofname;\nmsg.chainsaw_files = '/cases/evtxproc/chainsaw/' + msg.plasofname +'/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.chainsaw_dir;\n//msg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.vr + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname+\"-chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-hainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2247,22 +2114,6 @@
                 "669139136ac1b7d4"
             ]
         ]
-    },
-    {
-        "id": "e05031cf8d470d50",
-        "type": "debug",
-        "z": "44cf1917690496d8",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "c980c719a0572241",
@@ -2431,6 +2282,25 @@
         "wires": []
     },
     {
+        "id": "acd497499f3bac64",
+        "type": "function",
+        "z": "44cf1917690496d8",
+        "d": true,
+        "name": "VR Chainsaw Process Variables",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.vr + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "193c7477c3b6a27e",
         "type": "link in",
         "z": "d75898983a7b91b1",
@@ -2461,10 +2331,15 @@
         "x": 560,
         "y": 200,
         "wires": [
-            [],
-            [],
             [
-                "ec1efb37c43fbd43"
+                "f9a1dd21e7b8645f"
+            ],
+            [
+                "f9a1dd21e7b8645f"
+            ],
+            [
+                "ec1efb37c43fbd43",
+                "f9a1dd21e7b8645f"
             ]
         ]
     },
@@ -2811,6 +2686,22 @@
         ],
         "x": 1355,
         "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f9a1dd21e7b8645f",
+        "type": "debug",
+        "z": "d75898983a7b91b1",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 620,
         "wires": []
     },
     {
@@ -4342,473 +4233,5 @@
                 "e8aed768bff52623"
             ]
         ]
-    },
-    {
-        "id": "edcac73c6d2f1fd4",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Decompression Success",
-        "links": [
-            "562bd891136c7a22"
-        ],
-        "x": 255,
-        "y": 120,
-        "wires": [
-            [
-                "65be5cd6680294ca"
-            ]
-        ]
-    },
-    {
-        "id": "65be5cd6680294ca",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Decompression Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" +msg.filename + \" file was decompressed successfully\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 120,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "b43ee8044209a3aa",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Decompression Failure",
-        "links": [
-            "d3ad201a6345ec44"
-        ],
-        "x": 255,
-        "y": 180,
-        "wires": [
-            [
-                "f3c0e7e411c7a61e"
-            ]
-        ]
-    },
-    {
-        "id": "f3c0e7e411c7a61e",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Decompression Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + msg.filename + \" file decompression was unsuccessful\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 180,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "bc9fb963b0687733",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Plaso Generation Failure",
-        "links": [
-            "50851a2aa40d6716"
-        ],
-        "x": 255,
-        "y": 240,
-        "wires": [
-            [
-                "f1d981dde4fef202"
-            ]
-        ]
-    },
-    {
-        "id": "a05e730349905e6d",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Plaso Generation Success",
-        "links": [
-            "929888b23686884c"
-        ],
-        "x": 255,
-        "y": 300,
-        "wires": [
-            [
-                "eb6ca784fc1eaaa7"
-            ]
-        ]
-    },
-    {
-        "id": "f1d981dde4fef202",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Plaso Generation Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Plaso file generation failed for  \" + msg.filename;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "eb6ca784fc1eaaa7",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Plaso Generation Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Plaso file generation successful for  \" + msg.filename;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 300,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "a20fe85e7f1585f9",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Timesketch Ingestion Success",
-        "links": [
-            "c2df1a428cd94263"
-        ],
-        "x": 255,
-        "y": 360,
-        "wires": [
-            [
-                "ba5b6632cd41e404"
-            ]
-        ]
-    },
-    {
-        "id": "ba5b6632cd41e404",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Timesketch Ingestion Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Ingestion of \" + msg.plasofname +\".plaso\" + \" to Timesketch was successful\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 360,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "c87ad6c2583e31df",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Timesketch Ingestion Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Ingestion of \" + msg.plasofname +\".plaso\" + \" to Timesketch has failed\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 420,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "e1b089d27626665d",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Timesketch Ingestion Failure",
-        "links": [
-            "8a7ad3746fdfc178"
-        ],
-        "x": 255,
-        "y": 420,
-        "wires": [
-            [
-                "c87ad6c2583e31df"
-            ]
-        ]
-    },
-    {
-        "id": "75769f870091de80",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Queue Release",
-        "links": [
-            "62e7086b962f93fe"
-        ],
-        "x": 255,
-        "y": 60,
-        "wires": [
-            [
-                "cba9b76cb1c56b4a"
-            ]
-        ]
-    },
-    {
-        "id": "cba9b76cb1c56b4a",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Queue Release",
-        "func": "\nmsg.payload = new Date().toISOString() + \" - \" + msg.filename + \" file was released from the queue for processing\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 60,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "8f9d6c75a332b924",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Folder Deletion Success",
-        "links": [
-            "c7d1af60f74efd2f"
-        ],
-        "x": 255,
-        "y": 480,
-        "wires": [
-            [
-                "aeef9d6ba04ddb3e"
-            ]
-        ]
-    },
-    {
-        "id": "0975b2e8606a7c44",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Folder Deletion Failure",
-        "links": [
-            "81fe69036c81c53d"
-        ],
-        "x": 255,
-        "y": 540,
-        "wires": [
-            [
-                "4ba15d4b23220bd2"
-            ]
-        ]
-    },
-    {
-        "id": "aeef9d6ba04ddb3e",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Folder Deletion Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Ingestion of \" + msg.dirname + \" folder was successfully deleted\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 480,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "4ba15d4b23220bd2",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Folder Deletion Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Ingestion of \" + msg.dirname + \" folder deletion failed\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 540,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "63dc4d0d295180ee",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Hayabusa Process Success",
-        "links": [
-            "a1b64661a3ee175c"
-        ],
-        "x": 255,
-        "y": 600,
-        "wires": [
-            [
-                "4b974ddf0ca8899f"
-            ]
-        ]
-    },
-    {
-        "id": "3a52eeecb5988857",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Hayabusa Process Failure",
-        "links": [
-            "0974be28f22e530d"
-        ],
-        "x": 255,
-        "y": 660,
-        "wires": [
-            [
-                "d74f86e56560270b"
-            ]
-        ]
-    },
-    {
-        "id": "4b974ddf0ca8899f",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Hayabusa Process Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Hayabusa processing of \" + msg.winevt + \" was successful\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 600,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "d74f86e56560270b",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Hayabusa Process Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Hayabusa processing of \" + msg.winevt + \" has failed\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 660,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "190cbf4e80bfdd18",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Hayabusa Timesketch Ingestion Success",
-        "links": [
-            "829a105eb6642804"
-        ],
-        "x": 255,
-        "y": 720,
-        "wires": [
-            [
-                "ddbef328f7151428"
-            ]
-        ]
-    },
-    {
-        "id": "3f4ad6eb73e91522",
-        "type": "link in",
-        "z": "25f311019f0d6662",
-        "name": "Notification-IN-Hayabusa Timesketch Ingestion Failure",
-        "links": [
-            "c47ba0bd5dd540ee"
-        ],
-        "x": 255,
-        "y": 780,
-        "wires": [
-            [
-                "0d99b8c43a28aa0f"
-            ]
-        ]
-    },
-    {
-        "id": "ddbef328f7151428",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Hayabusa Timesketch Ingestion Success",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Timesketch ingestion of Hayabusa processsed data of  \" + msg.hayabusa_out + \".csv\" +\" was successful\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 460,
-        "y": 720,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "0d99b8c43a28aa0f",
-        "type": "function",
-        "z": "25f311019f0d6662",
-        "name": "Hayabusa Timesketch Ingestion Failure",
-        "func": "msg.payload = new Date().toISOString()  + \" - \" + \"Timesketch ingestion of Hayabusa processsed data of  \" + msg.hayabusa_out + \".csv\" + \" has failed\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 460,
-        "y": 780,
-        "wires": [
-            [
-                "9a14dd7dafbb0782"
-            ]
-        ]
-    },
-    {
-        "id": "9a14dd7dafbb0782",
-        "type": "slack",
-        "z": "25f311019f0d6662",
-        "name": "Notification to Slack",
-        "channelURL": "{CHANGEME_WEBHOOKURL",
-        "username": "DFIR Lab Bot",
-        "emojiIcon": "",
-        "channel": "",
-        "x": 750,
-        "y": 260,
-        "wires": []
     }
 ]
