@@ -103,10 +103,1413 @@
         "env": []
     },
     {
+        "id": "9583b8de.96bc48",
+        "type": "tab",
+        "label": "Basic Dashboard Elements",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "90da6d14.cc65d8",
+        "type": "tab",
+        "label": "CPU Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9b46958.ce6a368",
+        "type": "tab",
+        "label": "Space Station update",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "21f1b2aeb83d507c",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "29d4eba357840193",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fde894cc9253f03",
+        "type": "tab",
+        "label": "Flow 7",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eb4902f354a3b11b",
+        "type": "tab",
+        "label": "v2.0 File Upload",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ce54a2c5ab584757",
+        "type": "tab",
+        "label": "v1.0 File Upload",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7e96772c649e1a24",
+        "type": "tab",
+        "label": "v2.0 File Upload",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "32cfc6ae564d5d0d",
+        "type": "subflow",
+        "name": "v1.0 File Upload Process",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 1140,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "f9aa871be7506a0d",
+                        "port": 0
+                    },
+                    {
+                        "id": "985830e636916d66",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "UPLOAD_DIR",
+                "type": "str",
+                "value": "."
+            },
+            {
+                "name": "EXTENSIONS",
+                "type": "json",
+                "value": "[]"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "fileWritten"
+        ]
+    },
+    {
+        "id": "43f940ed9ce785ce",
+        "type": "subflow",
+        "name": "v1.0 File Upload List Files",
+        "info": "# List files\n\nWill list files in a directory.\n\nPath can be set in `msg.payload` or by setting the `DIRECTORY` environment variable.\n\nExtensions can be filtered by settings the `EXTENSIONS` environment variable to an Array of extensions.\n",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "0ac5932d31551059"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 840,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "8d85c2e96df8e084",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "DIRECTORY",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "EXTENSIONS",
+                "type": "json",
+                "value": "[]"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "1f05e4b7e53a7b3c",
         "type": "global-config",
         "name": "global-config",
         "env": []
+    },
+    {
+        "id": "b14d67d724b5880d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f7c3b33825b0828a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4e8d638d79fad479",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "b14d67d724b5880d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2fb9c205.dae50e",
+        "type": "ui_group",
+        "name": "Button",
+        "tab": "de296677.584f4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "122a9c51.bdf31c",
+        "type": "ui_group",
+        "name": "Analog",
+        "tab": "de296677.584f4",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "de296677.584f4",
+        "type": "ui_tab",
+        "name": "Basic Dashboard",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "baa4830e.d51ff",
+        "type": "ui_group",
+        "name": "Sense Hat Simulator ",
+        "tab": "262952a9.f1dcbe",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "6d02446b.841c64",
+        "type": "ui_group",
+        "name": "CPU On/Off",
+        "tab": "262952a9.f1dcbe",
+        "order": 1,
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "3d630fa8.8d0d68",
+        "type": "ui_group",
+        "name": "CPU Gauges",
+        "tab": "262952a9.f1dcbe",
+        "order": 3,
+        "disp": true,
+        "width": "3"
+    },
+    {
+        "id": "262952a9.f1dcbe",
+        "type": "ui_tab",
+        "name": "CPU Dashboard",
+        "icon": "dashboard",
+        "order": 9,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9813997d.68df88",
+        "type": "ui_group",
+        "name": "Start/Stop",
+        "tab": "c1fc79b.7049e88",
+        "order": 1,
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "66464e0a.235a1",
+        "type": "ui_group",
+        "z": "9b46958.ce6a368",
+        "name": "Space Station",
+        "tab": "c1fc79b.7049e88",
+        "order": 2,
+        "disp": true,
+        "width": "20"
+    },
+    {
+        "id": "c1fc79b.7049e88",
+        "type": "ui_tab",
+        "z": "9b46958.ce6a368",
+        "name": "International Space Station Location 2",
+        "icon": "fa-space-shuttle",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dd8d2662278f4f72",
+        "type": "ui-page",
+        "name": "Data Entry New",
+        "ui": "cb79bc4520925e32",
+        "path": "/entry",
+        "icon": "note-multiple",
+        "layout": "grid",
+        "theme": "0d92c765bfad87e6",
+        "order": 7,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "44010f4b04014d29",
+        "type": "ui-group",
+        "name": "Binary Upload",
+        "page": "dd8d2662278f4f72",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0d92c765bfad87e6",
+        "type": "ui-theme",
+        "name": "Basic Blue Theme",
+        "colors": {
+            "surface": "#4d58ff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "cb79bc4520925e32",
+        "type": "ui-base",
+        "name": "My UI",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false
+    },
+    {
+        "id": "f5c2b7111eeb7ab2",
+        "type": "ui-group",
+        "name": "Group Name",
+        "page": "1ac8f0dc6af762b8",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0d8bb4422190121d",
+        "type": "ui-group",
+        "name": "Task List",
+        "page": "abf2f56d637dd7e2",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b362eb01162ac195",
+        "type": "ui-group",
+        "name": "Tasks List",
+        "page": "9ddbd8b53184555c",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "22b17110c0d4f034",
+        "type": "ui-group",
+        "name": "Raspberry Pi Data",
+        "page": "621b72a71b7fea3c",
+        "width": "3",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "6541a2e358dbd499",
+        "type": "ui-group",
+        "name": "CO2 Levels",
+        "page": "621b72a71b7fea3c",
+        "width": "4",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1ac8f0dc6af762b8",
+        "type": "ui-page",
+        "name": "Task Submission",
+        "ui": "cb79bc4520925e32",
+        "path": "/submit-data",
+        "icon": "form-textbox",
+        "layout": "notebook",
+        "theme": "5ae8613757b62f89",
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "abf2f56d637dd7e2",
+        "type": "ui-page",
+        "name": "Admin View",
+        "ui": "cb79bc4520925e32",
+        "path": "/admin",
+        "icon": "lock",
+        "layout": "grid",
+        "theme": "a70602e73bbb2a95",
+        "order": 6,
+        "className": "",
+        "visible": false,
+        "disabled": "false"
+    },
+    {
+        "id": "9ddbd8b53184555c",
+        "type": "ui-page",
+        "name": "Your Tasks",
+        "ui": "cb79bc4520925e32",
+        "path": "/tasks",
+        "icon": "view-list-outline",
+        "layout": "grid",
+        "theme": "5ae8613757b62f89",
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "621b72a71b7fea3c",
+        "type": "ui-page",
+        "name": "Data Dashboard",
+        "ui": "cb79bc4520925e32",
+        "path": "/data",
+        "icon": "gauge",
+        "layout": "grid",
+        "theme": "5ae8613757b62f89",
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "5ae8613757b62f89",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "a70602e73bbb2a95",
+        "type": "ui-theme",
+        "name": "Admin Theme",
+        "colors": {
+            "surface": "#454545",
+            "primary": "#d47e1c",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "ea5c3d2dcfb3462e",
+        "type": "ui-group",
+        "name": "Group Name",
+        "page": "76f6b77509a74a17",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "76f6b77509a74a17",
+        "type": "ui-page",
+        "name": "Page Name",
+        "ui": "cb79bc4520925e32",
+        "path": "/",
+        "icon": "",
+        "layout": "grid",
+        "theme": "c5ed292f3032aa43",
+        "order": 2,
+        "className": ""
+    },
+    {
+        "id": "b73dc5151c8cd587",
+        "type": "ui-group",
+        "name": "CSV Table",
+        "page": "76f6b77509a74a17",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "c5ed292f3032aa43",
+        "type": "ui-theme",
+        "name": "Theme Name",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "c49126a1122b81c2",
+        "type": "ui-page",
+        "name": "Upload New",
+        "ui": "cb79bc4520925e32",
+        "path": "/page7",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "a70602e73bbb2a95",
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b754f85f5adaf50c",
+        "type": "ui-group",
+        "name": "Upload New",
+        "page": "c49126a1122b81c2",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "4178bf61.05d97",
+        "type": "ui_group",
+        "name": "File upload",
+        "tab": "f1b5a1b6.543fd8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f1b5a1b6.543fd8",
+        "type": "ui_tab",
+        "name": "File Upload",
+        "icon": "dashboard",
+        "order": 4
+    },
+    {
+        "id": "8c2f073fced364da",
+        "type": "http in",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "url": "/fileupload",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "b64b15cc50e1bca7",
+                "ba64aa097970c358",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "f4cc32ee41e7d54a",
+        "type": "http response",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5cb99ae26a548b44",
+        "type": "ui_template",
+        "z": "32cfc6ae564d5d0d",
+        "group": "4178bf61.05d97",
+        "name": "Upload",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "def0da21f80d8325",
+        "type": "ui_dropdown",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "4178bf61.05d97",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "46e1d43e335b8127"
+            ]
+        ]
+    },
+    {
+        "id": "a5160bea005632e9",
+        "type": "link in",
+        "z": "32cfc6ae564d5d0d",
+        "name": "refreshFileDropdown",
+        "links": [
+            "4bbb79f5dace631e",
+            "3c66394f7ddb4596"
+        ],
+        "x": 75,
+        "y": 140,
+        "wires": [
+            [
+                "d7efdaa53ff9f955"
+            ]
+        ]
+    },
+    {
+        "id": "288a3a4b384d757a",
+        "type": "ui_button",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "group": "4178bf61.05d97",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Delete",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "a5078173b932a519"
+            ]
+        ]
+    },
+    {
+        "id": "46e1d43e335b8127",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "selectedFile",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b64b15cc50e1bca7",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "getFile",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$env('UPLOAD_DIR')  & '/' & req.files[0].originalname",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "req.files[0].buffer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "c72d748572251434",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "1766bef9ac2e4b93",
+        "type": "file",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 830,
+        "y": 340,
+        "wires": [
+            [
+                "f9aa871be7506a0d",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "9e56cb6802490ebf",
+        "type": "inject",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "d7efdaa53ff9f955"
+            ]
+        ]
+    },
+    {
+        "id": "a5078173b932a519",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "getSelectedFile",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "$env('UPLOAD_DIR')  & '/' & $flowContext('selectedFile')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Delete File ?",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "84713b0c20d9a64d"
+            ]
+        ]
+    },
+    {
+        "id": "985830e636916d66",
+        "type": "file",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "x": 830,
+        "y": 220,
+        "wires": [
+            [
+                "3c66394f7ddb4596"
+            ]
+        ]
+    },
+    {
+        "id": "84713b0c20d9a64d",
+        "type": "ui_toast",
+        "z": "32cfc6ae564d5d0d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "topic": "",
+        "name": "",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "ab717de0d09a8b50"
+            ]
+        ]
+    },
+    {
+        "id": "ab717de0d09a8b50",
+        "type": "switch",
+        "z": "32cfc6ae564d5d0d",
+        "name": "OK ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 220,
+        "wires": [
+            [
+                "985830e636916d66"
+            ]
+        ]
+    },
+    {
+        "id": "a99a9bed99fddd26",
+        "type": "catch",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "scope": null,
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "f25a83ec11a27499"
+            ]
+        ]
+    },
+    {
+        "id": "4b7b954d1dd1276a",
+        "type": "ui_toast",
+        "z": "32cfc6ae564d5d0d",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 530,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f25a83ec11a27499",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "getError",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 500,
+        "wires": [
+            [
+                "4b7b954d1dd1276a",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "3c66394f7ddb4596",
+        "type": "link out",
+        "z": "32cfc6ae564d5d0d",
+        "name": "refreshAfterDelete",
+        "links": [
+            "a5160bea005632e9"
+        ],
+        "x": 1135,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4bbb79f5dace631e",
+        "type": "link out",
+        "z": "32cfc6ae564d5d0d",
+        "name": "refreshAfterUpload",
+        "links": [
+            "a5160bea005632e9"
+        ],
+        "x": 1135,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ba64aa097970c358",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'File ' & req.files[0].originalname & ' uploaded.'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 440,
+        "wires": [
+            [
+                "f4cc32ee41e7d54a",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "d7efdaa53ff9f955",
+        "type": "delay",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 190,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3bdf1765878817b4",
+        "type": "watch",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "files": "$(UPLOAD_DIR)",
+        "recursive": "",
+        "x": 420,
+        "y": 40,
+        "wires": [
+            [
+                "d7efdaa53ff9f955"
+            ]
+        ]
+    },
+    {
+        "id": "3aeb97c792268a6d",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "def0da21f80d8325"
+            ]
+        ]
+    },
+    {
+        "id": "c72d748572251434",
+        "type": "switch",
+        "z": "32cfc6ae564d5d0d",
+        "name": "extensionAllowed ?",
+        "property": "$env('EXTENSIONS')",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "$split(filename, '.')[-1]",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "1766bef9ac2e4b93",
+                "b9832061d3220afb"
+            ],
+            [
+                "51db31d03d052a4d",
+                "b9832061d3220afb"
+            ]
+        ]
+    },
+    {
+        "id": "51db31d03d052a4d",
+        "type": "function",
+        "z": "32cfc6ae564d5d0d",
+        "name": "Error",
+        "func": "node.error(`Error: only ${env.get('EXTENSIONS')} files are allowed.`, msg)\n",
+        "outputs": 0,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f9aa871be7506a0d",
+        "type": "change",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 340,
+        "wires": [
+            [
+                "4bbb79f5dace631e"
+            ]
+        ]
+    },
+    {
+        "id": "d522e234a3d99724",
+        "type": "watch",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "files": "$(UPLOAD_DIR)",
+        "recursive": "",
+        "x": 740,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9832061d3220afb",
+        "type": "debug",
+        "z": "32cfc6ae564d5d0d",
+        "name": "debug 367",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "26976fbec36d23c0",
+        "type": "http in",
+        "z": "32cfc6ae564d5d0d",
+        "name": "",
+        "url": "/fileupload",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41984c7ffa881733",
+        "type": "exec",
+        "z": "43f940ed9ce785ce",
+        "command": "ls",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "8d85c2e96df8e084"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8d85c2e96df8e084",
+        "type": "change",
+        "z": "43f940ed9ce785ce",
+        "name": "split and filter",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t    $files := [$split(payload, '\\n')[$ != \"\"]];\t    $count($env('EXTENSIONS')) = 0 ? [$files] : [$files[$split($, '.')[-1] in $env('EXTENSIONS')]];\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ac5932d31551059",
+        "type": "switch",
+        "z": "43f940ed9ce785ce",
+        "name": "",
+        "property": "$env('DIRECTORY')",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "41984c7ffa881733"
+            ],
+            [
+                "a2f56e0c16b7b910"
+            ]
+        ]
+    },
+    {
+        "id": "a2f56e0c16b7b910",
+        "type": "change",
+        "z": "43f940ed9ce785ce",
+        "name": "DIRECTORY",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "DIRECTORY",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "41984c7ffa881733"
+            ]
+        ]
     },
     {
         "id": "e8c9dac0b45ce024",
@@ -225,8 +1628,8 @@
         "z": "f8d31b3f79add29b",
         "name": "Double click on Queue Zips to the adjust bulk processing value",
         "info": "Tweak the value to configure how many archives to process at any given time",
-        "x": 1780,
-        "y": 80,
+        "x": 1680,
+        "y": 100,
         "wires": []
     },
     {
@@ -579,7 +1982,8 @@
         "z": "f8d31b3f79add29b",
         "name": "Hayabusa to Timesketch In",
         "links": [
-            "04540ea77b74e085"
+            "04540ea77b74e085",
+            "98de6e555668d6f0"
         ],
         "x": 235,
         "y": 880,
@@ -1033,7 +2437,7 @@
         "name": "ADD BSTRINGS to extract all IOCS to files",
         "info": "",
         "x": 1620,
-        "y": 240,
+        "y": 140,
         "wires": []
     },
     {
@@ -1301,55 +2705,6 @@
         "x": 220,
         "y": 100,
         "wires": []
-    },
-    {
-        "id": "5269571a.2b1298",
-        "type": "watch-directory",
-        "z": "661e7f7a151d4072",
-        "folder": "/cases/malware",
-        "recursive": 0,
-        "typeEvent": "create",
-        "ignoreInitial": true,
-        "ignoredFiles": "",
-        "ignoredFilesType": "re",
-        "name": "Checksum",
-        "x": 320,
-        "y": 360,
-        "wires": [
-            [
-                "f54e5b63de4137f2"
-            ]
-        ]
-    },
-    {
-        "id": "34e67b91.f43f24",
-        "type": "debug",
-        "z": "661e7f7a151d4072",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "f54e5b63de4137f2",
-        "type": "hash sha256",
-        "z": "661e7f7a151d4072",
-        "name": "",
-        "x": 530,
-        "y": 360,
-        "wires": [
-            [
-                "34e67b91.f43f24"
-            ]
-        ]
     },
     {
         "id": "00d7490ddc0f3e90",
@@ -1950,7 +3305,6 @@
         "id": "669139136ac1b7d4",
         "type": "switch",
         "z": "44cf1917690496d8",
-        "d": true,
         "name": "Chainsaw Out to Timesketch",
         "property": "payload.code",
         "propertyType": "msg",
@@ -1970,7 +3324,9 @@
         "x": 1400,
         "y": 380,
         "wires": [
-            [],
+            [
+                "98de6e555668d6f0"
+            ],
             []
         ]
     },
@@ -2047,7 +3403,7 @@
         "type": "function",
         "z": "44cf1917690496d8",
         "name": "VR Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_job = + msg.plasofname + '-chainsaw';\nmsg.chainsaw_dir = msg.plasofname;\nmsg.chainsaw_files = '/cases/evtxproc/chainsaw/' + msg.plasofname +'/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.chainsaw_dir;\n//msg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.vr + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname+\"-chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-hainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
+        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_job = + msg.plasofname + '-chainsaw';\nmsg.chainsaw_dir = msg.plasofname;\nmsg.chainsaw_files = '/cases/evtxproc/chainsaw/' + msg.plasofname +'/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.chainsaw_dir;\n//msg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.vr + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-hainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name\" + \" \" + msg.plasofname + \"-chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + msg.chainsaw_files + \"service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2282,23 +3638,17 @@
         "wires": []
     },
     {
-        "id": "acd497499f3bac64",
-        "type": "function",
+        "id": "98de6e555668d6f0",
+        "type": "link out",
         "z": "44cf1917690496d8",
-        "d": true,
-        "name": "VR Chainsaw Process Variables",
-        "func": "//Create a variable to store the EVTX directory path\nmsg.vr = msg.dirname + '/uploads/auto/C%3A/Windows/System32/winevt/Logs/';\nmsg.chainsaw_out = '/cases/evtxproc/chainsaw/' + msg.plasofname ;\nmsg.chainsaw_exec = 'hunt -q ' + msg.vr + ' -s /opt/chainsaw/sigma/ --mapping /opt/chainsaw/mappings/sigma-event-logs-all.yml -r /opt/chainsaw/rules/ --csv --output ' + msg.chainsaw_out;\nmsg.chainsaw_ts1 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_antivirus\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/antivirus.csv\";\nmsg.chainsaw_ts2 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rds_events_-_user_profile_disk\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rds_events_-_user_profile_disk.csv\";\nmsg.chainsaw_ts3 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_powershell_script.\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/powershell_script.csv\";\nmsg.chainsaw_ts4 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_rdp_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/rdp_events.csv\";\nmsg.chainsaw_ts5 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts6 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_sigma\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/sigma.csv\";\nmsg.chainsaw_ts7 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_account_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/account_tampering.csv\";\nmsg.chainsaw_ts8 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_applocker\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/applocker.csv\";\nmsg.chainsaw_ts9 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_credential_access\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/credential_access.csv\";\nmsg.chainsaw_ts10 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_defensive_evasion\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/defensive_evasion.csv\";\nmsg.chainsaw_ts11 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_lateral_movement\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/lateral_movement.csv\";\nmsg.chainsaw_ts12 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_log_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/log_tampering.csv\";\nmsg.chainsaw_ts13 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_login_attacks\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/login_attacks.csv\";\nmsg.chainsaw_ts14 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_microsoft_rasvpn_events\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/microsoft_rasvpn_events.csv\";\nmsg.chainsaw_ts15 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_installation\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_installation.csv\";\nmsg.chainsaw_ts16 = \"-u dfir -p admin --host http://127.0.0.1 --timeline_name chainsaw_service_tampering\" + \" --sketch_id \" + \"1 \" + \"/cases/evtxproc/chainsaw/service_tampering.csv\";\n\nreturn msg;\n\n\n// I MAY HAVE TO SPLIT THIS UP INTO Different nodes/functions",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 330,
-        "y": 540,
-        "wires": [
-            []
-        ]
+        "name": "Out to Hayabusa Process",
+        "mode": "link",
+        "links": [
+            "c07a0968fd953921"
+        ],
+        "x": 1615,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "193c7477c3b6a27e",
@@ -4232,6 +5582,2236 @@
             [
                 "e8aed768bff52623"
             ]
+        ]
+    },
+    {
+        "id": "fd446b54.5da24",
+        "type": "ui_button",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "2fb9c205.dae50e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "click me",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "topicType": "str",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "9569387b.fc24f",
+                "103477f0.45b588",
+                "b7e35051.2b75b",
+                "3375341f.88f7e4"
+            ]
+        ]
+    },
+    {
+        "id": "103477f0.45b588",
+        "type": "ui_text",
+        "z": "9583b8de.96bc48",
+        "group": "2fb9c205.dae50e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Click Here !",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 370,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9569387b.fc24f",
+        "type": "debug",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 390,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3692c3e.596783c",
+        "type": "ui_gauge",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "122a9c51.bdf31c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "75",
+        "seg2": "150",
+        "x": 370,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b5c97926.f8f0e",
+        "type": "ui_slider",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "122a9c51.bdf31c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "200",
+        "step": 1,
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "3692c3e.596783c",
+                "be838f3e.6af14",
+                "da3a316d.a4e43"
+            ]
+        ]
+    },
+    {
+        "id": "be838f3e.6af14",
+        "type": "ui_chart",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "122a9c51.bdf31c",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "label": "line chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 360,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da3a316d.a4e43",
+        "type": "ui_chart",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "122a9c51.bdf31c",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "label": "bar chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 360,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7e35051.2b75b",
+        "type": "ui_toast",
+        "z": "9583b8de.96bc48",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 370,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3375341f.88f7e4",
+        "type": "ui_audio",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "2fb9c205.dae50e",
+        "voice": "en-US",
+        "always": "",
+        "x": 360,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8399a57bab81eb9c",
+        "type": "debug",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1030,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5ff66e4126d25d44",
+        "type": "ui_chart",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "baa4830e.d51ff",
+        "order": 0,
+        "width": "8",
+        "height": "6",
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1010,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e76adff124a6a4ab",
+        "type": "inject",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 710,
+        "y": 120,
+        "wires": [
+            [
+                "0ffd8ea468f69494"
+            ]
+        ]
+    },
+    {
+        "id": "0ffd8ea468f69494",
+        "type": "ui_switch",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "6d02446b.841c64",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 870,
+        "y": 120,
+        "wires": [
+            [
+                "2d653edab64fbfcc"
+            ]
+        ]
+    },
+    {
+        "id": "2d653edab64fbfcc",
+        "type": "switch",
+        "z": "9583b8de.96bc48",
+        "name": "Switch On",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1020,
+        "y": 120,
+        "wires": [
+            [
+                "5397fa49fa8d8e23"
+            ]
+        ]
+    },
+    {
+        "id": "5fb1c1c36b5bda03",
+        "type": "template",
+        "z": "9583b8de.96bc48",
+        "name": "Alert",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alert: CPU {{topic}} is {{payload}}%",
+        "output": "str",
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "204f5bc415e4a099",
+        "type": "switch",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1010,
+        "y": 320,
+        "wires": [
+            [
+                "5fb1c1c36b5bda03"
+            ]
+        ]
+    },
+    {
+        "id": "417ea31b459acc2d",
+        "type": "ui_gauge",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "CPU 1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1190,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "30dff5326495515e",
+        "type": "switch",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "core_1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 1010,
+        "y": 440,
+        "wires": [
+            [
+                "417ea31b459acc2d"
+            ],
+            [
+                "aa625cb62eb5db76"
+            ],
+            [
+                "2d8383a4a9af660e"
+            ],
+            [
+                "d219fb022ebb18c7"
+            ]
+        ]
+    },
+    {
+        "id": "aa625cb62eb5db76",
+        "type": "ui_gauge",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1190,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "2d8383a4a9af660e",
+        "type": "ui_gauge",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 3",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1190,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d219fb022ebb18c7",
+        "type": "ui_gauge",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 4",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1190,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "5397fa49fa8d8e23",
+        "type": "cpu",
+        "z": "9583b8de.96bc48",
+        "name": "",
+        "msgCore": true,
+        "msgOverall": false,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "8399a57bab81eb9c",
+                "5ff66e4126d25d44",
+                "204f5bc415e4a099",
+                "30dff5326495515e"
+            ]
+        ]
+    },
+    {
+        "id": "1e9d7bc0.fcb984",
+        "type": "debug",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d274050d.badb88",
+        "type": "ui_chart",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "group": "baa4830e.d51ff",
+        "order": 0,
+        "width": "8",
+        "height": "6",
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "968d0d83.26b41",
+        "type": "inject",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "4b6874aa.19c8d4"
+            ]
+        ]
+    },
+    {
+        "id": "4b6874aa.19c8d4",
+        "type": "ui_switch",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "6d02446b.841c64",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "7697565f.2e6618"
+            ]
+        ]
+    },
+    {
+        "id": "7697565f.2e6618",
+        "type": "switch",
+        "z": "90da6d14.cc65d8",
+        "name": "Switch On",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "ed89ea38.72527"
+            ]
+        ]
+    },
+    {
+        "id": "f12ff5fc.0fc79",
+        "type": "ui_toast",
+        "z": "90da6d14.cc65d8",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 690,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2b2616b0.28443a",
+        "type": "template",
+        "z": "90da6d14.cc65d8",
+        "name": "Alert",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alert: CPU {{topic}} is {{payload}}%",
+        "output": "str",
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "f12ff5fc.0fc79"
+            ]
+        ]
+    },
+    {
+        "id": "3af072a3.14a1ce",
+        "type": "switch",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "2b2616b0.28443a"
+            ]
+        ]
+    },
+    {
+        "id": "36c7bd83.27b4f2",
+        "type": "ui_gauge",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "CPU 1",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "29073f22.c591c8",
+        "type": "switch",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "core_1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "core_4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "36c7bd83.27b4f2"
+            ],
+            [
+                "b3ee09cd.598f48"
+            ],
+            [
+                "1ab8d355.16ca75"
+            ],
+            [
+                "8bd46bad.a915f"
+            ]
+        ]
+    },
+    {
+        "id": "b3ee09cd.598f48",
+        "type": "ui_gauge",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 2",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 590,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1ab8d355.16ca75",
+        "type": "ui_gauge",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 3",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 590,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8bd46bad.a915f",
+        "type": "ui_gauge",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "group": "3d630fa8.8d0d68",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU 4",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ed89ea38.72527",
+        "type": "cpu",
+        "z": "90da6d14.cc65d8",
+        "name": "",
+        "msgCore": true,
+        "msgOverall": false,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "1e9d7bc0.fcb984",
+                "d274050d.badb88",
+                "3af072a3.14a1ce",
+                "29073f22.c591c8"
+            ]
+        ]
+    },
+    {
+        "id": "a9be280c.f004d8",
+        "type": "inject",
+        "z": "9b46958.ce6a368",
+        "name": "Every 5 sec",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "c5bf6cce.78d2f"
+            ]
+        ]
+    },
+    {
+        "id": "ed24894e.c2707",
+        "type": "http request",
+        "z": "9b46958.ce6a368",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "http://api.open-notify.org/iss-now.json",
+        "tls": "",
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "4a06a917.1074b8",
+                "4586a2ff.c4e2ac"
+            ]
+        ]
+    },
+    {
+        "id": "4a06a917.1074b8",
+        "type": "debug",
+        "z": "9b46958.ce6a368",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 810,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4586a2ff.c4e2ac",
+        "type": "function",
+        "z": "9b46958.ce6a368",
+        "name": "Extract ISS Location",
+        "func": "var iss_location = msg.payload.iss_position;\n\nmsg.payload = { \n        name : \"International Space Station\",\n        lat  : parseFloat(iss_location.latitude),\n        lon  : parseFloat(iss_location.longitude),\n        icon: \"iss\",\n        iconColor:'#900000',\n        command : { \"zoom\" : 3 }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "8a2f98ed.cbbb08",
+                "9d017892.d58c28",
+                "991ab523.dc1c78"
+            ]
+        ]
+    },
+    {
+        "id": "8a2f98ed.cbbb08",
+        "type": "debug",
+        "z": "9b46958.ce6a368",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 410,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c5f1b810.713fc",
+        "type": "comment",
+        "z": "9b46958.ce6a368",
+        "name": "Query the location of the International Space Station",
+        "info": "",
+        "x": 234.44444444444446,
+        "y": 64.44444444444443,
+        "wires": []
+    },
+    {
+        "id": "c5bf6cce.78d2f",
+        "type": "ui_switch",
+        "z": "9b46958.ce6a368",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "9813997d.68df88",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "facf4978.0c9fc8"
+            ]
+        ]
+    },
+    {
+        "id": "facf4978.0c9fc8",
+        "type": "switch",
+        "z": "9b46958.ce6a368",
+        "name": "Switch On",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "ed24894e.c2707"
+            ]
+        ]
+    },
+    {
+        "id": "9d017892.d58c28",
+        "type": "worldmap-tracks",
+        "z": "9b46958.ce6a368",
+        "name": "",
+        "depth": "100",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "991ab523.dc1c78"
+            ]
+        ]
+    },
+    {
+        "id": "991ab523.dc1c78",
+        "type": "ui_worldmap",
+        "z": "9b46958.ce6a368",
+        "group": "66464e0a.235a1",
+        "order": 0,
+        "width": "15",
+        "height": "15",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "5",
+        "layer": "Esri Satellite",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/worldmap",
+        "x": 560,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b7c88334044d2442",
+        "type": "ui-form",
+        "z": "21f1b2aeb83d507c",
+        "name": "",
+        "group": "f5c2b7111eeb7ab2",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Title",
+                "key": "title",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Description",
+                "key": "description",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Due Date",
+                "key": "due",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Is Priority",
+                "key": "priority",
+                "type": "switch",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "title": "",
+            "description": "",
+            "due": "",
+            "priority": false
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "0079bf7797296143",
+                "65e68efe103bc565"
+            ]
+        ]
+    },
+    {
+        "id": "8be707bb34ed9421",
+        "type": "ui-notification",
+        "z": "21f1b2aeb83d507c",
+        "ui": "cb79bc4520925e32",
+        "position": "top right",
+        "colorDefault": false,
+        "color": "#1bde42",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 0,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0079bf7797296143",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Thanks for submitting a task",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "8be707bb34ed9421"
+            ]
+        ]
+    },
+    {
+        "id": "fc8d2438da464532",
+        "type": "ui-template",
+        "z": "21f1b2aeb83d507c",
+        "group": "",
+        "page": "",
+        "ui": "cb79bc4520925e32",
+        "name": "User Info (top-right)",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <Teleport v-if=\"loaded\" to=\"#app-bar-actions\">\n        <div class=\"user-info\">\n            <img :src=\"setup.socketio.auth.user.image\" />\n            <span>Hi, {{ setup.socketio.auth.user.name }}!</span>\n        </div>\n    </Teleport>\n</template>\n\n<script>\n    export default {\n    data () {\n        return {\n            loaded: false\n        }\n    },\n    mounted() {\n        // code here when the component is first loaded\n        console.log('on mounted')\n        console.log(this.$store.state.setup?.setup?.socketio?.auth.user)\n        this.loaded = true\n    }\n}\n</script>\n\n<style>\n    .user-info {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n    }\n\n    .user-info img {\n        width: 24px;\n        height: 24px;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 410,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65e68efe103bc565",
+        "type": "function",
+        "z": "21f1b2aeb83d507c",
+        "name": "Store Form Entry",
+        "func": "const tasks = global.get(\"tasks\") || []\n\n// merge the form data with the _client.user\ntasks.push({\n    ...msg.payload,\n    ... {\n        user: msg._client.user\n    }\n})\n\n// set this to a global variable \nglobal.set(\"tasks\", tasks)",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13e96e85f55ecd1d",
+        "type": "ui-template",
+        "z": "21f1b2aeb83d507c",
+        "group": "0d8bb4422190121d",
+        "page": "",
+        "ui": "",
+        "name": "Tasks List",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n    <v-text-field v-model=\"search\" label=\"Search\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details></v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\">\n      <template v-slot:header.current>\n        <!-- Override how we render the header for the \"current\" column -->\n        <div class=\"text-center\">Center-Aligned</div>\n      </template>\n      \n      <template v-slot:item.priority=\"{ item }\">\n        <v-icon v-if=\"item.priority\" icon=\"mdi-alert\" color=\"red\"></v-icon>\n      </template>\n\n      <template v-slot:item.user=\"{ item }\">\n        <!-- Add a custom suffix to the value for the \"target\" column -->\n        <div class=\"user-info\">\n            <img :src=\"item.user.image\" />\n            <span>{{ item.user.username }}</span>\n        </div>\n      </template>\n\n      <template v-slot:item.due=\"{ item }\">\n        {{ daysBetween(item.due, new Date())}} Days\n      </template>\n    \n    </v-data-table>\n</template>\n\n<script>\n    export default {\n    data () {\n      return {\n        search: ''\n      }\n    },\n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n        getColor: function (item) {\n          if (item.current > item.target) {\n            return 'red'\n          } else {\n            return 'green'\n          }\n        },\n        daysBetween(date1, date2) {\n            // Convert both dates to milliseconds\n            var date1_ms = new Date(date1).getTime();\n            var date2_ms = new Date(date2).getTime();\n            \n            // Calculate the difference in milliseconds\n            var difference_ms = Math.abs(date1_ms - date2_ms);\n            \n            // Convert back to days and return\n            return Math.round(difference_ms / (1000 * 60 * 60 * 24));\n        }\n    }\n  }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1040,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bdc084bff2615fb0",
+        "type": "ui-event",
+        "z": "21f1b2aeb83d507c",
+        "ui": "cb79bc4520925e32",
+        "name": "",
+        "x": 380,
+        "y": 380,
+        "wires": [
+            [
+                "430be0411268db42",
+                "dddb1c95f1be3a69",
+                "bb0cbe58cd80129a",
+                "817e3b341f4b02c6"
+            ]
+        ]
+    },
+    {
+        "id": "f2f8c446e3f24f39",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "Load Tasks from Global",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tasks",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 340,
+        "wires": [
+            [
+                "13e96e85f55ecd1d"
+            ]
+        ]
+    },
+    {
+        "id": "430be0411268db42",
+        "type": "switch",
+        "z": "21f1b2aeb83d507c",
+        "name": "$pageview: Admin View",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Admin View",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "f2f8c446e3f24f39"
+            ]
+        ]
+    },
+    {
+        "id": "e8c2f792a7a98233",
+        "type": "ui-template",
+        "z": "21f1b2aeb83d507c",
+        "group": "b362eb01162ac195",
+        "page": "",
+        "ui": "",
+        "name": "Tasks List",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Provide an input text box to search the content -->\n    <v-text-field v-model=\"search\" label=\"Search\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n    hide-details></v-text-field>\n    <v-data-table v-model:search=\"search\" :items=\"msg?.payload\">\n      <template v-slot:header.current>\n        <!-- Override how we render the header for the \"current\" column -->\n        <div class=\"text-center\">Center-Aligned</div>\n      </template>\n\n      <template v-slot:item.user=\"{ item }\">\n        <!-- Add a custom suffix to the value for the \"target\" column -->\n        {{ item.user.username }}\n      </template>\n\n      <template v-slot:item.due=\"{ item }\">\n        {{ item.due }}\n        <!-- <v-progress-linear v-model=\"item.current\" min=\"15\" max=\"25\" height=\"25\" :color=\"getColor(item)\">\n          <template v-slot:default=\"{ value }\">\n            <strong>{{ item.current }}°C</strong>\n          </template>\n        </v-progress-linear> -->\n      </template>\n    \n    </v-data-table>\n</template>\n\n<script>\n    export default {\n    data () {\n      return {\n        search: ''\n      }\n    },\n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n      getColor: function (item) {\n        if (item.current > item.target) {\n          return 'red'\n        } else {\n          return 'green'\n        }\n      }\n    }\n  }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1240,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "884934de8d0ac7b3",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "Load Tasks from Global",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tasks",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 420,
+        "wires": [
+            [
+                "fdb08d99dd2bdadc"
+            ]
+        ]
+    },
+    {
+        "id": "dddb1c95f1be3a69",
+        "type": "switch",
+        "z": "21f1b2aeb83d507c",
+        "name": "$pageview: Your Tasks",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Your Tasks",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 600,
+        "y": 420,
+        "wires": [
+            [
+                "884934de8d0ac7b3"
+            ]
+        ]
+    },
+    {
+        "id": "fdb08d99dd2bdadc",
+        "type": "function",
+        "z": "21f1b2aeb83d507c",
+        "name": "Filter Tasks to User",
+        "func": "msg.payload = msg.payload?.filter((task) => {\n    return msg._client.user.username === task.user.username\n})\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 420,
+        "wires": [
+            [
+                "e8c2f792a7a98233"
+            ]
+        ]
+    },
+    {
+        "id": "bb0cbe58cd80129a",
+        "type": "switch",
+        "z": "21f1b2aeb83d507c",
+        "name": "Is Admin User",
+        "property": "admins",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "_client.user.username",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 600,
+        "y": 500,
+        "wires": [
+            [
+                "860a6512ff99ab69"
+            ],
+            [
+                "80567e592f64f4df"
+            ]
+        ]
+    },
+    {
+        "id": "d2d66c16c4bcc38a",
+        "type": "ui-control",
+        "z": "21f1b2aeb83d507c",
+        "name": "",
+        "ui": "cb79bc4520925e32",
+        "events": "all",
+        "x": 980,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "860a6512ff99ab69",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "Show Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"show\":[\"Admin View\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 480,
+        "wires": [
+            [
+                "d2d66c16c4bcc38a"
+            ]
+        ]
+    },
+    {
+        "id": "80567e592f64f4df",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "Hide Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"hide\":[\"Admin View\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 520,
+        "wires": [
+            [
+                "d2d66c16c4bcc38a"
+            ]
+        ]
+    },
+    {
+        "id": "b1f4e52a9025e398",
+        "type": "inject",
+        "z": "21f1b2aeb83d507c",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 970,
+        "y": 120,
+        "wires": [
+            [
+                "f1249167a24acf65"
+            ]
+        ]
+    },
+    {
+        "id": "f1249167a24acf65",
+        "type": "change",
+        "z": "21f1b2aeb83d507c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "admins",
+                "pt": "global",
+                "to": "[\"admin-user\"]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "817e3b341f4b02c6",
+        "type": "debug",
+        "z": "21f1b2aeb83d507c",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "7c13e5015b7c28c0",
+        "type": "comment",
+        "z": "21f1b2aeb83d507c",
+        "name": "Define Admins Here",
+        "info": "",
+        "x": 990,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4615b9d913078624",
+        "type": "comment",
+        "z": "21f1b2aeb83d507c",
+        "name": "Form Entry",
+        "info": "",
+        "x": 380,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "48b4b84396d955dd",
+        "type": "http in",
+        "z": "29d4eba357840193",
+        "name": "",
+        "url": "/simple",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "868a7d41f9b8a6f2"
+            ]
+        ]
+    },
+    {
+        "id": "868a7d41f9b8a6f2",
+        "type": "template",
+        "z": "29d4eba357840193",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<h1>Upload a file here:</h1>\n\n<form action=\"/upload\" method=\"POST\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"myFile\" />\n    <input type=\"submit\" value=\"Submit\">\n</form>",
+        "output": "str",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "3e6697fa62384171"
+            ]
+        ]
+    },
+    {
+        "id": "3e6697fa62384171",
+        "type": "http response",
+        "z": "29d4eba357840193",
+        "name": "",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d8945da94181a082",
+        "type": "comment",
+        "z": "29d4eba357840193",
+        "name": "Simple",
+        "info": "",
+        "x": 330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "26fd2ab5cb475520",
+        "type": "http response",
+        "z": "29d4eba357840193",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 830,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e36d116b261e2745",
+        "type": "http in",
+        "z": "29d4eba357840193",
+        "name": "",
+        "url": "/upload",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "58342e2519dfa507"
+            ]
+        ]
+    },
+    {
+        "id": "dc19f578d58edeb7",
+        "type": "template",
+        "z": "29d4eba357840193",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<p></p>File {{name}} uploaded !</p>\n\n<h2>Contents:</h2>\n\n<pre>\n{{{payload}}}\n</pre>",
+        "output": "str",
+        "x": 690,
+        "y": 400,
+        "wires": [
+            [
+                "26fd2ab5cb475520"
+            ]
+        ]
+    },
+    {
+        "id": "58342e2519dfa507",
+        "type": "function",
+        "z": "29d4eba357840193",
+        "name": "toBase64",
+        "func": "msg.name = msg.req.files[0].originalname;\nmsg.filepath = \"/cases/processor/\" + msg.name;\nmsg.filedata = msg.req.files[0].buffer;\n\nif (msg.req.files[0].mimetype.includes('image')) {\n    msg.payload = `<img src=\"data:image/gif;base64,${msg.req.files[0].buffer.toString('base64')}\">`;\n} else {\n    msg.payload = msg.req.files[0].buffer.toString();\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "62c433df07f1254f"
+            ]
+        ]
+    },
+    {
+        "id": "62c433df07f1254f",
+        "type": "file",
+        "z": "29d4eba357840193",
+        "name": "Write File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "binary",
+        "x": 700,
+        "y": 280,
+        "wires": [
+            [
+                "dc19f578d58edeb7"
+            ]
+        ]
+    },
+    {
+        "id": "bd23839aaa31f438",
+        "type": "template",
+        "z": "5fde894cc9253f03",
+        "name": "dropzone.js",
+        "field": "dropzonejs",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "\n/*\n *\n * More info at [www.dropzonejs.com](http://www.dropzonejs.com)\n *\n * Copyright (c) 2012, Matias Meno\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy\n * of this software and associated documentation files (the \"Software\"), to deal\n * in the Software without restriction, including without limitation the rights\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n * copies of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in\n * all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n * THE SOFTWARE.\n *\n */\n\n(function() {\n  var Dropzone, Emitter, camelize, contentLoaded, detectVerticalSquash, drawImageIOSFix, noop, without,\n    __slice = [].slice,\n    __hasProp = {}.hasOwnProperty,\n    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };\n\n  noop = function() {};\n\n  Emitter = (function() {\n    function Emitter() {}\n\n    Emitter.prototype.addEventListener = Emitter.prototype.on;\n\n    Emitter.prototype.on = function(event, fn) {\n      this._callbacks = this._callbacks || {};\n      if (!this._callbacks[event]) {\n        this._callbacks[event] = [];\n      }\n      this._callbacks[event].push(fn);\n      return this;\n    };\n\n    Emitter.prototype.emit = function() {\n      var args, callback, callbacks, event, _i, _len;\n      event = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];\n      this._callbacks = this._callbacks || {};\n      callbacks = this._callbacks[event];\n      if (callbacks) {\n        for (_i = 0, _len = callbacks.length; _i < _len; _i++) {\n          callback = callbacks[_i];\n          callback.apply(this, args);\n        }\n      }\n      return this;\n    };\n\n    Emitter.prototype.removeListener = Emitter.prototype.off;\n\n    Emitter.prototype.removeAllListeners = Emitter.prototype.off;\n\n    Emitter.prototype.removeEventListener = Emitter.prototype.off;\n\n    Emitter.prototype.off = function(event, fn) {\n      var callback, callbacks, i, _i, _len;\n      if (!this._callbacks || arguments.length === 0) {\n        this._callbacks = {};\n        return this;\n      }\n      callbacks = this._callbacks[event];\n      if (!callbacks) {\n        return this;\n      }\n      if (arguments.length === 1) {\n        delete this._callbacks[event];\n        return this;\n      }\n      for (i = _i = 0, _len = callbacks.length; _i < _len; i = ++_i) {\n        callback = callbacks[i];\n        if (callback === fn) {\n          callbacks.splice(i, 1);\n          break;\n        }\n      }\n      return this;\n    };\n\n    return Emitter;\n\n  })();\n\n  Dropzone = (function(_super) {\n    var extend, resolveOption;\n\n    __extends(Dropzone, _super);\n\n    Dropzone.prototype.Emitter = Emitter;\n\n\n    /*\n    This is a list of all available events you can register on a dropzone object.\n    \n    You can register an event handler like this:\n    \n        dropzone.on(\"dragEnter\", function() { });\n     */\n\n    Dropzone.prototype.events = [\"drop\", \"dragstart\", \"dragend\", \"dragenter\", \"dragover\", \"dragleave\", \"addedfile\", \"addedfiles\", \"removedfile\", \"thumbnail\", \"error\", \"errormultiple\", \"processing\", \"processingmultiple\", \"uploadprogress\", \"totaluploadprogress\", \"sending\", \"sendingmultiple\", \"success\", \"successmultiple\", \"canceled\", \"canceledmultiple\", \"complete\", \"completemultiple\", \"reset\", \"maxfilesexceeded\", \"maxfilesreached\", \"queuecomplete\"];\n\n    Dropzone.prototype.defaultOptions = {\n      url: null,\n      method: \"post\",\n      withCredentials: false,\n      parallelUploads: 2,\n      uploadMultiple: false,\n      maxFilesize: 256,\n      paramName: \"file\",\n      createImageThumbnails: true,\n      maxThumbnailFilesize: 10,\n      thumbnailWidth: 120,\n      thumbnailHeight: 120,\n      filesizeBase: 1000,\n      maxFiles: null,\n      params: {},\n      clickable: true,\n      ignoreHiddenFiles: true,\n      acceptedFiles: null,\n      acceptedMimeTypes: null,\n      autoProcessQueue: true,\n      autoQueue: true,\n      addRemoveLinks: false,\n      previewsContainer: null,\n      hiddenInputContainer: \"body\",\n      capture: null,\n      renameFilename: null,\n      dictDefaultMessage: \"Drop files here to upload\",\n      dictFallbackMessage: \"Your browser does not support drag'n'drop file uploads.\",\n      dictFallbackText: \"Please use the fallback form below to upload your files like in the olden days.\",\n      dictFileTooBig: \"File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.\",\n      dictInvalidFileType: \"You can't upload files of this type.\",\n      dictResponseError: \"Server responded with {{statusCode}} code.\",\n      dictCancelUpload: \"Cancel upload\",\n      dictCancelUploadConfirmation: \"Are you sure you want to cancel this upload?\",\n      dictRemoveFile: \"Remove file\",\n      dictRemoveFileConfirmation: null,\n      dictMaxFilesExceeded: \"You can not upload any more files.\",\n      accept: function(file, done) {\n        return done();\n      },\n      init: function() {\n        return noop;\n      },\n      forceFallback: false,\n      fallback: function() {\n        var child, messageElement, span, _i, _len, _ref;\n        this.element.className = \"\" + this.element.className + \" dz-browser-not-supported\";\n        _ref = this.element.getElementsByTagName(\"div\");\n        for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n          child = _ref[_i];\n          if (/(^| )dz-message($| )/.test(child.className)) {\n            messageElement = child;\n            child.className = \"dz-message\";\n            continue;\n          }\n        }\n        if (!messageElement) {\n          messageElement = Dropzone.createElement(\"<div class=\\\"dz-message\\\"><span></span></div>\");\n          this.element.appendChild(messageElement);\n        }\n        span = messageElement.getElementsByTagName(\"span\")[0];\n        if (span) {\n          if (span.textContent != null) {\n            span.textContent = this.options.dictFallbackMessage;\n          } else if (span.innerText != null) {\n            span.innerText = this.options.dictFallbackMessage;\n          }\n        }\n        return this.element.appendChild(this.getFallbackForm());\n      },\n      resize: function(file) {\n        var info, srcRatio, trgRatio;\n        info = {\n          srcX: 0,\n          srcY: 0,\n          srcWidth: file.width,\n          srcHeight: file.height\n        };\n        srcRatio = file.width / file.height;\n        info.optWidth = this.options.thumbnailWidth;\n        info.optHeight = this.options.thumbnailHeight;\n        if ((info.optWidth == null) && (info.optHeight == null)) {\n          info.optWidth = info.srcWidth;\n          info.optHeight = info.srcHeight;\n        } else if (info.optWidth == null) {\n          info.optWidth = srcRatio * info.optHeight;\n        } else if (info.optHeight == null) {\n          info.optHeight = (1 / srcRatio) * info.optWidth;\n        }\n        trgRatio = info.optWidth / info.optHeight;\n        if (file.height < info.optHeight || file.width < info.optWidth) {\n          info.trgHeight = info.srcHeight;\n          info.trgWidth = info.srcWidth;\n        } else {\n          if (srcRatio > trgRatio) {\n            info.srcHeight = file.height;\n            info.srcWidth = info.srcHeight * trgRatio;\n          } else {\n            info.srcWidth = file.width;\n            info.srcHeight = info.srcWidth / trgRatio;\n          }\n        }\n        info.srcX = (file.width - info.srcWidth) / 2;\n        info.srcY = (file.height - info.srcHeight) / 2;\n        return info;\n      },\n\n      /*\n      Those functions register themselves to the events on init and handle all\n      the user interface specific stuff. Overwriting them won't break the upload\n      but can break the way it's displayed.\n      You can overwrite them if you don't like the default behavior. If you just\n      want to add an additional event handler, register it on the dropzone object\n      and don't overwrite those options.\n       */\n      drop: function(e) {\n        return this.element.classList.remove(\"dz-drag-hover\");\n      },\n      dragstart: noop,\n      dragend: function(e) {\n        return this.element.classList.remove(\"dz-drag-hover\");\n      },\n      dragenter: function(e) {\n        return this.element.classList.add(\"dz-drag-hover\");\n      },\n      dragover: function(e) {\n        return this.element.classList.add(\"dz-drag-hover\");\n      },\n      dragleave: function(e) {\n        return this.element.classList.remove(\"dz-drag-hover\");\n      },\n      paste: noop,\n      reset: function() {\n        return this.element.classList.remove(\"dz-started\");\n      },\n      addedfile: function(file) {\n        var node, removeFileEvent, removeLink, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _results;\n        if (this.element === this.previewsContainer) {\n          this.element.classList.add(\"dz-started\");\n        }\n        if (this.previewsContainer) {\n          file.previewElement = Dropzone.createElement(this.options.previewTemplate.trim());\n          file.previewTemplate = file.previewElement;\n          this.previewsContainer.appendChild(file.previewElement);\n          _ref = file.previewElement.querySelectorAll(\"[data-dz-name]\");\n          for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n            node = _ref[_i];\n            node.textContent = this._renameFilename(file.name);\n          }\n          _ref1 = file.previewElement.querySelectorAll(\"[data-dz-size]\");\n          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {\n            node = _ref1[_j];\n            node.innerHTML = this.filesize(file.size);\n          }\n          if (this.options.addRemoveLinks) {\n            file._removeLink = Dropzone.createElement(\"<a class=\\\"dz-remove\\\" href=\\\"javascript:undefined;\\\" data-dz-remove>\" + this.options.dictRemoveFile + \"</a>\");\n            file.previewElement.appendChild(file._removeLink);\n          }\n          removeFileEvent = (function(_this) {\n            return function(e) {\n              e.preventDefault();\n              e.stopPropagation();\n              if (file.status === Dropzone.UPLOADING) {\n                return Dropzone.confirm(_this.options.dictCancelUploadConfirmation, function() {\n                  return _this.removeFile(file);\n                });\n              } else {\n                if (_this.options.dictRemoveFileConfirmation) {\n                  return Dropzone.confirm(_this.options.dictRemoveFileConfirmation, function() {\n                    return _this.removeFile(file);\n                  });\n                } else {\n                  return _this.removeFile(file);\n                }\n              }\n            };\n          })(this);\n          _ref2 = file.previewElement.querySelectorAll(\"[data-dz-remove]\");\n          _results = [];\n          for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {\n            removeLink = _ref2[_k];\n            _results.push(removeLink.addEventListener(\"click\", removeFileEvent));\n          }\n          return _results;\n        }\n      },\n      removedfile: function(file) {\n        var _ref;\n        if (file.previewElement) {\n          if ((_ref = file.previewElement) != null) {\n            _ref.parentNode.removeChild(file.previewElement);\n          }\n        }\n        return this._updateMaxFilesReachedClass();\n      },\n      thumbnail: function(file, dataUrl) {\n        var thumbnailElement, _i, _len, _ref;\n        if (file.previewElement) {\n          file.previewElement.classList.remove(\"dz-file-preview\");\n          _ref = file.previewElement.querySelectorAll(\"[data-dz-thumbnail]\");\n          for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n            thumbnailElement = _ref[_i];\n            thumbnailElement.alt = file.name;\n            thumbnailElement.src = dataUrl;\n          }\n          return setTimeout(((function(_this) {\n            return function() {\n              return file.previewElement.classList.add(\"dz-image-preview\");\n            };\n          })(this)), 1);\n        }\n      },\n      error: function(file, message) {\n        var node, _i, _len, _ref, _results;\n        if (file.previewElement) {\n          file.previewElement.classList.add(\"dz-error\");\n          if (typeof message !== \"String\" && message.error) {\n            message = message.error;\n          }\n          _ref = file.previewElement.querySelectorAll(\"[data-dz-errormessage]\");\n          _results = [];\n          for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n            node = _ref[_i];\n            _results.push(node.textContent = message);\n          }\n          return _results;\n        }\n      },\n      errormultiple: noop,\n      processing: function(file) {\n        if (file.previewElement) {\n          file.previewElement.classList.add(\"dz-processing\");\n          if (file._removeLink) {\n            return file._removeLink.textContent = this.options.dictCancelUpload;\n          }\n        }\n      },\n      processingmultiple: noop,\n      uploadprogress: function(file, progress, bytesSent) {\n        var node, _i, _len, _ref, _results;\n        if (file.previewElement) {\n          _ref = file.previewElement.querySelectorAll(\"[data-dz-uploadprogress]\");\n          _results = [];\n          for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n            node = _ref[_i];\n            if (node.nodeName === 'PROGRESS') {\n              _results.push(node.value = progress);\n            } else {\n              _results.push(node.style.width = \"\" + progress + \"%\");\n            }\n          }\n          return _results;\n        }\n      },\n      totaluploadprogress: noop,\n      sending: noop,\n      sendingmultiple: noop,\n      success: function(file) {\n        if (file.previewElement) {\n          return file.previewElement.classList.add(\"dz-success\");\n        }\n      },\n      successmultiple: noop,\n      canceled: function(file) {\n        return this.emit(\"error\", file, \"Upload canceled.\");\n      },\n      canceledmultiple: noop,\n      complete: function(file) {\n        if (file._removeLink) {\n          file._removeLink.textContent = this.options.dictRemoveFile;\n        }\n        if (file.previewElement) {\n          return file.previewElement.classList.add(\"dz-complete\");\n        }\n      },\n      completemultiple: noop,\n      maxfilesexceeded: noop,\n      maxfilesreached: noop,\n      queuecomplete: noop,\n      addedfiles: noop,\n      previewTemplate: \"<div class=\\\"dz-preview dz-file-preview\\\">\\n  <div class=\\\"dz-image\\\"><img data-dz-thumbnail /></div>\\n  <div class=\\\"dz-details\\\">\\n    <div class=\\\"dz-size\\\"><span data-dz-size></span></div>\\n    <div class=\\\"dz-filename\\\"><span data-dz-name></span></div>\\n  </div>\\n  <div class=\\\"dz-progress\\\"><span class=\\\"dz-upload\\\" data-dz-uploadprogress></span></div>\\n  <div class=\\\"dz-error-message\\\"><span data-dz-errormessage></span></div>\\n  <div class=\\\"dz-success-mark\\\">\\n    <svg width=\\\"54px\\\" height=\\\"54px\\\" viewBox=\\\"0 0 54 54\\\" version=\\\"1.1\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" xmlns:sketch=\\\"http://www.bohemiancoding.com/sketch/ns\\\">\\n      <title>Check</title>\\n      <defs></defs>\\n      <g id=\\\"Page-1\\\" stroke=\\\"none\\\" stroke-width=\\\"1\\\" fill=\\\"none\\\" fill-rule=\\\"evenodd\\\" sketch:type=\\\"MSPage\\\">\\n        <path d=\\\"M23.5,31.8431458 L17.5852419,25.9283877 C16.0248253,24.3679711 13.4910294,24.366835 11.9289322,25.9289322 C10.3700136,27.4878508 10.3665912,30.0234455 11.9283877,31.5852419 L20.4147581,40.0716123 C20.5133999,40.1702541 20.6159315,40.2626649 20.7218615,40.3488435 C22.2835669,41.8725651 24.794234,41.8626202 26.3461564,40.3106978 L43.3106978,23.3461564 C44.8771021,21.7797521 44.8758057,19.2483887 43.3137085,17.6862915 C41.7547899,16.1273729 39.2176035,16.1255422 37.6538436,17.6893022 L23.5,31.8431458 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z\\\" id=\\\"Oval-2\\\" stroke-opacity=\\\"0.198794158\\\" stroke=\\\"#747474\\\" fill-opacity=\\\"0.816519475\\\" fill=\\\"#FFFFFF\\\" sketch:type=\\\"MSShapeGroup\\\"></path>\\n      </g>\\n    </svg>\\n  </div>\\n  <div class=\\\"dz-error-mark\\\">\\n    <svg width=\\\"54px\\\" height=\\\"54px\\\" viewBox=\\\"0 0 54 54\\\" version=\\\"1.1\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" xmlns:sketch=\\\"http://www.bohemiancoding.com/sketch/ns\\\">\\n      <title>Error</title>\\n      <defs></defs>\\n      <g id=\\\"Page-1\\\" stroke=\\\"none\\\" stroke-width=\\\"1\\\" fill=\\\"none\\\" fill-rule=\\\"evenodd\\\" sketch:type=\\\"MSPage\\\">\\n        <g id=\\\"Check-+-Oval-2\\\" sketch:type=\\\"MSLayerGroup\\\" stroke=\\\"#747474\\\" stroke-opacity=\\\"0.198794158\\\" fill=\\\"#FFFFFF\\\" fill-opacity=\\\"0.816519475\\\">\\n          <path d=\\\"M32.6568542,29 L38.3106978,23.3461564 C39.8771021,21.7797521 39.8758057,19.2483887 38.3137085,17.6862915 C36.7547899,16.1273729 34.2176035,16.1255422 32.6538436,17.6893022 L27,23.3431458 L21.3461564,17.6893022 C19.7823965,16.1255422 17.2452101,16.1273729 15.6862915,17.6862915 C14.1241943,19.2483887 14.1228979,21.7797521 15.6893022,23.3461564 L21.3431458,29 L15.6893022,34.6538436 C14.1228979,36.2202479 14.1241943,38.7516113 15.6862915,40.3137085 C17.2452101,41.8726271 19.7823965,41.8744578 21.3461564,40.3106978 L27,34.6568542 L32.6538436,40.3106978 C34.2176035,41.8744578 36.7547899,41.8726271 38.3137085,40.3137085 C39.8758057,38.7516113 39.8771021,36.2202479 38.3106978,34.6538436 L32.6568542,29 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z\\\" id=\\\"Oval-2\\\" sketch:type=\\\"MSShapeGroup\\\"></path>\\n        </g>\\n      </g>\\n    </svg>\\n  </div>\\n</div>\"\n    };\n\n    extend = function() {\n      var key, object, objects, target, val, _i, _len;\n      target = arguments[0], objects = 2 <= arguments.length ? __slice.call(arguments, 1) : [];\n      for (_i = 0, _len = objects.length; _i < _len; _i++) {\n        object = objects[_i];\n        for (key in object) {\n          val = object[key];\n          target[key] = val;\n        }\n      }\n      return target;\n    };\n\n    function Dropzone(element, options) {\n      var elementOptions, fallback, _ref;\n      this.element = element;\n      this.version = Dropzone.version;\n      this.defaultOptions.previewTemplate = this.defaultOptions.previewTemplate.replace(/\\n*/g, \"\");\n      this.clickableElements = [];\n      this.listeners = [];\n      this.files = [];\n      if (typeof this.element === \"string\") {\n        this.element = document.querySelector(this.element);\n      }\n      if (!(this.element && (this.element.nodeType != null))) {\n        throw new Error(\"Invalid dropzone element.\");\n      }\n      if (this.element.dropzone) {\n        throw new Error(\"Dropzone already attached.\");\n      }\n      Dropzone.instances.push(this);\n      this.element.dropzone = this;\n      elementOptions = (_ref = Dropzone.optionsForElement(this.element)) != null ? _ref : {};\n      this.options = extend({}, this.defaultOptions, elementOptions, options != null ? options : {});\n      if (this.options.forceFallback || !Dropzone.isBrowserSupported()) {\n        return this.options.fallback.call(this);\n      }\n      if (this.options.url == null) {\n        this.options.url = this.element.getAttribute(\"action\");\n      }\n      if (!this.options.url) {\n        throw new Error(\"No URL provided.\");\n      }\n      if (this.options.acceptedFiles && this.options.acceptedMimeTypes) {\n        throw new Error(\"You can't provide both 'acceptedFiles' and 'acceptedMimeTypes'. 'acceptedMimeTypes' is deprecated.\");\n      }\n      if (this.options.acceptedMimeTypes) {\n        this.options.acceptedFiles = this.options.acceptedMimeTypes;\n        delete this.options.acceptedMimeTypes;\n      }\n      this.options.method = this.options.method.toUpperCase();\n      if ((fallback = this.getExistingFallback()) && fallback.parentNode) {\n        fallback.parentNode.removeChild(fallback);\n      }\n      if (this.options.previewsContainer !== false) {\n        if (this.options.previewsContainer) {\n          this.previewsContainer = Dropzone.getElement(this.options.previewsContainer, \"previewsContainer\");\n        } else {\n          this.previewsContainer = this.element;\n        }\n      }\n      if (this.options.clickable) {\n        if (this.options.clickable === true) {\n          this.clickableElements = [this.element];\n        } else {\n          this.clickableElements = Dropzone.getElements(this.options.clickable, \"clickable\");\n        }\n      }\n      this.init();\n    }\n\n    Dropzone.prototype.getAcceptedFiles = function() {\n      var file, _i, _len, _ref, _results;\n      _ref = this.files;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        if (file.accepted) {\n          _results.push(file);\n        }\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.getRejectedFiles = function() {\n      var file, _i, _len, _ref, _results;\n      _ref = this.files;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        if (!file.accepted) {\n          _results.push(file);\n        }\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.getFilesWithStatus = function(status) {\n      var file, _i, _len, _ref, _results;\n      _ref = this.files;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        if (file.status === status) {\n          _results.push(file);\n        }\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.getQueuedFiles = function() {\n      return this.getFilesWithStatus(Dropzone.QUEUED);\n    };\n\n    Dropzone.prototype.getUploadingFiles = function() {\n      return this.getFilesWithStatus(Dropzone.UPLOADING);\n    };\n\n    Dropzone.prototype.getAddedFiles = function() {\n      return this.getFilesWithStatus(Dropzone.ADDED);\n    };\n\n    Dropzone.prototype.getActiveFiles = function() {\n      var file, _i, _len, _ref, _results;\n      _ref = this.files;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        if (file.status === Dropzone.UPLOADING || file.status === Dropzone.QUEUED) {\n          _results.push(file);\n        }\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.init = function() {\n      var eventName, noPropagation, setupHiddenFileInput, _i, _len, _ref, _ref1;\n      if (this.element.tagName === \"form\") {\n        this.element.setAttribute(\"enctype\", \"multipart/form-data\");\n      }\n      if (this.element.classList.contains(\"dropzone\") && !this.element.querySelector(\".dz-message\")) {\n        this.element.appendChild(Dropzone.createElement(\"<div class=\\\"dz-default dz-message\\\"><span>\" + this.options.dictDefaultMessage + \"</span></div>\"));\n      }\n      if (this.clickableElements.length) {\n        setupHiddenFileInput = (function(_this) {\n          return function() {\n            if (_this.hiddenFileInput) {\n              _this.hiddenFileInput.parentNode.removeChild(_this.hiddenFileInput);\n            }\n            _this.hiddenFileInput = document.createElement(\"input\");\n            _this.hiddenFileInput.setAttribute(\"type\", \"file\");\n            if ((_this.options.maxFiles == null) || _this.options.maxFiles > 1) {\n              _this.hiddenFileInput.setAttribute(\"multiple\", \"multiple\");\n            }\n            _this.hiddenFileInput.className = \"dz-hidden-input\";\n            if (_this.options.acceptedFiles != null) {\n              _this.hiddenFileInput.setAttribute(\"accept\", _this.options.acceptedFiles);\n            }\n            if (_this.options.capture != null) {\n              _this.hiddenFileInput.setAttribute(\"capture\", _this.options.capture);\n            }\n            _this.hiddenFileInput.style.visibility = \"hidden\";\n            _this.hiddenFileInput.style.position = \"absolute\";\n            _this.hiddenFileInput.style.top = \"0\";\n            _this.hiddenFileInput.style.left = \"0\";\n            _this.hiddenFileInput.style.height = \"0\";\n            _this.hiddenFileInput.style.width = \"0\";\n            document.querySelector(_this.options.hiddenInputContainer).appendChild(_this.hiddenFileInput);\n            return _this.hiddenFileInput.addEventListener(\"change\", function() {\n              var file, files, _i, _len;\n              files = _this.hiddenFileInput.files;\n              if (files.length) {\n                for (_i = 0, _len = files.length; _i < _len; _i++) {\n                  file = files[_i];\n                  _this.addFile(file);\n                }\n              }\n              _this.emit(\"addedfiles\", files);\n              return setupHiddenFileInput();\n            });\n          };\n        })(this);\n        setupHiddenFileInput();\n      }\n      this.URL = (_ref = window.URL) != null ? _ref : window.webkitURL;\n      _ref1 = this.events;\n      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {\n        eventName = _ref1[_i];\n        this.on(eventName, this.options[eventName]);\n      }\n      this.on(\"uploadprogress\", (function(_this) {\n        return function() {\n          return _this.updateTotalUploadProgress();\n        };\n      })(this));\n      this.on(\"removedfile\", (function(_this) {\n        return function() {\n          return _this.updateTotalUploadProgress();\n        };\n      })(this));\n      this.on(\"canceled\", (function(_this) {\n        return function(file) {\n          return _this.emit(\"complete\", file);\n        };\n      })(this));\n      this.on(\"complete\", (function(_this) {\n        return function(file) {\n          if (_this.getAddedFiles().length === 0 && _this.getUploadingFiles().length === 0 && _this.getQueuedFiles().length === 0) {\n            return setTimeout((function() {\n              return _this.emit(\"queuecomplete\");\n            }), 0);\n          }\n        };\n      })(this));\n      noPropagation = function(e) {\n        e.stopPropagation();\n        if (e.preventDefault) {\n          return e.preventDefault();\n        } else {\n          return e.returnValue = false;\n        }\n      };\n      this.listeners = [\n        {\n          element: this.element,\n          events: {\n            \"dragstart\": (function(_this) {\n              return function(e) {\n                return _this.emit(\"dragstart\", e);\n              };\n            })(this),\n            \"dragenter\": (function(_this) {\n              return function(e) {\n                noPropagation(e);\n                return _this.emit(\"dragenter\", e);\n              };\n            })(this),\n            \"dragover\": (function(_this) {\n              return function(e) {\n                var efct;\n                try {\n                  efct = e.dataTransfer.effectAllowed;\n                } catch (_error) {}\n                e.dataTransfer.dropEffect = 'move' === efct || 'linkMove' === efct ? 'move' : 'copy';\n                noPropagation(e);\n                return _this.emit(\"dragover\", e);\n              };\n            })(this),\n            \"dragleave\": (function(_this) {\n              return function(e) {\n                return _this.emit(\"dragleave\", e);\n              };\n            })(this),\n            \"drop\": (function(_this) {\n              return function(e) {\n                noPropagation(e);\n                return _this.drop(e);\n              };\n            })(this),\n            \"dragend\": (function(_this) {\n              return function(e) {\n                return _this.emit(\"dragend\", e);\n              };\n            })(this)\n          }\n        }\n      ];\n      this.clickableElements.forEach((function(_this) {\n        return function(clickableElement) {\n          return _this.listeners.push({\n            element: clickableElement,\n            events: {\n              \"click\": function(evt) {\n                if ((clickableElement !== _this.element) || (evt.target === _this.element || Dropzone.elementInside(evt.target, _this.element.querySelector(\".dz-message\")))) {\n                  _this.hiddenFileInput.click();\n                }\n                return true;\n              }\n            }\n          });\n        };\n      })(this));\n      this.enable();\n      return this.options.init.call(this);\n    };\n\n    Dropzone.prototype.destroy = function() {\n      var _ref;\n      this.disable();\n      this.removeAllFiles(true);\n      if ((_ref = this.hiddenFileInput) != null ? _ref.parentNode : void 0) {\n        this.hiddenFileInput.parentNode.removeChild(this.hiddenFileInput);\n        this.hiddenFileInput = null;\n      }\n      delete this.element.dropzone;\n      return Dropzone.instances.splice(Dropzone.instances.indexOf(this), 1);\n    };\n\n    Dropzone.prototype.updateTotalUploadProgress = function() {\n      var activeFiles, file, totalBytes, totalBytesSent, totalUploadProgress, _i, _len, _ref;\n      totalBytesSent = 0;\n      totalBytes = 0;\n      activeFiles = this.getActiveFiles();\n      if (activeFiles.length) {\n        _ref = this.getActiveFiles();\n        for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n          file = _ref[_i];\n          totalBytesSent += file.upload.bytesSent;\n          totalBytes += file.upload.total;\n        }\n        totalUploadProgress = 100 * totalBytesSent / totalBytes;\n      } else {\n        totalUploadProgress = 100;\n      }\n      return this.emit(\"totaluploadprogress\", totalUploadProgress, totalBytes, totalBytesSent);\n    };\n\n    Dropzone.prototype._getParamName = function(n) {\n      if (typeof this.options.paramName === \"function\") {\n        return this.options.paramName(n);\n      } else {\n        return \"\" + this.options.paramName + (this.options.uploadMultiple ? \"[\" + n + \"]\" : \"\");\n      }\n    };\n\n    Dropzone.prototype._renameFilename = function(name) {\n      if (typeof this.options.renameFilename !== \"function\") {\n        return name;\n      }\n      return this.options.renameFilename(name);\n    };\n\n    Dropzone.prototype.getFallbackForm = function() {\n      var existingFallback, fields, fieldsString, form;\n      if (existingFallback = this.getExistingFallback()) {\n        return existingFallback;\n      }\n      fieldsString = \"<div class=\\\"dz-fallback\\\">\";\n      if (this.options.dictFallbackText) {\n        fieldsString += \"<p>\" + this.options.dictFallbackText + \"</p>\";\n      }\n      fieldsString += \"<input type=\\\"file\\\" name=\\\"\" + (this._getParamName(0)) + \"\\\" \" + (this.options.uploadMultiple ? 'multiple=\"multiple\"' : void 0) + \" /><input type=\\\"submit\\\" value=\\\"Upload!\\\"></div>\";\n      fields = Dropzone.createElement(fieldsString);\n      if (this.element.tagName !== \"FORM\") {\n        form = Dropzone.createElement(\"<form action=\\\"\" + this.options.url + \"\\\" enctype=\\\"multipart/form-data\\\" method=\\\"\" + this.options.method + \"\\\"></form>\");\n        form.appendChild(fields);\n      } else {\n        this.element.setAttribute(\"enctype\", \"multipart/form-data\");\n        this.element.setAttribute(\"method\", this.options.method);\n      }\n      return form != null ? form : fields;\n    };\n\n    Dropzone.prototype.getExistingFallback = function() {\n      var fallback, getFallback, tagName, _i, _len, _ref;\n      getFallback = function(elements) {\n        var el, _i, _len;\n        for (_i = 0, _len = elements.length; _i < _len; _i++) {\n          el = elements[_i];\n          if (/(^| )fallback($| )/.test(el.className)) {\n            return el;\n          }\n        }\n      };\n      _ref = [\"div\", \"form\"];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        tagName = _ref[_i];\n        if (fallback = getFallback(this.element.getElementsByTagName(tagName))) {\n          return fallback;\n        }\n      }\n    };\n\n    Dropzone.prototype.setupEventListeners = function() {\n      var elementListeners, event, listener, _i, _len, _ref, _results;\n      _ref = this.listeners;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        elementListeners = _ref[_i];\n        _results.push((function() {\n          var _ref1, _results1;\n          _ref1 = elementListeners.events;\n          _results1 = [];\n          for (event in _ref1) {\n            listener = _ref1[event];\n            _results1.push(elementListeners.element.addEventListener(event, listener, false));\n          }\n          return _results1;\n        })());\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.removeEventListeners = function() {\n      var elementListeners, event, listener, _i, _len, _ref, _results;\n      _ref = this.listeners;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        elementListeners = _ref[_i];\n        _results.push((function() {\n          var _ref1, _results1;\n          _ref1 = elementListeners.events;\n          _results1 = [];\n          for (event in _ref1) {\n            listener = _ref1[event];\n            _results1.push(elementListeners.element.removeEventListener(event, listener, false));\n          }\n          return _results1;\n        })());\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.disable = function() {\n      var file, _i, _len, _ref, _results;\n      this.clickableElements.forEach(function(element) {\n        return element.classList.remove(\"dz-clickable\");\n      });\n      this.removeEventListeners();\n      _ref = this.files;\n      _results = [];\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        _results.push(this.cancelUpload(file));\n      }\n      return _results;\n    };\n\n    Dropzone.prototype.enable = function() {\n      this.clickableElements.forEach(function(element) {\n        return element.classList.add(\"dz-clickable\");\n      });\n      return this.setupEventListeners();\n    };\n\n    Dropzone.prototype.filesize = function(size) {\n      var cutoff, i, selectedSize, selectedUnit, unit, units, _i, _len;\n      selectedSize = 0;\n      selectedUnit = \"b\";\n      if (size > 0) {\n        units = ['TB', 'GB', 'MB', 'KB', 'b'];\n        for (i = _i = 0, _len = units.length; _i < _len; i = ++_i) {\n          unit = units[i];\n          cutoff = Math.pow(this.options.filesizeBase, 4 - i) / 10;\n          if (size >= cutoff) {\n            selectedSize = size / Math.pow(this.options.filesizeBase, 4 - i);\n            selectedUnit = unit;\n            break;\n          }\n        }\n        selectedSize = Math.round(10 * selectedSize) / 10;\n      }\n      return \"<strong>\" + selectedSize + \"</strong> \" + selectedUnit;\n    };\n\n    Dropzone.prototype._updateMaxFilesReachedClass = function() {\n      if ((this.options.maxFiles != null) && this.getAcceptedFiles().length >= this.options.maxFiles) {\n        if (this.getAcceptedFiles().length === this.options.maxFiles) {\n          this.emit('maxfilesreached', this.files);\n        }\n        return this.element.classList.add(\"dz-max-files-reached\");\n      } else {\n        return this.element.classList.remove(\"dz-max-files-reached\");\n      }\n    };\n\n    Dropzone.prototype.drop = function(e) {\n      var files, items;\n      if (!e.dataTransfer) {\n        return;\n      }\n      this.emit(\"drop\", e);\n      files = e.dataTransfer.files;\n      this.emit(\"addedfiles\", files);\n      if (files.length) {\n        items = e.dataTransfer.items;\n        if (items && items.length && (items[0].webkitGetAsEntry != null)) {\n          this._addFilesFromItems(items);\n        } else {\n          this.handleFiles(files);\n        }\n      }\n    };\n\n    Dropzone.prototype.paste = function(e) {\n      var items, _ref;\n      if ((e != null ? (_ref = e.clipboardData) != null ? _ref.items : void 0 : void 0) == null) {\n        return;\n      }\n      this.emit(\"paste\", e);\n      items = e.clipboardData.items;\n      if (items.length) {\n        return this._addFilesFromItems(items);\n      }\n    };\n\n    Dropzone.prototype.handleFiles = function(files) {\n      var file, _i, _len, _results;\n      _results = [];\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        _results.push(this.addFile(file));\n      }\n      return _results;\n    };\n\n    Dropzone.prototype._addFilesFromItems = function(items) {\n      var entry, item, _i, _len, _results;\n      _results = [];\n      for (_i = 0, _len = items.length; _i < _len; _i++) {\n        item = items[_i];\n        if ((item.webkitGetAsEntry != null) && (entry = item.webkitGetAsEntry())) {\n          if (entry.isFile) {\n            _results.push(this.addFile(item.getAsFile()));\n          } else if (entry.isDirectory) {\n            _results.push(this._addFilesFromDirectory(entry, entry.name));\n          } else {\n            _results.push(void 0);\n          }\n        } else if (item.getAsFile != null) {\n          if ((item.kind == null) || item.kind === \"file\") {\n            _results.push(this.addFile(item.getAsFile()));\n          } else {\n            _results.push(void 0);\n          }\n        } else {\n          _results.push(void 0);\n        }\n      }\n      return _results;\n    };\n\n    Dropzone.prototype._addFilesFromDirectory = function(directory, path) {\n      var dirReader, errorHandler, readEntries;\n      dirReader = directory.createReader();\n      errorHandler = function(error) {\n        return typeof console !== \"undefined\" && console !== null ? typeof console.log === \"function\" ? console.log(error) : void 0 : void 0;\n      };\n      readEntries = (function(_this) {\n        return function() {\n          return dirReader.readEntries(function(entries) {\n            var entry, _i, _len;\n            if (entries.length > 0) {\n              for (_i = 0, _len = entries.length; _i < _len; _i++) {\n                entry = entries[_i];\n                if (entry.isFile) {\n                  entry.file(function(file) {\n                    if (_this.options.ignoreHiddenFiles && file.name.substring(0, 1) === '.') {\n                      return;\n                    }\n                    file.fullPath = \"\" + path + \"/\" + file.name;\n                    return _this.addFile(file);\n                  });\n                } else if (entry.isDirectory) {\n                  _this._addFilesFromDirectory(entry, \"\" + path + \"/\" + entry.name);\n                }\n              }\n              readEntries();\n            }\n            return null;\n          }, errorHandler);\n        };\n      })(this);\n      return readEntries();\n    };\n\n    Dropzone.prototype.accept = function(file, done) {\n      if (file.size > this.options.maxFilesize * 1024 * 1024) {\n        return done(this.options.dictFileTooBig.replace(\"{{filesize}}\", Math.round(file.size / 1024 / 10.24) / 100).replace(\"{{maxFilesize}}\", this.options.maxFilesize));\n      } else if (!Dropzone.isValidFile(file, this.options.acceptedFiles)) {\n        return done(this.options.dictInvalidFileType);\n      } else if ((this.options.maxFiles != null) && this.getAcceptedFiles().length >= this.options.maxFiles) {\n        done(this.options.dictMaxFilesExceeded.replace(\"{{maxFiles}}\", this.options.maxFiles));\n        return this.emit(\"maxfilesexceeded\", file);\n      } else {\n        return this.options.accept.call(this, file, done);\n      }\n    };\n\n    Dropzone.prototype.addFile = function(file) {\n      file.upload = {\n        progress: 0,\n        total: file.size,\n        bytesSent: 0\n      };\n      this.files.push(file);\n      file.status = Dropzone.ADDED;\n      this.emit(\"addedfile\", file);\n      this._enqueueThumbnail(file);\n      return this.accept(file, (function(_this) {\n        return function(error) {\n          if (error) {\n            file.accepted = false;\n            _this._errorProcessing([file], error);\n          } else {\n            file.accepted = true;\n            if (_this.options.autoQueue) {\n              _this.enqueueFile(file);\n            }\n          }\n          return _this._updateMaxFilesReachedClass();\n        };\n      })(this));\n    };\n\n    Dropzone.prototype.enqueueFiles = function(files) {\n      var file, _i, _len;\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        this.enqueueFile(file);\n      }\n      return null;\n    };\n\n    Dropzone.prototype.enqueueFile = function(file) {\n      if (file.status === Dropzone.ADDED && file.accepted === true) {\n        file.status = Dropzone.QUEUED;\n        if (this.options.autoProcessQueue) {\n          return setTimeout(((function(_this) {\n            return function() {\n              return _this.processQueue();\n            };\n          })(this)), 0);\n        }\n      } else {\n        throw new Error(\"This file can't be queued because it has already been processed or was rejected.\");\n      }\n    };\n\n    Dropzone.prototype._thumbnailQueue = [];\n\n    Dropzone.prototype._processingThumbnail = false;\n\n    Dropzone.prototype._enqueueThumbnail = function(file) {\n      if (this.options.createImageThumbnails && file.type.match(/image.*/) && file.size <= this.options.maxThumbnailFilesize * 1024 * 1024) {\n        this._thumbnailQueue.push(file);\n        return setTimeout(((function(_this) {\n          return function() {\n            return _this._processThumbnailQueue();\n          };\n        })(this)), 0);\n      }\n    };\n\n    Dropzone.prototype._processThumbnailQueue = function() {\n      if (this._processingThumbnail || this._thumbnailQueue.length === 0) {\n        return;\n      }\n      this._processingThumbnail = true;\n      return this.createThumbnail(this._thumbnailQueue.shift(), (function(_this) {\n        return function() {\n          _this._processingThumbnail = false;\n          return _this._processThumbnailQueue();\n        };\n      })(this));\n    };\n\n    Dropzone.prototype.removeFile = function(file) {\n      if (file.status === Dropzone.UPLOADING) {\n        this.cancelUpload(file);\n      }\n      this.files = without(this.files, file);\n      this.emit(\"removedfile\", file);\n      if (this.files.length === 0) {\n        return this.emit(\"reset\");\n      }\n    };\n\n    Dropzone.prototype.removeAllFiles = function(cancelIfNecessary) {\n      var file, _i, _len, _ref;\n      if (cancelIfNecessary == null) {\n        cancelIfNecessary = false;\n      }\n      _ref = this.files.slice();\n      for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n        file = _ref[_i];\n        if (file.status !== Dropzone.UPLOADING || cancelIfNecessary) {\n          this.removeFile(file);\n        }\n      }\n      return null;\n    };\n\n    Dropzone.prototype.createThumbnail = function(file, callback) {\n      var fileReader;\n      fileReader = new FileReader;\n      fileReader.onload = (function(_this) {\n        return function() {\n          if (file.type === \"image/svg+xml\") {\n            _this.emit(\"thumbnail\", file, fileReader.result);\n            if (callback != null) {\n              callback();\n            }\n            return;\n          }\n          return _this.createThumbnailFromUrl(file, fileReader.result, callback);\n        };\n      })(this);\n      return fileReader.readAsDataURL(file);\n    };\n\n    Dropzone.prototype.createThumbnailFromUrl = function(file, imageUrl, callback, crossOrigin) {\n      var img;\n      img = document.createElement(\"img\");\n      if (crossOrigin) {\n        img.crossOrigin = crossOrigin;\n      }\n      img.onload = (function(_this) {\n        return function() {\n          var canvas, ctx, resizeInfo, thumbnail, _ref, _ref1, _ref2, _ref3;\n          file.width = img.width;\n          file.height = img.height;\n          resizeInfo = _this.options.resize.call(_this, file);\n          if (resizeInfo.trgWidth == null) {\n            resizeInfo.trgWidth = resizeInfo.optWidth;\n          }\n          if (resizeInfo.trgHeight == null) {\n            resizeInfo.trgHeight = resizeInfo.optHeight;\n          }\n          canvas = document.createElement(\"canvas\");\n          ctx = canvas.getContext(\"2d\");\n          canvas.width = resizeInfo.trgWidth;\n          canvas.height = resizeInfo.trgHeight;\n          drawImageIOSFix(ctx, img, (_ref = resizeInfo.srcX) != null ? _ref : 0, (_ref1 = resizeInfo.srcY) != null ? _ref1 : 0, resizeInfo.srcWidth, resizeInfo.srcHeight, (_ref2 = resizeInfo.trgX) != null ? _ref2 : 0, (_ref3 = resizeInfo.trgY) != null ? _ref3 : 0, resizeInfo.trgWidth, resizeInfo.trgHeight);\n          thumbnail = canvas.toDataURL(\"image/png\");\n          _this.emit(\"thumbnail\", file, thumbnail);\n          if (callback != null) {\n            return callback();\n          }\n        };\n      })(this);\n      if (callback != null) {\n        img.onerror = callback;\n      }\n      return img.src = imageUrl;\n    };\n\n    Dropzone.prototype.processQueue = function() {\n      var i, parallelUploads, processingLength, queuedFiles;\n      parallelUploads = this.options.parallelUploads;\n      processingLength = this.getUploadingFiles().length;\n      i = processingLength;\n      if (processingLength >= parallelUploads) {\n        return;\n      }\n      queuedFiles = this.getQueuedFiles();\n      if (!(queuedFiles.length > 0)) {\n        return;\n      }\n      if (this.options.uploadMultiple) {\n        return this.processFiles(queuedFiles.slice(0, parallelUploads - processingLength));\n      } else {\n        while (i < parallelUploads) {\n          if (!queuedFiles.length) {\n            return;\n          }\n          this.processFile(queuedFiles.shift());\n          i++;\n        }\n      }\n    };\n\n    Dropzone.prototype.processFile = function(file) {\n      return this.processFiles([file]);\n    };\n\n    Dropzone.prototype.processFiles = function(files) {\n      var file, _i, _len;\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        file.processing = true;\n        file.status = Dropzone.UPLOADING;\n        this.emit(\"processing\", file);\n      }\n      if (this.options.uploadMultiple) {\n        this.emit(\"processingmultiple\", files);\n      }\n      return this.uploadFiles(files);\n    };\n\n    Dropzone.prototype._getFilesWithXhr = function(xhr) {\n      var file, files;\n      return files = (function() {\n        var _i, _len, _ref, _results;\n        _ref = this.files;\n        _results = [];\n        for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n          file = _ref[_i];\n          if (file.xhr === xhr) {\n            _results.push(file);\n          }\n        }\n        return _results;\n      }).call(this);\n    };\n\n    Dropzone.prototype.cancelUpload = function(file) {\n      var groupedFile, groupedFiles, _i, _j, _len, _len1, _ref;\n      if (file.status === Dropzone.UPLOADING) {\n        groupedFiles = this._getFilesWithXhr(file.xhr);\n        for (_i = 0, _len = groupedFiles.length; _i < _len; _i++) {\n          groupedFile = groupedFiles[_i];\n          groupedFile.status = Dropzone.CANCELED;\n        }\n        file.xhr.abort();\n        for (_j = 0, _len1 = groupedFiles.length; _j < _len1; _j++) {\n          groupedFile = groupedFiles[_j];\n          this.emit(\"canceled\", groupedFile);\n        }\n        if (this.options.uploadMultiple) {\n          this.emit(\"canceledmultiple\", groupedFiles);\n        }\n      } else if ((_ref = file.status) === Dropzone.ADDED || _ref === Dropzone.QUEUED) {\n        file.status = Dropzone.CANCELED;\n        this.emit(\"canceled\", file);\n        if (this.options.uploadMultiple) {\n          this.emit(\"canceledmultiple\", [file]);\n        }\n      }\n      if (this.options.autoProcessQueue) {\n        return this.processQueue();\n      }\n    };\n\n    resolveOption = function() {\n      var args, option;\n      option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];\n      if (typeof option === 'function') {\n        return option.apply(this, args);\n      }\n      return option;\n    };\n\n    Dropzone.prototype.uploadFile = function(file) {\n      return this.uploadFiles([file]);\n    };\n\n    Dropzone.prototype.uploadFiles = function(files) {\n      var file, formData, handleError, headerName, headerValue, headers, i, input, inputName, inputType, key, method, option, progressObj, response, updateProgress, url, value, xhr, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;\n      xhr = new XMLHttpRequest();\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        file.xhr = xhr;\n      }\n      method = resolveOption(this.options.method, files);\n      url = resolveOption(this.options.url, files);\n      xhr.open(method, url, true);\n      xhr.withCredentials = !!this.options.withCredentials;\n      response = null;\n      handleError = (function(_this) {\n        return function() {\n          var _j, _len1, _results;\n          _results = [];\n          for (_j = 0, _len1 = files.length; _j < _len1; _j++) {\n            file = files[_j];\n            _results.push(_this._errorProcessing(files, response || _this.options.dictResponseError.replace(\"{{statusCode}}\", xhr.status), xhr));\n          }\n          return _results;\n        };\n      })(this);\n      updateProgress = (function(_this) {\n        return function(e) {\n          var allFilesFinished, progress, _j, _k, _l, _len1, _len2, _len3, _results;\n          if (e != null) {\n            progress = 100 * e.loaded / e.total;\n            for (_j = 0, _len1 = files.length; _j < _len1; _j++) {\n              file = files[_j];\n              file.upload = {\n                progress: progress,\n                total: e.total,\n                bytesSent: e.loaded\n              };\n            }\n          } else {\n            allFilesFinished = true;\n            progress = 100;\n            for (_k = 0, _len2 = files.length; _k < _len2; _k++) {\n              file = files[_k];\n              if (!(file.upload.progress === 100 && file.upload.bytesSent === file.upload.total)) {\n                allFilesFinished = false;\n              }\n              file.upload.progress = progress;\n              file.upload.bytesSent = file.upload.total;\n            }\n            if (allFilesFinished) {\n              return;\n            }\n          }\n          _results = [];\n          for (_l = 0, _len3 = files.length; _l < _len3; _l++) {\n            file = files[_l];\n            _results.push(_this.emit(\"uploadprogress\", file, progress, file.upload.bytesSent));\n          }\n          return _results;\n        };\n      })(this);\n      xhr.onload = (function(_this) {\n        return function(e) {\n          var _ref;\n          if (files[0].status === Dropzone.CANCELED) {\n            return;\n          }\n          if (xhr.readyState !== 4) {\n            return;\n          }\n          response = xhr.responseText;\n          if (xhr.getResponseHeader(\"content-type\") && ~xhr.getResponseHeader(\"content-type\").indexOf(\"application/json\")) {\n            try {\n              response = JSON.parse(response);\n            } catch (_error) {\n              e = _error;\n              response = \"Invalid JSON response from server.\";\n            }\n          }\n          updateProgress();\n          if (!((200 <= (_ref = xhr.status) && _ref < 300))) {\n            return handleError();\n          } else {\n            return _this._finished(files, response, e);\n          }\n        };\n      })(this);\n      xhr.onerror = (function(_this) {\n        return function() {\n          if (files[0].status === Dropzone.CANCELED) {\n            return;\n          }\n          return handleError();\n        };\n      })(this);\n      progressObj = (_ref = xhr.upload) != null ? _ref : xhr;\n      progressObj.onprogress = updateProgress;\n      headers = {\n        \"Accept\": \"application/json\",\n        \"Cache-Control\": \"no-cache\",\n        \"X-Requested-With\": \"XMLHttpRequest\"\n      };\n      if (this.options.headers) {\n        extend(headers, this.options.headers);\n      }\n      for (headerName in headers) {\n        headerValue = headers[headerName];\n        if (headerValue) {\n          xhr.setRequestHeader(headerName, headerValue);\n        }\n      }\n      formData = new FormData();\n      if (this.options.params) {\n        _ref1 = this.options.params;\n        for (key in _ref1) {\n          value = _ref1[key];\n          formData.append(key, value);\n        }\n      }\n      for (_j = 0, _len1 = files.length; _j < _len1; _j++) {\n        file = files[_j];\n        this.emit(\"sending\", file, xhr, formData);\n      }\n      if (this.options.uploadMultiple) {\n        this.emit(\"sendingmultiple\", files, xhr, formData);\n      }\n      if (this.element.tagName === \"FORM\") {\n        _ref2 = this.element.querySelectorAll(\"input, textarea, select, button\");\n        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {\n          input = _ref2[_k];\n          inputName = input.getAttribute(\"name\");\n          inputType = input.getAttribute(\"type\");\n          if (input.tagName === \"SELECT\" && input.hasAttribute(\"multiple\")) {\n            _ref3 = input.options;\n            for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {\n              option = _ref3[_l];\n              if (option.selected) {\n                formData.append(inputName, option.value);\n              }\n            }\n          } else if (!inputType || ((_ref4 = inputType.toLowerCase()) !== \"checkbox\" && _ref4 !== \"radio\") || input.checked) {\n            formData.append(inputName, input.value);\n          }\n        }\n      }\n      for (i = _m = 0, _ref5 = files.length - 1; 0 <= _ref5 ? _m <= _ref5 : _m >= _ref5; i = 0 <= _ref5 ? ++_m : --_m) {\n        formData.append(this._getParamName(i), files[i], this._renameFilename(files[i].name));\n      }\n      return this.submitRequest(xhr, formData, files);\n    };\n\n    Dropzone.prototype.submitRequest = function(xhr, formData, files) {\n      return xhr.send(formData);\n    };\n\n    Dropzone.prototype._finished = function(files, responseText, e) {\n      var file, _i, _len;\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        file.status = Dropzone.SUCCESS;\n        this.emit(\"success\", file, responseText, e);\n        this.emit(\"complete\", file);\n      }\n      if (this.options.uploadMultiple) {\n        this.emit(\"successmultiple\", files, responseText, e);\n        this.emit(\"completemultiple\", files);\n      }\n      if (this.options.autoProcessQueue) {\n        return this.processQueue();\n      }\n    };\n\n    Dropzone.prototype._errorProcessing = function(files, message, xhr) {\n      var file, _i, _len;\n      for (_i = 0, _len = files.length; _i < _len; _i++) {\n        file = files[_i];\n        file.status = Dropzone.ERROR;\n        this.emit(\"error\", file, message, xhr);\n        this.emit(\"complete\", file);\n      }\n      if (this.options.uploadMultiple) {\n        this.emit(\"errormultiple\", files, message, xhr);\n        this.emit(\"completemultiple\", files);\n      }\n      if (this.options.autoProcessQueue) {\n        return this.processQueue();\n      }\n    };\n\n    return Dropzone;\n\n  })(Emitter);\n\n  Dropzone.version = \"4.3.0\";\n\n  Dropzone.options = {};\n\n  Dropzone.optionsForElement = function(element) {\n    if (element.getAttribute(\"id\")) {\n      return Dropzone.options[camelize(element.getAttribute(\"id\"))];\n    } else {\n      return void 0;\n    }\n  };\n\n  Dropzone.instances = [];\n\n  Dropzone.forElement = function(element) {\n    if (typeof element === \"string\") {\n      element = document.querySelector(element);\n    }\n    if ((element != null ? element.dropzone : void 0) == null) {\n      throw new Error(\"No Dropzone found for given element. This is probably because you're trying to access it before Dropzone had the time to initialize. Use the `init` option to setup any additional observers on your Dropzone.\");\n    }\n    return element.dropzone;\n  };\n\n  Dropzone.autoDiscover = true;\n\n  Dropzone.discover = function() {\n    var checkElements, dropzone, dropzones, _i, _len, _results;\n    if (document.querySelectorAll) {\n      dropzones = document.querySelectorAll(\".dropzone\");\n    } else {\n      dropzones = [];\n      checkElements = function(elements) {\n        var el, _i, _len, _results;\n        _results = [];\n        for (_i = 0, _len = elements.length; _i < _len; _i++) {\n          el = elements[_i];\n          if (/(^| )dropzone($| )/.test(el.className)) {\n            _results.push(dropzones.push(el));\n          } else {\n            _results.push(void 0);\n          }\n        }\n        return _results;\n      };\n      checkElements(document.getElementsByTagName(\"div\"));\n      checkElements(document.getElementsByTagName(\"form\"));\n    }\n    _results = [];\n    for (_i = 0, _len = dropzones.length; _i < _len; _i++) {\n      dropzone = dropzones[_i];\n      if (Dropzone.optionsForElement(dropzone) !== false) {\n        _results.push(new Dropzone(dropzone));\n      } else {\n        _results.push(void 0);\n      }\n    }\n    return _results;\n  };\n\n  Dropzone.blacklistedBrowsers = [/opera.*Macintosh.*version\\/12/i];\n\n  Dropzone.isBrowserSupported = function() {\n    var capableBrowser, regex, _i, _len, _ref;\n    capableBrowser = true;\n    if (window.File && window.FileReader && window.FileList && window.Blob && window.FormData && document.querySelector) {\n      if (!(\"classList\" in document.createElement(\"a\"))) {\n        capableBrowser = false;\n      } else {\n        _ref = Dropzone.blacklistedBrowsers;\n        for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n          regex = _ref[_i];\n          if (regex.test(navigator.userAgent)) {\n            capableBrowser = false;\n            continue;\n          }\n        }\n      }\n    } else {\n      capableBrowser = false;\n    }\n    return capableBrowser;\n  };\n\n  without = function(list, rejectedItem) {\n    var item, _i, _len, _results;\n    _results = [];\n    for (_i = 0, _len = list.length; _i < _len; _i++) {\n      item = list[_i];\n      if (item !== rejectedItem) {\n        _results.push(item);\n      }\n    }\n    return _results;\n  };\n\n  camelize = function(str) {\n    return str.replace(/[\\-_](\\w)/g, function(match) {\n      return match.charAt(1).toUpperCase();\n    });\n  };\n\n  Dropzone.createElement = function(string) {\n    var div;\n    div = document.createElement(\"div\");\n    div.innerHTML = string;\n    return div.childNodes[0];\n  };\n\n  Dropzone.elementInside = function(element, container) {\n    if (element === container) {\n      return true;\n    }\n    while (element = element.parentNode) {\n      if (element === container) {\n        return true;\n      }\n    }\n    return false;\n  };\n\n  Dropzone.getElement = function(el, name) {\n    var element;\n    if (typeof el === \"string\") {\n      element = document.querySelector(el);\n    } else if (el.nodeType != null) {\n      element = el;\n    }\n    if (element == null) {\n      throw new Error(\"Invalid `\" + name + \"` option provided. Please provide a CSS selector or a plain HTML element.\");\n    }\n    return element;\n  };\n\n  Dropzone.getElements = function(els, name) {\n    var e, el, elements, _i, _j, _len, _len1, _ref;\n    if (els instanceof Array) {\n      elements = [];\n      try {\n        for (_i = 0, _len = els.length; _i < _len; _i++) {\n          el = els[_i];\n          elements.push(this.getElement(el, name));\n        }\n      } catch (_error) {\n        e = _error;\n        elements = null;\n      }\n    } else if (typeof els === \"string\") {\n      elements = [];\n      _ref = document.querySelectorAll(els);\n      for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {\n        el = _ref[_j];\n        elements.push(el);\n      }\n    } else if (els.nodeType != null) {\n      elements = [els];\n    }\n    if (!((elements != null) && elements.length)) {\n      throw new Error(\"Invalid `\" + name + \"` option provided. Please provide a CSS selector, a plain HTML element or a list of those.\");\n    }\n    return elements;\n  };\n\n  Dropzone.confirm = function(question, accepted, rejected) {\n    if (window.confirm(question)) {\n      return accepted();\n    } else if (rejected != null) {\n      return rejected();\n    }\n  };\n\n  Dropzone.isValidFile = function(file, acceptedFiles) {\n    var baseMimeType, mimeType, validType, _i, _len;\n    if (!acceptedFiles) {\n      return true;\n    }\n    acceptedFiles = acceptedFiles.split(\",\");\n    mimeType = file.type;\n    baseMimeType = mimeType.replace(/\\/.*$/, \"\");\n    for (_i = 0, _len = acceptedFiles.length; _i < _len; _i++) {\n      validType = acceptedFiles[_i];\n      validType = validType.trim();\n      if (validType.charAt(0) === \".\") {\n        if (file.name.toLowerCase().indexOf(validType.toLowerCase(), file.name.length - validType.length) !== -1) {\n          return true;\n        }\n      } else if (/\\/\\*$/.test(validType)) {\n        if (baseMimeType === validType.replace(/\\/.*$/, \"\")) {\n          return true;\n        }\n      } else {\n        if (mimeType === validType) {\n          return true;\n        }\n      }\n    }\n    return false;\n  };\n\n  if (typeof jQuery !== \"undefined\" && jQuery !== null) {\n    jQuery.fn.dropzone = function(options) {\n      return this.each(function() {\n        return new Dropzone(this, options);\n      });\n    };\n  }\n\n  if (typeof module !== \"undefined\" && module !== null) {\n    module.exports = Dropzone;\n  } else {\n    window.Dropzone = Dropzone;\n  }\n\n  Dropzone.ADDED = \"added\";\n\n  Dropzone.QUEUED = \"queued\";\n\n  Dropzone.ACCEPTED = Dropzone.QUEUED;\n\n  Dropzone.UPLOADING = \"uploading\";\n\n  Dropzone.PROCESSING = Dropzone.UPLOADING;\n\n  Dropzone.CANCELED = \"canceled\";\n\n  Dropzone.ERROR = \"error\";\n\n  Dropzone.SUCCESS = \"success\";\n\n\n  /*\n  \n  Bugfix for iOS 6 and 7\n  Source: http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios\n  based on the work of https://github.com/stomita/ios-imagefile-megapixel\n   */\n\n  detectVerticalSquash = function(img) {\n    var alpha, canvas, ctx, data, ey, ih, iw, py, ratio, sy;\n    iw = img.naturalWidth;\n    ih = img.naturalHeight;\n    canvas = document.createElement(\"canvas\");\n    canvas.width = 1;\n    canvas.height = ih;\n    ctx = canvas.getContext(\"2d\");\n    ctx.drawImage(img, 0, 0);\n    data = ctx.getImageData(0, 0, 1, ih).data;\n    sy = 0;\n    ey = ih;\n    py = ih;\n    while (py > sy) {\n      alpha = data[(py - 1) * 4 + 3];\n      if (alpha === 0) {\n        ey = py;\n      } else {\n        sy = py;\n      }\n      py = (ey + sy) >> 1;\n    }\n    ratio = py / ih;\n    if (ratio === 0) {\n      return 1;\n    } else {\n      return ratio;\n    }\n  };\n\n  drawImageIOSFix = function(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {\n    var vertSquashRatio;\n    vertSquashRatio = detectVerticalSquash(img);\n    return ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);\n  };\n\n\n  /*\n   * contentloaded.js\n   *\n   * Author: Diego Perini (diego.perini at gmail.com)\n   * Summary: cross-browser wrapper for DOMContentLoaded\n   * Updated: 20101020\n   * License: MIT\n   * Version: 1.2\n   *\n   * URL:\n   * http://javascript.nwbox.com/ContentLoaded/\n   * http://javascript.nwbox.com/ContentLoaded/MIT-LICENSE\n   */\n\n  contentLoaded = function(win, fn) {\n    var add, doc, done, init, poll, pre, rem, root, top;\n    done = false;\n    top = true;\n    doc = win.document;\n    root = doc.documentElement;\n    add = (doc.addEventListener ? \"addEventListener\" : \"attachEvent\");\n    rem = (doc.addEventListener ? \"removeEventListener\" : \"detachEvent\");\n    pre = (doc.addEventListener ? \"\" : \"on\");\n    init = function(e) {\n      if (e.type === \"readystatechange\" && doc.readyState !== \"complete\") {\n        return;\n      }\n      (e.type === \"load\" ? win : doc)[rem](pre + e.type, init, false);\n      if (!done && (done = true)) {\n        return fn.call(win, e.type || e);\n      }\n    };\n    poll = function() {\n      var e;\n      try {\n        root.doScroll(\"left\");\n      } catch (_error) {\n        e = _error;\n        setTimeout(poll, 50);\n        return;\n      }\n      return init(\"poll\");\n    };\n    if (doc.readyState !== \"complete\") {\n      if (doc.createEventObject && root.doScroll) {\n        try {\n          top = !win.frameElement;\n        } catch (_error) {}\n        if (top) {\n          poll();\n        }\n      }\n      doc[add](pre + \"DOMContentLoaded\", init, false);\n      doc[add](pre + \"readystatechange\", init, false);\n      return win[add](pre + \"load\", init, false);\n    }\n  };\n\n  Dropzone._autoDiscoverFunction = function() {\n    if (Dropzone.autoDiscover) {\n      return Dropzone.discover();\n    }\n  };\n\n  contentLoaded(window, Dropzone._autoDiscoverFunction);\n\n}).call(this);",
+        "output": "str",
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "3e48becf1b3951af"
+            ]
+        ]
+    },
+    {
+        "id": "66c77bebc15ef7f1",
+        "type": "http in",
+        "z": "5fde894cc9253f03",
+        "name": "",
+        "url": "/complex",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "bd23839aaa31f438"
+            ]
+        ]
+    },
+    {
+        "id": "d9ccc36cd5f4c5b2",
+        "type": "template",
+        "z": "5fde894cc9253f03",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<script>\n    {{{dropzonejs}}}\n</script>\n<style>\n    {{{css}}}\n</style>\n\n<script>\n    // \"myAwesomeDropzone\" is the camelized version of the HTML element's ID\n    Dropzone.options.myDropzone = {\n      paramName: \"myFile\", // The name that will be used to transfer the file\n      maxFilesize: 2, // MB\n      accept: function(file, done) {\n        if (file.name == \"justinbieber.jpg\") {\n          done(\"Naha, you don't.\");\n        }\n        else { done(); }\n      }\n    };\n</script>\n\n<h1>Upload a file here:</h1>\n\n<form action=\"/uploadpretty\" class=\"dropzone\" method=\"post\" enctype=\"multipart/form-data\" id=\"my-dropzone\">\n  <div class=\"fallback\">\n    <input name=\"myFile\" type=\"file\" />\n    <input type=\"submit\" value=\"Submit\">\n  </div>\n</form>",
+        "output": "str",
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "8b0660f0e0dd3b8f"
+            ]
+        ]
+    },
+    {
+        "id": "8b0660f0e0dd3b8f",
+        "type": "http response",
+        "z": "5fde894cc9253f03",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3e48becf1b3951af",
+        "type": "template",
+        "z": "5fde894cc9253f03",
+        "name": "css",
+        "field": "css",
+        "fieldType": "msg",
+        "format": "css",
+        "syntax": "mustache",
+        "template": "/*\n * The MIT License\n * Copyright (c) 2012 Matias Meno <m@tias.me>\n */\n@-webkit-keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@-moz-keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@keyframes passing-through {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30%, 70% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-40px);\n    -moz-transform: translateY(-40px);\n    -ms-transform: translateY(-40px);\n    -o-transform: translateY(-40px);\n    transform: translateY(-40px); } }\n@-webkit-keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@-moz-keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@keyframes slide-in {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(40px);\n    -moz-transform: translateY(40px);\n    -ms-transform: translateY(40px);\n    -o-transform: translateY(40px);\n    transform: translateY(40px); }\n  30% {\n    opacity: 1;\n    -webkit-transform: translateY(0px);\n    -moz-transform: translateY(0px);\n    -ms-transform: translateY(0px);\n    -o-transform: translateY(0px);\n    transform: translateY(0px); } }\n@-webkit-keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n@-moz-keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n@keyframes pulse {\n  0% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); }\n  10% {\n    -webkit-transform: scale(1.1);\n    -moz-transform: scale(1.1);\n    -ms-transform: scale(1.1);\n    -o-transform: scale(1.1);\n    transform: scale(1.1); }\n  20% {\n    -webkit-transform: scale(1);\n    -moz-transform: scale(1);\n    -ms-transform: scale(1);\n    -o-transform: scale(1);\n    transform: scale(1); } }\n.dropzone, .dropzone * {\n  box-sizing: border-box; }\n\n.dropzone {\n  min-height: 150px;\n  border: 2px solid rgba(0, 0, 0, 0.3);\n  background: white;\n  padding: 20px 20px; }\n  .dropzone.dz-clickable {\n    cursor: pointer; }\n    .dropzone.dz-clickable * {\n      cursor: default; }\n    .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {\n      cursor: pointer; }\n  .dropzone.dz-started .dz-message {\n    display: none; }\n  .dropzone.dz-drag-hover {\n    border-style: solid; }\n    .dropzone.dz-drag-hover .dz-message {\n      opacity: 0.5; }\n  .dropzone .dz-message {\n    text-align: center;\n    margin: 2em 0; }\n  .dropzone .dz-preview {\n    position: relative;\n    display: inline-block;\n    vertical-align: top;\n    margin: 16px;\n    min-height: 100px; }\n    .dropzone .dz-preview:hover {\n      z-index: 1000; }\n      .dropzone .dz-preview:hover .dz-details {\n        opacity: 1; }\n    .dropzone .dz-preview.dz-file-preview .dz-image {\n      border-radius: 20px;\n      background: #999;\n      background: linear-gradient(to bottom, #eee, #ddd); }\n    .dropzone .dz-preview.dz-file-preview .dz-details {\n      opacity: 1; }\n    .dropzone .dz-preview.dz-image-preview {\n      background: white; }\n      .dropzone .dz-preview.dz-image-preview .dz-details {\n        -webkit-transition: opacity 0.2s linear;\n        -moz-transition: opacity 0.2s linear;\n        -ms-transition: opacity 0.2s linear;\n        -o-transition: opacity 0.2s linear;\n        transition: opacity 0.2s linear; }\n    .dropzone .dz-preview .dz-remove {\n      font-size: 14px;\n      text-align: center;\n      display: block;\n      cursor: pointer;\n      border: none; }\n      .dropzone .dz-preview .dz-remove:hover {\n        text-decoration: underline; }\n    .dropzone .dz-preview:hover .dz-details {\n      opacity: 1; }\n    .dropzone .dz-preview .dz-details {\n      z-index: 20;\n      position: absolute;\n      top: 0;\n      left: 0;\n      opacity: 0;\n      font-size: 13px;\n      min-width: 100%;\n      max-width: 100%;\n      padding: 2em 1em;\n      text-align: center;\n      color: rgba(0, 0, 0, 0.9);\n      line-height: 150%; }\n      .dropzone .dz-preview .dz-details .dz-size {\n        margin-bottom: 1em;\n        font-size: 16px; }\n      .dropzone .dz-preview .dz-details .dz-filename {\n        white-space: nowrap; }\n        .dropzone .dz-preview .dz-details .dz-filename:hover span {\n          border: 1px solid rgba(200, 200, 200, 0.8);\n          background-color: rgba(255, 255, 255, 0.8); }\n        .dropzone .dz-preview .dz-details .dz-filename:not(:hover) {\n          overflow: hidden;\n          text-overflow: ellipsis; }\n          .dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {\n            border: 1px solid transparent; }\n      .dropzone .dz-preview .dz-details .dz-filename span, .dropzone .dz-preview .dz-details .dz-size span {\n        background-color: rgba(255, 255, 255, 0.4);\n        padding: 0 0.4em;\n        border-radius: 3px; }\n    .dropzone .dz-preview:hover .dz-image img {\n      -webkit-transform: scale(1.05, 1.05);\n      -moz-transform: scale(1.05, 1.05);\n      -ms-transform: scale(1.05, 1.05);\n      -o-transform: scale(1.05, 1.05);\n      transform: scale(1.05, 1.05);\n      -webkit-filter: blur(8px);\n      filter: blur(8px); }\n    .dropzone .dz-preview .dz-image {\n      border-radius: 20px;\n      overflow: hidden;\n      width: 120px;\n      height: 120px;\n      position: relative;\n      display: block;\n      z-index: 10; }\n      .dropzone .dz-preview .dz-image img {\n        display: block; }\n    .dropzone .dz-preview.dz-success .dz-success-mark {\n      -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -moz-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -ms-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -o-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1); }\n    .dropzone .dz-preview.dz-error .dz-error-mark {\n      opacity: 1;\n      -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -moz-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -ms-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      -o-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n      animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1); }\n    .dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {\n      pointer-events: none;\n      opacity: 0;\n      z-index: 500;\n      position: absolute;\n      display: block;\n      top: 50%;\n      left: 50%;\n      margin-left: -27px;\n      margin-top: -27px; }\n      .dropzone .dz-preview .dz-success-mark svg, .dropzone .dz-preview .dz-error-mark svg {\n        display: block;\n        width: 54px;\n        height: 54px; }\n    .dropzone .dz-preview.dz-processing .dz-progress {\n      opacity: 1;\n      -webkit-transition: all 0.2s linear;\n      -moz-transition: all 0.2s linear;\n      -ms-transition: all 0.2s linear;\n      -o-transition: all 0.2s linear;\n      transition: all 0.2s linear; }\n    .dropzone .dz-preview.dz-complete .dz-progress {\n      opacity: 0;\n      -webkit-transition: opacity 0.4s ease-in;\n      -moz-transition: opacity 0.4s ease-in;\n      -ms-transition: opacity 0.4s ease-in;\n      -o-transition: opacity 0.4s ease-in;\n      transition: opacity 0.4s ease-in; }\n    .dropzone .dz-preview:not(.dz-processing) .dz-progress {\n      -webkit-animation: pulse 6s ease infinite;\n      -moz-animation: pulse 6s ease infinite;\n      -ms-animation: pulse 6s ease infinite;\n      -o-animation: pulse 6s ease infinite;\n      animation: pulse 6s ease infinite; }\n    .dropzone .dz-preview .dz-progress {\n      opacity: 1;\n      z-index: 1000;\n      pointer-events: none;\n      position: absolute;\n      height: 16px;\n      left: 50%;\n      top: 50%;\n      margin-top: -8px;\n      width: 80px;\n      margin-left: -40px;\n      background: rgba(255, 255, 255, 0.9);\n      -webkit-transform: scale(1);\n      border-radius: 8px;\n      overflow: hidden; }\n      .dropzone .dz-preview .dz-progress .dz-upload {\n        background: #333;\n        background: linear-gradient(to bottom, #666, #444);\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: 0;\n        width: 0;\n        -webkit-transition: width 300ms ease-in-out;\n        -moz-transition: width 300ms ease-in-out;\n        -ms-transition: width 300ms ease-in-out;\n        -o-transition: width 300ms ease-in-out;\n        transition: width 300ms ease-in-out; }\n    .dropzone .dz-preview.dz-error .dz-error-message {\n      display: block; }\n    .dropzone .dz-preview.dz-error:hover .dz-error-message {\n      opacity: 1;\n      pointer-events: auto; }\n    .dropzone .dz-preview .dz-error-message {\n      pointer-events: none;\n      z-index: 1000;\n      position: absolute;\n      display: block;\n      display: none;\n      opacity: 0;\n      -webkit-transition: opacity 0.3s ease;\n      -moz-transition: opacity 0.3s ease;\n      -ms-transition: opacity 0.3s ease;\n      -o-transition: opacity 0.3s ease;\n      transition: opacity 0.3s ease;\n      border-radius: 8px;\n      font-size: 13px;\n      top: 130px;\n      left: -10px;\n      width: 140px;\n      background: #be2626;\n      background: linear-gradient(to bottom, #be2626, #a92222);\n      padding: 0.5em 1.2em;\n      color: white; }\n      .dropzone .dz-preview .dz-error-message:after {\n        content: '';\n        position: absolute;\n        top: -6px;\n        left: 64px;\n        width: 0;\n        height: 0;\n        border-left: 6px solid transparent;\n        border-right: 6px solid transparent;\n        border-bottom: 6px solid #be2626; }",
+        "output": "str",
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "d9ccc36cd5f4c5b2"
+            ]
+        ]
+    },
+    {
+        "id": "6beb7faf70dc9547",
+        "type": "comment",
+        "z": "5fde894cc9253f03",
+        "name": "Complex",
+        "info": "",
+        "x": 200,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "79012b29fa710381",
+        "type": "debug",
+        "z": "5fde894cc9253f03",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "req.files",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 458,
+        "y": 377,
+        "wires": []
+    },
+    {
+        "id": "b33ff89757ad4fc1",
+        "type": "http response",
+        "z": "5fde894cc9253f03",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e65a6bdea18c5052",
+        "type": "http in",
+        "z": "5fde894cc9253f03",
+        "name": "",
+        "url": "/uploadpretty",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 390,
+        "y": 460,
+        "wires": [
+            [
+                "eef72310df9b1ea3",
+                "79012b29fa710381"
+            ]
+        ]
+    },
+    {
+        "id": "9bb2afa226d1d16c",
+        "type": "template",
+        "z": "5fde894cc9253f03",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<p></p>File {{name}} uploaded !</p>\n\n<h2>Contents:</h2>\n\n<pre>\n{{{payload}}}\n</pre>",
+        "output": "str",
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "b33ff89757ad4fc1"
+            ]
+        ]
+    },
+    {
+        "id": "eef72310df9b1ea3",
+        "type": "function",
+        "z": "5fde894cc9253f03",
+        "name": "toBase64",
+        "func": "msg.name = msg.req.files[0].originalname;\nmsg.filepath = \"/cases/processor/\" + msg.name;\nmsg.filedata = msg.req.files[0].buffer;\n\nif (msg.req.files[0].mimetype.includes('image')) {\n    msg.payload = `<img src=\"data:image/gif;base64,${msg.req.files[0].buffer.toString('base64')}\">`;\n} else {\n    msg.payload = msg.req.files[0].buffer.toString();\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "7f88d1d25b183d11"
+            ]
+        ]
+    },
+    {
+        "id": "7f88d1d25b183d11",
+        "type": "file",
+        "z": "5fde894cc9253f03",
+        "name": "Write File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "binary",
+        "x": 720,
+        "y": 460,
+        "wires": [
+            [
+                "9bb2afa226d1d16c"
+            ]
+        ]
+    },
+    {
+        "id": "96cb284c3591def4",
+        "type": "ui-template",
+        "z": "eb4902f354a3b11b",
+        "group": "b754f85f5adaf50c",
+        "page": "",
+        "ui": "",
+        "name": "Binary File Upload",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-card width=\"1000\" height=\"400\" raised color=\"white\">\n        <v-card-title>Upload Triage / Image file for processing</v-card-title>\n        <br>\n        <v-card-text>\n            <v-file-input label=\"Click here to select a file\" show-size v-model=\"uploadFile\"></v-file-input>\n            <v-select v-model=\"fileType\" :items=\"['Triage', 'Malware']\" label=\"Select file type\"></v-select>\n            <div>Progress: {{ progress }} bytes loaded</div>\n        </v-card-text>\n        <v-card-actions>\n            <v-spacer></v-spacer>\n            <v-btn right @click=\"startUpload\">Upload File</v-btn>\n        </v-card-actions>\n    </v-card>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                uploadFile: null,\n                fileType: null,\n                progress: 0\n            }\n        },\n        methods: {\n            startUpload() {\n                if (!this.uploadFile || !this.fileType) {\n                    return;\n                } else {\n                    const reader = new FileReader();\n                    reader.readAsArrayBuffer(this.uploadFile);\n                    reader.onload = () => {\n                        this.send({topic:\"upload\", payload: reader.result, file:{name: this.uploadFile.name, size: this.uploadFile.size, type: this.uploadFile.type, fileType: this.fileType }  });\n                    }\n                    reader.onprogress = (data) => {\n                        this.progress = data.loaded;\n                    }\n                }\n            }\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "5db413f820f8928d"
+            ]
+        ]
+    },
+    {
+        "id": "74c42d034a938e43",
+        "type": "debug",
+        "z": "eb4902f354a3b11b",
+        "name": "debug 365",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5db413f820f8928d",
+        "type": "function",
+        "z": "eb4902f354a3b11b",
+        "name": "buffer2string",
+        "func": "msg.filename = msg.file.name;\nif (msg.file.fileType === 'Triage') {\n    msg.filepath = \"/cases/processor/\" + msg.filename;\n    msg.casesdir = \"/cases/processor/\";\n} else if (msg.file.fileType === 'Malware') {\n    msg.filepath = \"/cases/malware/\" + msg.filename;\n    msg.casesdir = \"/cases/malware/\";\n}\nmsg.homedir = \"/home/ubuntu/\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "f5646da4c2a11943"
+            ]
+        ]
+    },
+    {
+        "id": "f5646da4c2a11943",
+        "type": "file",
+        "z": "eb4902f354a3b11b",
+        "name": "Save File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "binary",
+        "x": 880,
+        "y": 280,
+        "wires": [
+            [
+                "74c42d034a938e43",
+                "5c191812e3ec1017"
+            ]
+        ]
+    },
+    {
+        "id": "5c191812e3ec1017",
+        "type": "fs-ops-move",
+        "z": "eb4902f354a3b11b",
+        "name": "",
+        "sourcePath": "homedir",
+        "sourcePathType": "msg",
+        "sourceFilename": "filename",
+        "sourceFilenameType": "msg",
+        "destPath": "casesdir",
+        "destPathType": "msg",
+        "destFilename": "filename",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "719fa2912769afc5",
+        "type": "subflow:32cfc6ae564d5d0d",
+        "z": "ce54a2c5ab584757",
+        "name": "",
+        "env": [
+            {
+                "name": "UPLOAD_DIR",
+                "value": "/cases/processor",
+                "type": "str"
+            },
+            {
+                "name": "EXTENSIONS",
+                "value": "txt,csv,exe",
+                "type": "str"
+            }
+        ],
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "8538ebb992349203"
+            ]
+        ]
+    },
+    {
+        "id": "8538ebb992349203",
+        "type": "debug",
+        "z": "ce54a2c5ab584757",
+        "name": "debug 366",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d79a5718bb6c9a4c",
+        "type": "ui-template",
+        "z": "7e96772c649e1a24",
+        "group": "b754f85f5adaf50c",
+        "page": "",
+        "ui": "",
+        "name": "Binary File Upload",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-card width=\"600\" height=\"300\" raised color=\"white\">\n        <v-card-title>Upload Triage / Image file for processing</v-card-title>\n        <br>\n        <v-card-text>\n            <v-file-input label=\"Click here to select a file\" show-size v-model=\"uploadFile\"></v-file-input>\n            <v-select v-model=\"fileType\" :items=\"['Triage', 'Malware']\" label=\"Select file type\"></v-select>\n            <div>Progress: {{ progress }} bytes loaded</div>\n        </v-card-text>\n        <v-card-actions>\n            <v-spacer></v-spacer>\n            <v-btn right @click=\"startUpload\">Upload File</v-btn>\n        </v-card-actions>\n    </v-card>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                uploadFile: null,\n                fileType: null,\n                progress: 0\n            }\n        },\n        methods: {\n            startUpload() {\n                if (!this.uploadFile || !this.fileType) {\n                    return;\n                } else {\n                    const reader = new FileReader();\n                    reader.readAsArrayBuffer(this.uploadFile);\n                    reader.onload = () => {\n                        this.send({topic:\"upload\", payload: reader.result, file:{name: this.uploadFile.name, size: this.uploadFile.size, type: this.uploadFile.type, fileType: this.fileType }  });\n                    }\n                    reader.onprogress = (data) => {\n                        this.progress = data.loaded;\n                    }\n                }\n            }\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "8afdfc59ce4d331f"
+            ]
+        ]
+    },
+    {
+        "id": "0e0d236bf6781095",
+        "type": "debug",
+        "z": "7e96772c649e1a24",
+        "name": "debug 365",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8afdfc59ce4d331f",
+        "type": "function",
+        "z": "7e96772c649e1a24",
+        "name": "buffer2string",
+        "func": "msg.filename = msg.file.name;\nif (msg.file.fileType === 'Triage') {\n    msg.filepath = \"/cases/processor/\" + msg.filename;\n    msg.casesdir = \"/cases/processor/\";\n} else if (msg.file.fileType === 'Malware') {\n    msg.filepath = \"/cases/malware/\" + msg.filename;\n    msg.casesdir = \"/cases/malware/\";\n}\nmsg.homedir = \"/home/ubuntu/\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "7acb9fb869328aec"
+            ]
+        ]
+    },
+    {
+        "id": "7acb9fb869328aec",
+        "type": "file",
+        "z": "7e96772c649e1a24",
+        "name": "Save File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "binary",
+        "x": 880,
+        "y": 280,
+        "wires": [
+            [
+                "0e0d236bf6781095",
+                "a0983a17ec52fb13"
+            ]
+        ]
+    },
+    {
+        "id": "a0983a17ec52fb13",
+        "type": "fs-ops-move",
+        "z": "7e96772c649e1a24",
+        "name": "",
+        "sourcePath": "homedir",
+        "sourcePathType": "msg",
+        "sourceFilename": "filename",
+        "sourceFilenameType": "msg",
+        "destPath": "casesdir",
+        "destPathType": "msg",
+        "destFilename": "filename",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            []
         ]
     }
 ]
