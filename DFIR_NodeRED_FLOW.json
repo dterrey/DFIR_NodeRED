@@ -15,6 +15,14 @@
         "env": []
     },
     {
+        "id": "eb4902f354a3b11b",
+        "type": "tab",
+        "label": "v2.0 File Upload",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "661e7f7a151d4072",
         "type": "tab",
         "label": "Flow 1",
@@ -103,23 +111,9 @@
         "env": []
     },
     {
-        "id": "9583b8de.96bc48",
+        "id": "772e6979.67cd08",
         "type": "tab",
-        "label": "Basic Dashboard Elements",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "90da6d14.cc65d8",
-        "type": "tab",
-        "label": "CPU Dashboard",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "9b46958.ce6a368",
-        "type": "tab",
-        "label": "Space Station update",
+        "label": "System",
         "disabled": false,
         "info": ""
     },
@@ -127,7 +121,7 @@
         "id": "21f1b2aeb83d507c",
         "type": "tab",
         "label": "Flow 3",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -135,7 +129,7 @@
         "id": "29d4eba357840193",
         "type": "tab",
         "label": "Flow 5",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -143,15 +137,7 @@
         "id": "5fde894cc9253f03",
         "type": "tab",
         "label": "Flow 7",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "eb4902f354a3b11b",
-        "type": "tab",
-        "label": "v2.0 File Upload",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -159,7 +145,7 @@
         "id": "ce54a2c5ab584757",
         "type": "tab",
         "label": "v1.0 File Upload",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -168,6 +154,14 @@
         "type": "tab",
         "label": "v2.0 File Upload",
         "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "013503dd751f3a30",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -257,6 +251,30 @@
         "color": "#DDAA99"
     },
     {
+        "id": "874be12f42def019",
+        "type": "group",
+        "z": "013503dd751f3a30",
+        "name": "Display CSV and Button to send data on",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ffa6f27918e862df",
+            "82017f5035333378",
+            "cdfa41d591861944",
+            "c87fa6dddbc3f4ec",
+            "99f07b6c3e38e0e4",
+            "1db33ec989a7d826",
+            "d4448932e0fe7a19",
+            "2362014ac10a6dd5",
+            "994b8815bd5d29ac"
+        ],
+        "x": 374,
+        "y": 359,
+        "w": 972,
+        "h": 122
+    },
+    {
         "id": "1f05e4b7e53a7b3c",
         "type": "global-config",
         "name": "global-config",
@@ -267,6 +285,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -403,7 +422,7 @@
         "type": "ui_tab",
         "name": "Basic Dashboard",
         "icon": "dashboard",
-        "order": 3,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -425,7 +444,8 @@
         "order": 1,
         "disp": true,
         "width": "3",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "3d630fa8.8d0d68",
@@ -441,7 +461,7 @@
         "type": "ui_tab",
         "name": "CPU Dashboard",
         "icon": "dashboard",
-        "order": 9,
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
@@ -456,26 +476,6 @@
         "collapse": false
     },
     {
-        "id": "66464e0a.235a1",
-        "type": "ui_group",
-        "z": "9b46958.ce6a368",
-        "name": "Space Station",
-        "tab": "c1fc79b.7049e88",
-        "order": 2,
-        "disp": true,
-        "width": "20"
-    },
-    {
-        "id": "c1fc79b.7049e88",
-        "type": "ui_tab",
-        "z": "9b46958.ce6a368",
-        "name": "International Space Station Location 2",
-        "icon": "fa-space-shuttle",
-        "order": 10,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "dd8d2662278f4f72",
         "type": "ui-page",
         "name": "Data Entry New",
@@ -484,7 +484,7 @@
         "icon": "note-multiple",
         "layout": "grid",
         "theme": "0d92c765bfad87e6",
-        "order": 7,
+        "order": 8,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -552,7 +552,7 @@
         "page": "abf2f56d637dd7e2",
         "width": "12",
         "height": "1",
-        "order": 1,
+        "order": 2,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -606,7 +606,7 @@
         "icon": "form-textbox",
         "layout": "notebook",
         "theme": "5ae8613757b62f89",
-        "order": 4,
+        "order": 5,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -620,9 +620,9 @@
         "icon": "lock",
         "layout": "grid",
         "theme": "a70602e73bbb2a95",
-        "order": 6,
+        "order": 7,
         "className": "",
-        "visible": false,
+        "visible": "true",
         "disabled": "false"
     },
     {
@@ -634,7 +634,7 @@
         "icon": "view-list-outline",
         "layout": "grid",
         "theme": "5ae8613757b62f89",
-        "order": 5,
+        "order": 6,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -648,7 +648,7 @@
         "icon": "gauge",
         "layout": "grid",
         "theme": "5ae8613757b62f89",
-        "order": 3,
+        "order": 4,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -709,7 +709,7 @@
         "icon": "",
         "layout": "grid",
         "theme": "c5ed292f3032aa43",
-        "order": 2,
+        "order": 3,
         "className": ""
     },
     {
@@ -744,7 +744,7 @@
         "icon": "home",
         "layout": "grid",
         "theme": "a70602e73bbb2a95",
-        "order": 1,
+        "order": 2,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -770,14 +770,122 @@
         "order": 4,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "f1b5a1b6.543fd8",
         "type": "ui_tab",
         "name": "File Upload",
         "icon": "dashboard",
-        "order": 4
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b04a66bac7ec93ed",
+        "type": "ui-group",
+        "name": "System Resources",
+        "page": "abf2f56d637dd7e2",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7853403.230cdc",
+        "type": "ui_group",
+        "name": "CPU Load",
+        "tab": "e6013c6f.69328",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1d1da0fc.6ab84f",
+        "type": "ui_group",
+        "name": "Memory",
+        "tab": "e6013c6f.69328",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "a9912d64.97094",
+        "type": "ui_group",
+        "name": "System Information",
+        "tab": "e6013c6f.69328",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "e6013c6f.69328",
+        "type": "ui_tab",
+        "name": "DFIR_NodeRED System Resource Monitor",
+        "icon": "computer",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cf9c80fbc1bd0254",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "4f5827d58c78ed29",
+        "type": "ui-page",
+        "name": "upload to table",
+        "ui": "cb79bc4520925e32",
+        "path": "/page8",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "a70602e73bbb2a95",
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1045b63f3f13278b",
+        "type": "ui-group",
+        "name": "Group Name",
+        "page": "4f5827d58c78ed29",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c16494733913da56",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "f1b5a1b6.543fd8",
+        "order": 2,
+        "disp": true,
+        "width": 6
     },
     {
         "id": "8c2f073fced364da",
@@ -815,9 +923,9 @@
         "z": "32cfc6ae564d5d0d",
         "group": "4178bf61.05d97",
         "name": "Upload",
-        "order": 1,
-        "width": "6",
-        "height": "3",
+        "order": 2,
+        "width": 6,
+        "height": 3,
         "format": "<form id=\"upload_form\" enctype=\"multipart/form-data\" method=\"post\">\n    <input type=\"file\" name=\"file1\" id=\"file1\"><br>\n    <input type=\"button\" value=\"Upload File\" onclick=\"uploadFile()\">\n    <progress id=\"progressBar\" value=\"0\" max=\"100\" style=\"width:300px;\"></progress>\n    <p id=\"status\"></p>\n    <p id=\"loaded_n_total\"></p>\n</form>\n\n<script>\n    function _(el){\n    return document.getElementById(el);\n}\nfunction uploadFile(){\n    var file = _(\"file1\").files[0];\n    // alert(file.name+\" | \"+file.size+\" | \"+file.type);\n    var formdata = new FormData();\n    formdata.append(\"file1\", file);\n    var ajax = new XMLHttpRequest();\n    ajax.upload.addEventListener(\"progress\", progressHandler, false);\n    ajax.addEventListener(\"load\", completeHandler, false);\n    ajax.addEventListener(\"error\", errorHandler, false);\n    ajax.addEventListener(\"abort\", abortHandler, false);\n    ajax.open(\"POST\", \"/fileupload\");\n    ajax.send(formdata);\n}\nfunction progressHandler(event){\n    _(\"loaded_n_total\").innerHTML = \"Uploaded \"+event.loaded+\" bytes of \"+event.total;\n    var percent = (event.loaded / event.total) * 100;\n    _(\"progressBar\").value = Math.round(percent);\n    _(\"status\").innerHTML = Math.round(percent)+\"% uploaded... please wait\";\n}\nfunction completeHandler(event){\n    _(\"status\").innerHTML = event.target.responseText;\n    _(\"progressBar\").value = 0;\n}\nfunction errorHandler(event){\n    _(\"status\").innerHTML = \"Upload Failed\";\n}\nfunction abortHandler(event){\n    _(\"status\").innerHTML = \"Upload Aborted\";\n}\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
@@ -841,7 +949,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "4178bf61.05d97",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -885,7 +993,7 @@
         "z": "32cfc6ae564d5d0d",
         "name": "",
         "group": "4178bf61.05d97",
-        "order": 0,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1841,8 +1949,8 @@
             "bb4beaa62a0d33db",
             "a8d477a02835a411"
         ],
-        "x": 1185,
-        "y": 300,
+        "x": 1685,
+        "y": 340,
         "wires": []
     },
     {
@@ -1873,8 +1981,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 300,
+        "x": 1500,
+        "y": 340,
         "wires": [
             [
                 "b6ecf5f15136a82b"
@@ -2064,8 +2172,8 @@
         "links": [
             "84d7cd3a2988674f"
         ],
-        "x": 825,
-        "y": 80,
+        "x": 1225,
+        "y": 20,
         "wires": []
     },
     {
@@ -2080,8 +2188,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 300,
+        "x": 1290,
+        "y": 340,
         "wires": [
             [
                 "3b18ad5734fc996b"
@@ -2130,8 +2238,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 580,
-        "y": 140,
+        "x": 980,
+        "y": 80,
         "wires": [
             [
                 "519e07706b40afdf"
@@ -2159,8 +2267,8 @@
         "links": [
             "236dcee18367a244"
         ],
-        "x": 825,
-        "y": 120,
+        "x": 1225,
+        "y": 60,
         "wires": []
     },
     {
@@ -2172,8 +2280,8 @@
         "links": [
             "abc43a287b554b44"
         ],
-        "x": 825,
-        "y": 160,
+        "x": 1225,
+        "y": 100,
         "wires": []
     },
     {
@@ -2185,8 +2293,8 @@
         "links": [
             "1896b282f8d5a850"
         ],
-        "x": 825,
-        "y": 200,
+        "x": 1225,
+        "y": 140,
         "wires": []
     },
     {
@@ -2204,7 +2312,7 @@
         "y": 220,
         "wires": [
             [
-                "5b48534e1cd703c5"
+                "ac6102b8f2e02e1d"
             ]
         ]
     },
@@ -2368,8 +2476,8 @@
         "z": "f8d31b3f79add29b",
         "name": "3) Zip File Flow",
         "info": "",
-        "x": 800,
-        "y": 260,
+        "x": 1300,
+        "y": 300,
         "wires": []
     },
     {
@@ -2439,6 +2547,108 @@
         "x": 1620,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "170f01091e925743",
+        "type": "function",
+        "z": "f8d31b3f79add29b",
+        "name": "SHA256 Extract Params",
+        "func": "msg.sha256 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\nmsg.md5 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\nmsg.sha1 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "5ae2f0b21d457840"
+            ]
+        ]
+    },
+    {
+        "id": "5ae2f0b21d457840",
+        "type": "exec",
+        "z": "f8d31b3f79add29b",
+        "command": "echo -n \"sha256 =  \" >> /cases/processor/hashes/hashes.txt && sha256sum",
+        "addpay": "sha256",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA256 Process",
+        "x": 790,
+        "y": 180,
+        "wires": [
+            [],
+            [],
+            [
+                "89da42cac6bfe167"
+            ]
+        ]
+    },
+    {
+        "id": "89da42cac6bfe167",
+        "type": "exec",
+        "z": "f8d31b3f79add29b",
+        "command": "echo -n \"sha1 =  \" >> /cases/processor/hashes/hashes.txt && sha1sum",
+        "addpay": "sha1",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA1 Process",
+        "x": 800,
+        "y": 240,
+        "wires": [
+            [],
+            [],
+            [
+                "1bbab0601bca07c4"
+            ]
+        ]
+    },
+    {
+        "id": "1bbab0601bca07c4",
+        "type": "exec",
+        "z": "f8d31b3f79add29b",
+        "command": "echo -n \"md5 = \" >> /cases/processor/hashes/hashes.txt && md5sum",
+        "addpay": "md5",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "MD5 Process",
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [],
+            [],
+            [
+                "5b48534e1cd703c5",
+                "ac6102b8f2e02e1d"
+            ]
+        ]
+    },
+    {
+        "id": "ac6102b8f2e02e1d",
+        "type": "simple-queue",
+        "z": "f8d31b3f79add29b",
+        "name": "Queue files",
+        "count": "1",
+        "unique_check": "",
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "170f01091e925743"
+            ]
+        ]
     },
     {
         "id": "7461cd115a5e16e8",
@@ -2544,8 +2754,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Capa Process",
-        "x": 1380,
-        "y": 320,
+        "x": 1640,
+        "y": 440,
         "wires": [
             [
                 "948989701c6b53a7"
@@ -2589,8 +2799,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 580,
+        "x": 460,
+        "y": 700,
         "wires": [
             [
                 "f97575bd23bfd3ad"
@@ -2609,8 +2819,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Capa Process",
-        "x": 880,
-        "y": 580,
+        "x": 840,
+        "y": 700,
         "wires": [
             [],
             [],
@@ -2630,7 +2840,8 @@
         "y": 380,
         "wires": [
             [
-                "423d6d17ae8921c2"
+                "423d6d17ae8921c2",
+                "876ccc93b4aa5060"
             ]
         ]
     },
@@ -2646,8 +2857,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 280,
+        "x": 1450,
+        "y": 240,
         "wires": [
             [
                 "6695eee14b943191"
@@ -2666,8 +2877,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
-        "y": 360,
+        "x": 710,
+        "y": 320,
         "wires": [
             [
                 "87717fdc6d7e61f5"
@@ -2686,8 +2897,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "SHA256 Process",
-        "x": 830,
-        "y": 360,
+        "x": 970,
+        "y": 300,
         "wires": [
             [],
             [],
@@ -2704,6 +2915,213 @@
         "info": "",
         "x": 220,
         "y": 100,
+        "wires": []
+    },
+    {
+        "id": "876ccc93b4aa5060",
+        "type": "function",
+        "z": "adaa3f44094f3fb5",
+        "name": "SHA256 Extract Params",
+        "func": "msg.sha256 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\nmsg.md5 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\nmsg.sha1 = msg.payload + \" >> /cases/processor/hashes/hashes.txt\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 420,
+        "wires": [
+            [
+                "44953918942f66f3"
+            ]
+        ]
+    },
+    {
+        "id": "44953918942f66f3",
+        "type": "exec",
+        "z": "adaa3f44094f3fb5",
+        "command": "echo -n \"sha256 =  \" >> /cases/processor/hashes/hashes.txt && sha256sum",
+        "addpay": "sha256",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA256 Process",
+        "x": 990,
+        "y": 380,
+        "wires": [
+            [],
+            [],
+            [
+                "c3f0407b73cce906"
+            ]
+        ]
+    },
+    {
+        "id": "c3f0407b73cce906",
+        "type": "exec",
+        "z": "adaa3f44094f3fb5",
+        "command": "echo -n \"sha1 =  \" >> /cases/processor/hashes/hashes.txt && sha1sum",
+        "addpay": "sha1",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA1 Process",
+        "x": 1020,
+        "y": 440,
+        "wires": [
+            [],
+            [],
+            [
+                "b71e9c9808f12733"
+            ]
+        ]
+    },
+    {
+        "id": "b71e9c9808f12733",
+        "type": "exec",
+        "z": "adaa3f44094f3fb5",
+        "command": "echo -n \"md5 = \" >> /cases/processor/hashes/hashes.txt && md5sum",
+        "addpay": "md5",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "MD5 Process",
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "db442544cdb08774",
+        "type": "comment",
+        "z": "adaa3f44094f3fb5",
+        "name": "Need to FIX THIS!!!!!",
+        "info": "",
+        "x": 770,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "96cb284c3591def4",
+        "type": "ui-template",
+        "z": "eb4902f354a3b11b",
+        "group": "b754f85f5adaf50c",
+        "page": "",
+        "ui": "",
+        "name": "Binary File Upload",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-card width=\"1000\" height=\"700\" raised color=\"white\">\n        <v-card-title>Upload Triage / Image file for processing</v-card-title>\n        <br>\n        <v-card-text>\n            <v-file-input label=\"Click here to select a file\" show-size v-model=\"uploadFile\"></v-file-input>\n            <v-select v-model=\"fileType\" :items=\"['Triage', 'Malware']\" label=\"Select file type\"></v-select>\n            <div>Progress: {{ progress }} bytes loaded</div>\n        </v-card-text>\n        <v-card-actions>\n            <v-spacer></v-spacer>\n            <v-btn right @click=\"startUpload\">Upload File</v-btn>\n        </v-card-actions>\n    </v-card>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                uploadFile: null,\n                fileType: null,\n                progress: 0\n            }\n        },\n        methods: {\n            startUpload() {\n                if (!this.uploadFile || !this.fileType) {\n                    return;\n                } else {\n                    const reader = new FileReader();\n                    reader.readAsArrayBuffer(this.uploadFile);\n                    reader.onload = () => {\n                        this.send({topic:\"upload\", payload: reader.result, file:{name: this.uploadFile.name, size: this.uploadFile.size, type: this.uploadFile.type, fileType: this.fileType }  });\n                    }\n                    reader.onprogress = (data) => {\n                        this.progress = data.loaded;\n                    }\n                }\n            }\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "5db413f820f8928d"
+            ]
+        ]
+    },
+    {
+        "id": "74c42d034a938e43",
+        "type": "debug",
+        "z": "eb4902f354a3b11b",
+        "name": "debug 365",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5db413f820f8928d",
+        "type": "function",
+        "z": "eb4902f354a3b11b",
+        "name": "buffer2string",
+        "func": "msg.filename = msg.file.name;\nif (msg.file.fileType === 'Triage') {\n    msg.filepath = \"/cases/processor/\" + msg.filename;\n    msg.casesdir = \"/cases/processor/\";\n} else if (msg.file.fileType === 'Malware') {\n    msg.filepath = \"/cases/malware/\" + msg.filename;\n    msg.casesdir = \"/cases/malware/\";\n}\nmsg.homedir = \"/home/ubuntu/\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "f5646da4c2a11943"
+            ]
+        ]
+    },
+    {
+        "id": "f5646da4c2a11943",
+        "type": "file",
+        "z": "eb4902f354a3b11b",
+        "name": "Save File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "binary",
+        "x": 880,
+        "y": 280,
+        "wires": [
+            [
+                "74c42d034a938e43",
+                "5c191812e3ec1017"
+            ]
+        ]
+    },
+    {
+        "id": "5c191812e3ec1017",
+        "type": "fs-ops-move",
+        "z": "eb4902f354a3b11b",
+        "name": "",
+        "sourcePath": "homedir",
+        "sourcePathType": "msg",
+        "sourceFilename": "filename",
+        "sourceFilenameType": "msg",
+        "destPath": "casesdir",
+        "destPathType": "msg",
+        "destFilename": "filename",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1000,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9ab79e6625e19db",
+        "type": "comment",
+        "z": "eb4902f354a3b11b",
+        "name": "Report for Logfile ",
+        "info": "",
+        "x": 680,
+        "y": 120,
         "wires": []
     },
     {
@@ -5585,1125 +6003,724 @@
         ]
     },
     {
-        "id": "fd446b54.5da24",
-        "type": "ui_button",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "2fb9c205.dae50e",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "click me",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
+        "id": "ed27cae4.70b728",
+        "type": "inject",
+        "z": "772e6979.67cd08",
+        "name": "update",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
         "payload": "",
         "payloadType": "date",
-        "topic": "",
-        "topicType": "str",
-        "x": 140,
-        "y": 140,
+        "x": 94,
+        "y": 245,
         "wires": [
             [
-                "9569387b.fc24f",
-                "103477f0.45b588",
-                "b7e35051.2b75b",
-                "3375341f.88f7e4"
+                "f25a9b1d.c6fce8",
+                "c63cb373.ce94f",
+                "21faa622.8c25da",
+                "7780c9ca.7581b8",
+                "7cf01d46.a3cad4"
             ]
         ]
     },
     {
-        "id": "103477f0.45b588",
-        "type": "ui_text",
-        "z": "9583b8de.96bc48",
-        "group": "2fb9c205.dae50e",
-        "order": 1,
-        "width": 0,
-        "height": 0,
+        "id": "240a76f3.9953ea",
+        "type": "function",
+        "z": "772e6979.67cd08",
         "name": "",
-        "label": "Click Here !",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 370,
-        "y": 140,
-        "wires": []
+        "func": "msg.payload = msg.payload.loadavg[0];\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 333,
+        "y": 105,
+        "wires": [
+            [
+                "51dfac0c.fdc9c4"
+            ]
+        ]
     },
     {
-        "id": "9569387b.fc24f",
-        "type": "debug",
-        "z": "9583b8de.96bc48",
+        "id": "5d85387c.957fb8",
+        "type": "function",
+        "z": "772e6979.67cd08",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 390,
-        "y": 200,
-        "wires": []
+        "func": "msg.payload = msg.payload.loadavg[1];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 334,
+        "y": 143,
+        "wires": [
+            [
+                "79d3dbc8.390014"
+            ]
+        ]
     },
     {
-        "id": "3692c3e.596783c",
+        "id": "b33d4d45.a6673",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.loadavg[2];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 333,
+        "y": 186,
+        "wires": [
+            [
+                "1ff0080f.4e10c8"
+            ]
+        ]
+    },
+    {
+        "id": "51dfac0c.fdc9c4",
         "type": "ui_gauge",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "122a9c51.bdf31c",
+        "z": "772e6979.67cd08",
+        "name": "CPU Load 1",
+        "group": "7853403.230cdc",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": "0",
+        "height": "0",
         "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{value}}",
+        "title": "1 Minute",
+        "label": "load",
+        "format": "{{value | number:2}}",
         "min": 0,
-        "max": "200",
+        "max": "4",
         "colors": [
             "#00b500",
             "#e6e600",
             "#ca3838"
         ],
-        "seg1": "75",
-        "seg2": "150",
-        "x": 370,
-        "y": 380,
+        "x": 501,
+        "y": 104,
         "wires": []
     },
     {
-        "id": "b5c97926.f8f0e",
-        "type": "ui_slider",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "label": "slider",
-        "tooltip": "",
-        "group": "122a9c51.bdf31c",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "",
+        "id": "79d3dbc8.390014",
+        "type": "ui_gauge",
+        "z": "772e6979.67cd08",
+        "name": "CPU Load 2",
+        "group": "7853403.230cdc",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "5 Minutes",
+        "label": "load",
+        "format": "{{value | number:2}}",
         "min": 0,
-        "max": "200",
-        "step": 1,
-        "x": 130,
-        "y": 380,
+        "max": "4",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 501,
+        "y": 145,
+        "wires": []
+    },
+    {
+        "id": "1ff0080f.4e10c8",
+        "type": "ui_gauge",
+        "z": "772e6979.67cd08",
+        "name": "CPU Load 3",
+        "group": "7853403.230cdc",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "15 Minutes",
+        "label": "load",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "4",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 499,
+        "y": 187,
+        "wires": []
+    },
+    {
+        "id": "e6b8a679.aff648",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.memusage;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 116,
+        "y": 699,
         "wires": [
             [
-                "3692c3e.596783c",
-                "be838f3e.6af14",
-                "da3a316d.a4e43"
+                "cc57cdea.f9387"
             ]
         ]
     },
     {
-        "id": "be838f3e.6af14",
-        "type": "ui_chart",
-        "z": "9583b8de.96bc48",
+        "id": "cc57cdea.f9387",
+        "type": "ui_gauge",
+        "z": "772e6979.67cd08",
+        "name": "Memory Usage",
+        "group": "1d1da0fc.6ab84f",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "1 Minute",
+        "label": "Usage",
+        "format": "{{value | number:2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "x": 300,
+        "y": 703,
+        "wires": []
+    },
+    {
+        "id": "dd0cca19.6f90a8",
+        "type": "function",
+        "z": "772e6979.67cd08",
         "name": "",
-        "group": "122a9c51.bdf31c",
+        "func": "function formatBytes(bytes,decimals) {\n   if(bytes === 0) return '0 Byte';\n   var k = 1000; // or 1024 for binary\n   var dm = decimals + 1 || 3;\n   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n   var i = Math.floor(Math.log(bytes) / Math.log(k));\n   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.payload = formatBytes(msg.payload.totalmem);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 118,
+        "y": 742,
+        "wires": [
+            [
+                "4aeaebd1.24f4c4"
+            ]
+        ]
+    },
+    {
+        "id": "308d683f.10ab08",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "function formatBytes(bytes,decimals) {\n   if(bytes === 0) return '0 Byte';\n   var k = 1000; // or 1024 for binary\n   var dm = decimals + 1 || 3;\n   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n   var i = Math.floor(Math.log(bytes) / Math.log(k));\n   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nmsg.payload = formatBytes(msg.payload.freemem);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 116,
+        "y": 788,
+        "wires": [
+            [
+                "ef649e9b.dce7d"
+            ]
+        ]
+    },
+    {
+        "id": "4aeaebd1.24f4c4",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "1d1da0fc.6ab84f",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Total Memory",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 299,
+        "y": 746,
+        "wires": []
+    },
+    {
+        "id": "ef649e9b.dce7d",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "1d1da0fc.6ab84f",
         "order": 3,
         "width": "0",
         "height": "0",
-        "label": "line chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "200",
-        "removeOlder": "2",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "x": 360,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "da3a316d.a4e43",
-        "type": "ui_chart",
-        "z": "9583b8de.96bc48",
         "name": "",
-        "group": "122a9c51.bdf31c",
-        "order": 4,
-        "width": "0",
-        "height": "0",
-        "label": "bar chart",
-        "chartType": "bar",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "200",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "x": 360,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b7e35051.2b75b",
-        "type": "ui_toast",
-        "z": "9583b8de.96bc48",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "",
-        "name": "",
-        "x": 370,
-        "y": 280,
+        "label": "Free Memory",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 303,
+        "y": 789,
         "wires": []
     },
     {
-        "id": "3375341f.88f7e4",
-        "type": "ui_audio",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "2fb9c205.dae50e",
-        "voice": "en-US",
-        "always": "",
-        "x": 360,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "8399a57bab81eb9c",
-        "type": "debug",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 1030,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "5ff66e4126d25d44",
-        "type": "ui_chart",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "baa4830e.d51ff",
-        "order": 0,
-        "width": "8",
-        "height": "6",
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "1",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "x": 1010,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e76adff124a6a4ab",
-        "type": "inject",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 710,
-        "y": 120,
-        "wires": [
-            [
-                "0ffd8ea468f69494"
-            ]
-        ]
-    },
-    {
-        "id": "0ffd8ea468f69494",
-        "type": "ui_switch",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "6d02446b.841c64",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 870,
-        "y": 120,
-        "wires": [
-            [
-                "2d653edab64fbfcc"
-            ]
-        ]
-    },
-    {
-        "id": "2d653edab64fbfcc",
-        "type": "switch",
-        "z": "9583b8de.96bc48",
-        "name": "Switch On",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1020,
-        "y": 120,
-        "wires": [
-            [
-                "5397fa49fa8d8e23"
-            ]
-        ]
-    },
-    {
-        "id": "5fb1c1c36b5bda03",
-        "type": "template",
-        "z": "9583b8de.96bc48",
-        "name": "Alert",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alert: CPU {{topic}} is {{payload}}%",
-        "output": "str",
-        "x": 1130,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "204f5bc415e4a099",
-        "type": "switch",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "50",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1010,
-        "y": 320,
-        "wires": [
-            [
-                "5fb1c1c36b5bda03"
-            ]
-        ]
-    },
-    {
-        "id": "417ea31b459acc2d",
-        "type": "ui_gauge",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": "0",
-        "height": "0",
-        "gtype": "gage",
-        "title": "CPU 1",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1190,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "30dff5326495515e",
-        "type": "switch",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "core_1",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_2",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_3",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_4",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 1010,
-        "y": 440,
-        "wires": [
-            [
-                "417ea31b459acc2d"
-            ],
-            [
-                "aa625cb62eb5db76"
-            ],
-            [
-                "2d8383a4a9af660e"
-            ],
-            [
-                "d219fb022ebb18c7"
-            ]
-        ]
-    },
-    {
-        "id": "aa625cb62eb5db76",
-        "type": "ui_gauge",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 2",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1190,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "2d8383a4a9af660e",
-        "type": "ui_gauge",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 3",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1190,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "d219fb022ebb18c7",
-        "type": "ui_gauge",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 4",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 1190,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "5397fa49fa8d8e23",
-        "type": "cpu",
-        "z": "9583b8de.96bc48",
-        "name": "",
-        "msgCore": true,
-        "msgOverall": false,
-        "msgArray": false,
-        "msgTemp": false,
-        "x": 810,
-        "y": 260,
-        "wires": [
-            [
-                "8399a57bab81eb9c",
-                "5ff66e4126d25d44",
-                "204f5bc415e4a099",
-                "30dff5326495515e"
-            ]
-        ]
-    },
-    {
-        "id": "1e9d7bc0.fcb984",
-        "type": "debug",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 430,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "d274050d.badb88",
-        "type": "ui_chart",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "group": "baa4830e.d51ff",
-        "order": 0,
-        "width": "8",
-        "height": "6",
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "1",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "x": 410,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "968d0d83.26b41",
-        "type": "inject",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 60,
-        "wires": [
-            [
-                "4b6874aa.19c8d4"
-            ]
-        ]
-    },
-    {
-        "id": "4b6874aa.19c8d4",
-        "type": "ui_switch",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "6d02446b.841c64",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 270,
-        "y": 60,
-        "wires": [
-            [
-                "7697565f.2e6618"
-            ]
-        ]
-    },
-    {
-        "id": "7697565f.2e6618",
-        "type": "switch",
-        "z": "90da6d14.cc65d8",
-        "name": "Switch On",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 420,
-        "y": 60,
-        "wires": [
-            [
-                "ed89ea38.72527"
-            ]
-        ]
-    },
-    {
-        "id": "f12ff5fc.0fc79",
-        "type": "ui_toast",
-        "z": "90da6d14.cc65d8",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "topic": "",
-        "name": "",
-        "x": 690,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "2b2616b0.28443a",
-        "type": "template",
-        "z": "90da6d14.cc65d8",
-        "name": "Alert",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alert: CPU {{topic}} is {{payload}}%",
-        "output": "str",
-        "x": 530,
-        "y": 260,
-        "wires": [
-            [
-                "f12ff5fc.0fc79"
-            ]
-        ]
-    },
-    {
-        "id": "3af072a3.14a1ce",
-        "type": "switch",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "50",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 410,
-        "y": 260,
-        "wires": [
-            [
-                "2b2616b0.28443a"
-            ]
-        ]
-    },
-    {
-        "id": "36c7bd83.27b4f2",
-        "type": "ui_gauge",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": "0",
-        "height": "0",
-        "gtype": "gage",
-        "title": "CPU 1",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 590,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "29073f22.c591c8",
-        "type": "switch",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "core_1",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_2",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_3",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "core_4",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 4,
-        "x": 410,
-        "y": 380,
-        "wires": [
-            [
-                "36c7bd83.27b4f2"
-            ],
-            [
-                "b3ee09cd.598f48"
-            ],
-            [
-                "1ab8d355.16ca75"
-            ],
-            [
-                "8bd46bad.a915f"
-            ]
-        ]
-    },
-    {
-        "id": "b3ee09cd.598f48",
-        "type": "ui_gauge",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 2",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 590,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "1ab8d355.16ca75",
-        "type": "ui_gauge",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 3",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 590,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "8bd46bad.a915f",
-        "type": "ui_gauge",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "group": "3d630fa8.8d0d68",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "CPU 4",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 590,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "ed89ea38.72527",
-        "type": "cpu",
-        "z": "90da6d14.cc65d8",
-        "name": "",
-        "msgCore": true,
-        "msgOverall": false,
-        "msgArray": false,
-        "msgTemp": false,
-        "x": 210,
-        "y": 200,
-        "wires": [
-            [
-                "1e9d7bc0.fcb984",
-                "d274050d.badb88",
-                "3af072a3.14a1ce",
-                "29073f22.c591c8"
-            ]
-        ]
-    },
-    {
-        "id": "a9be280c.f004d8",
-        "type": "inject",
-        "z": "9b46958.ce6a368",
-        "name": "Every 5 sec",
-        "repeat": "5",
-        "crontab": "",
-        "once": false,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 100,
-        "wires": [
-            [
-                "c5bf6cce.78d2f"
-            ]
-        ]
-    },
-    {
-        "id": "ed24894e.c2707",
-        "type": "http request",
-        "z": "9b46958.ce6a368",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "url": "http://api.open-notify.org/iss-now.json",
-        "tls": "",
-        "x": 610,
-        "y": 100,
-        "wires": [
-            [
-                "4a06a917.1074b8",
-                "4586a2ff.c4e2ac"
-            ]
-        ]
-    },
-    {
-        "id": "4a06a917.1074b8",
-        "type": "debug",
-        "z": "9b46958.ce6a368",
-        "name": "",
-        "active": false,
-        "console": "false",
-        "complete": "false",
-        "x": 810,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "4586a2ff.c4e2ac",
+        "id": "20567afa.bd4466",
         "type": "function",
-        "z": "9b46958.ce6a368",
-        "name": "Extract ISS Location",
-        "func": "var iss_location = msg.payload.iss_position;\n\nmsg.payload = { \n        name : \"International Space Station\",\n        lat  : parseFloat(iss_location.latitude),\n        lon  : parseFloat(iss_location.longitude),\n        icon: \"iss\",\n        iconColor:'#900000',\n        command : { \"zoom\" : 3 }\n};\n\nreturn msg;",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "function timeConversion(millisec) {\n\n    var seconds = (millisec / 1000).toFixed(1);\n\n    var minutes = (millisec / (1000 * 60)).toFixed(1);\n\n    var hours = (millisec / (1000 * 60 * 60)).toFixed(1);\n\n    var days = (millisec / (1000 * 60 * 60 * 24)).toFixed(1);\n\n    if (seconds < 60) {\n        return seconds + \" Sec\";\n    } else if (minutes < 60) {\n        return minutes + \" Min\";\n    } else if (hours < 24) {\n        return hours + \" Hrs\";\n    } else {\n        return days + \" Days\"\n    }\n}\n\nmsg.payload = timeConversion(msg.payload.uptime * 1000);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 180,
-        "y": 280,
+        "x": 406,
+        "y": 353,
         "wires": [
             [
-                "8a2f98ed.cbbb08",
-                "9d017892.d58c28",
-                "991ab523.dc1c78"
+                "91bb24ba.6dba48"
             ]
         ]
     },
     {
-        "id": "8a2f98ed.cbbb08",
-        "type": "debug",
-        "z": "9b46958.ce6a368",
+        "id": "91bb24ba.6dba48",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
         "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 410,
-        "y": 320,
+        "label": "Uptime",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 561,
+        "y": 352,
         "wires": []
     },
     {
-        "id": "c5f1b810.713fc",
-        "type": "comment",
-        "z": "9b46958.ce6a368",
-        "name": "Query the location of the International Space Station",
-        "info": "",
-        "x": 234.44444444444446,
-        "y": 64.44444444444443,
-        "wires": []
-    },
-    {
-        "id": "c5bf6cce.78d2f",
-        "type": "ui_switch",
-        "z": "9b46958.ce6a368",
+        "id": "f745cace.30f2d8",
+        "type": "function",
+        "z": "772e6979.67cd08",
         "name": "",
-        "label": "switch",
-        "tooltip": "",
-        "group": "9813997d.68df88",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 290,
-        "y": 100,
-        "wires": [
-            [
-                "facf4978.0c9fc8"
-            ]
-        ]
-    },
-    {
-        "id": "facf4978.0c9fc8",
-        "type": "switch",
-        "z": "9b46958.ce6a368",
-        "name": "Switch On",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "true",
+        "func": "msg.payload = msg.payload.hostname;\nreturn msg;",
         "outputs": 1,
-        "x": 440,
-        "y": 100,
+        "noerr": 0,
+        "x": 405,
+        "y": 390,
         "wires": [
             [
-                "ed24894e.c2707"
+                "f9bfd652.4be908"
             ]
         ]
     },
     {
-        "id": "9d017892.d58c28",
-        "type": "worldmap-tracks",
-        "z": "9b46958.ce6a368",
+        "id": "f9bfd652.4be908",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
         "name": "",
-        "depth": "100",
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [
-                "991ab523.dc1c78"
-            ]
-        ]
-    },
-    {
-        "id": "991ab523.dc1c78",
-        "type": "ui_worldmap",
-        "z": "9b46958.ce6a368",
-        "group": "66464e0a.235a1",
-        "order": 0,
-        "width": "15",
-        "height": "15",
-        "name": "",
-        "lat": "",
-        "lon": "",
-        "zoom": "5",
-        "layer": "Esri Satellite",
-        "cluster": "",
-        "maxage": "",
-        "usermenu": "hide",
-        "layers": "hide",
-        "panit": "false",
-        "panlock": "false",
-        "zoomlock": "false",
-        "hiderightclick": "true",
-        "coords": "none",
-        "showgrid": "false",
-        "path": "/worldmap",
-        "x": 560,
-        "y": 280,
+        "label": "Hostname",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 573,
+        "y": 392,
         "wires": []
+    },
+    {
+        "id": "3153bd68.82b782",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.platform;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 407,
+        "y": 428,
+        "wires": [
+            [
+                "6c7dc269.a0180c"
+            ]
+        ]
+    },
+    {
+        "id": "6c7dc269.a0180c",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Platform",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 569,
+        "y": 431,
+        "wires": []
+    },
+    {
+        "id": "7eec4b7e.c15ad4",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.arch;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 408,
+        "y": 467,
+        "wires": [
+            [
+                "a6e5bcd3.7c90e"
+            ]
+        ]
+    },
+    {
+        "id": "a6e5bcd3.7c90e",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Arch",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 557,
+        "y": 471,
+        "wires": []
+    },
+    {
+        "id": "6b4d7f76.271fb",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.release;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 409,
+        "y": 503,
+        "wires": [
+            [
+                "f7e2d4a1.f3acf8"
+            ]
+        ]
+    },
+    {
+        "id": "f7e2d4a1.f3acf8",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Release",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 569,
+        "y": 509,
+        "wires": []
+    },
+    {
+        "id": "8a945e71.8626b",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.cpus[0].model;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 408,
+        "y": 544,
+        "wires": [
+            [
+                "6ce3fe6a.0088f",
+                "6ed6930f.dfaa0c",
+                "2cf68a4b.2caef6",
+                "6ad00145.d0875"
+            ]
+        ]
+    },
+    {
+        "id": "6ce3fe6a.0088f",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "CPU 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 560,
+        "y": 552,
+        "wires": []
+    },
+    {
+        "id": "6ed6930f.dfaa0c",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "CPU 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 562,
+        "y": 591,
+        "wires": []
+    },
+    {
+        "id": "2cf68a4b.2caef6",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "CPU 3",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 564,
+        "y": 632,
+        "wires": []
+    },
+    {
+        "id": "6ad00145.d0875",
+        "type": "ui_text",
+        "z": "772e6979.67cd08",
+        "group": "a9912d64.97094",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "CPU 4",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 566,
+        "y": 672,
+        "wires": []
+    },
+    {
+        "id": "a25b88bc.6ead88",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.loadavg[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 338,
+        "y": 229,
+        "wires": [
+            [
+                "a978ef7f.6851a"
+            ]
+        ]
+    },
+    {
+        "id": "a978ef7f.6851a",
+        "type": "ui_chart",
+        "z": "772e6979.67cd08",
+        "name": "CPU Load - Historical",
+        "group": "7853403.230cdc",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "label": "24 Hours",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "%H:%M:%S",
+        "interpolate": "linear",
+        "nodata": "",
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderUnit": "86400",
+        "outputs": 2,
+        "x": 530,
+        "y": 229,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fbd3e7db.8ca558",
+        "type": "function",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "func": "msg.payload = msg.payload.memusage;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 113,
+        "y": 660,
+        "wires": [
+            [
+                "ae72c338.cf1ff"
+            ]
+        ]
+    },
+    {
+        "id": "ae72c338.cf1ff",
+        "type": "ui_chart",
+        "z": "772e6979.67cd08",
+        "name": "Memory - 24 Hours",
+        "group": "1d1da0fc.6ab84f",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "label": "24 Hours",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "%H:%M:%S",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 311,
+        "y": 663,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d8c1a68.736494",
+        "type": "comment",
+        "z": "772e6979.67cd08",
+        "name": "CPU Load",
+        "info": "",
+        "x": 488,
+        "y": 57,
+        "wires": []
+    },
+    {
+        "id": "c759448a.854258",
+        "type": "comment",
+        "z": "772e6979.67cd08",
+        "name": "Memory Usage",
+        "info": "",
+        "x": 296,
+        "y": 613,
+        "wires": []
+    },
+    {
+        "id": "ff2b3794.382148",
+        "type": "comment",
+        "z": "772e6979.67cd08",
+        "name": "System Information",
+        "info": "",
+        "x": 587,
+        "y": 302,
+        "wires": []
+    },
+    {
+        "id": "f25a9b1d.c6fce8",
+        "type": "OS",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "x": 234,
+        "y": 398,
+        "wires": [
+            [
+                "f745cace.30f2d8",
+                "3153bd68.82b782",
+                "7eec4b7e.c15ad4",
+                "6b4d7f76.271fb"
+            ]
+        ]
+    },
+    {
+        "id": "c63cb373.ce94f",
+        "type": "Uptime",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "x": 245,
+        "y": 353,
+        "wires": [
+            [
+                "20567afa.bd4466"
+            ]
+        ]
+    },
+    {
+        "id": "21faa622.8c25da",
+        "type": "CPUs",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "x": 234,
+        "y": 443,
+        "wires": [
+            [
+                "8a945e71.8626b"
+            ]
+        ]
+    },
+    {
+        "id": "7780c9ca.7581b8",
+        "type": "Loadavg",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "x": 171,
+        "y": 165,
+        "wires": [
+            [
+                "240a76f3.9953ea",
+                "5d85387c.957fb8",
+                "b33d4d45.a6673",
+                "a25b88bc.6ead88"
+            ]
+        ]
+    },
+    {
+        "id": "7cf01d46.a3cad4",
+        "type": "Memory",
+        "z": "772e6979.67cd08",
+        "name": "",
+        "x": 111,
+        "y": 531,
+        "wires": [
+            [
+                "e6b8a679.aff648",
+                "dd0cca19.6f90a8",
+                "308d683f.10ab08",
+                "fbd3e7db.8ca558"
+            ]
+        ]
     },
     {
         "id": "b7c88334044d2442",
@@ -7568,109 +7585,6 @@
         ]
     },
     {
-        "id": "96cb284c3591def4",
-        "type": "ui-template",
-        "z": "eb4902f354a3b11b",
-        "group": "b754f85f5adaf50c",
-        "page": "",
-        "ui": "",
-        "name": "Binary File Upload",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <v-card width=\"1000\" height=\"400\" raised color=\"white\">\n        <v-card-title>Upload Triage / Image file for processing</v-card-title>\n        <br>\n        <v-card-text>\n            <v-file-input label=\"Click here to select a file\" show-size v-model=\"uploadFile\"></v-file-input>\n            <v-select v-model=\"fileType\" :items=\"['Triage', 'Malware']\" label=\"Select file type\"></v-select>\n            <div>Progress: {{ progress }} bytes loaded</div>\n        </v-card-text>\n        <v-card-actions>\n            <v-spacer></v-spacer>\n            <v-btn right @click=\"startUpload\">Upload File</v-btn>\n        </v-card-actions>\n    </v-card>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                uploadFile: null,\n                fileType: null,\n                progress: 0\n            }\n        },\n        methods: {\n            startUpload() {\n                if (!this.uploadFile || !this.fileType) {\n                    return;\n                } else {\n                    const reader = new FileReader();\n                    reader.readAsArrayBuffer(this.uploadFile);\n                    reader.onload = () => {\n                        this.send({topic:\"upload\", payload: reader.result, file:{name: this.uploadFile.name, size: this.uploadFile.size, type: this.uploadFile.type, fileType: this.fileType }  });\n                    }\n                    reader.onprogress = (data) => {\n                        this.progress = data.loaded;\n                    }\n                }\n            }\n        }\n    }\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 390,
-        "y": 280,
-        "wires": [
-            [
-                "5db413f820f8928d"
-            ]
-        ]
-    },
-    {
-        "id": "74c42d034a938e43",
-        "type": "debug",
-        "z": "eb4902f354a3b11b",
-        "name": "debug 365",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1130,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "5db413f820f8928d",
-        "type": "function",
-        "z": "eb4902f354a3b11b",
-        "name": "buffer2string",
-        "func": "msg.filename = msg.file.name;\nif (msg.file.fileType === 'Triage') {\n    msg.filepath = \"/cases/processor/\" + msg.filename;\n    msg.casesdir = \"/cases/processor/\";\n} else if (msg.file.fileType === 'Malware') {\n    msg.filepath = \"/cases/malware/\" + msg.filename;\n    msg.casesdir = \"/cases/malware/\";\n}\nmsg.homedir = \"/home/ubuntu/\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 280,
-        "wires": [
-            [
-                "f5646da4c2a11943"
-            ]
-        ]
-    },
-    {
-        "id": "f5646da4c2a11943",
-        "type": "file",
-        "z": "eb4902f354a3b11b",
-        "name": "Save File",
-        "filename": "filename",
-        "filenameType": "msg",
-        "appendNewline": false,
-        "createDir": true,
-        "overwriteFile": "false",
-        "encoding": "binary",
-        "x": 880,
-        "y": 280,
-        "wires": [
-            [
-                "74c42d034a938e43",
-                "5c191812e3ec1017"
-            ]
-        ]
-    },
-    {
-        "id": "5c191812e3ec1017",
-        "type": "fs-ops-move",
-        "z": "eb4902f354a3b11b",
-        "name": "",
-        "sourcePath": "homedir",
-        "sourcePathType": "msg",
-        "sourceFilename": "filename",
-        "sourceFilenameType": "msg",
-        "destPath": "casesdir",
-        "destPathType": "msg",
-        "destFilename": "filename",
-        "destFilenameType": "msg",
-        "link": false,
-        "x": 1000,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "719fa2912769afc5",
         "type": "subflow:32cfc6ae564d5d0d",
         "z": "ce54a2c5ab584757",
@@ -7812,6 +7726,227 @@
         "y": 380,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "ffa6f27918e862df",
+        "type": "ui-template",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "group": "b73dc5151c8cd587",
+        "page": "",
+        "ui": "",
+        "name": "UPLOAD",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<v-file-input show-size multiple chips :rules=\"rules\" accept=\".csv\"\n    variant=\"underlined\" label=\"File input\" v-on:change=\"uploadFile\" v-model=\"value\"\n    active-color=\"primary\" @update:modelValue=\"send({payload: value})\" />\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "82017f5035333378"
+            ]
+        ]
+    },
+    {
+        "id": "82017f5035333378",
+        "type": "change",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "cdfa41d591861944"
+            ]
+        ]
+    },
+    {
+        "id": "cdfa41d591861944",
+        "type": "function",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "Convert Hex to String",
+        "func": "const hexBuffer = msg.payload;\n\n// Convert the hex buffer to a Buffer object\nconst buffer = Buffer.from(hexBuffer, 'hex');\n\n// Convert the Buffer to a string\nconst string = buffer.toString();\n\n// Assign the string to msg.payload for further processing\nmsg.payload = string;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 400,
+        "wires": [
+            [
+                "c87fa6dddbc3f4ec"
+            ]
+        ]
+    },
+    {
+        "id": "c87fa6dddbc3f4ec",
+        "type": "csv",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "1",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "d4448932e0fe7a19"
+            ]
+        ]
+    },
+    {
+        "id": "99f07b6c3e38e0e4",
+        "type": "ui-table",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "group": "b73dc5151c8cd587",
+        "name": "",
+        "label": "text",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "autocols": true,
+        "columns": [],
+        "x": 1270,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1db33ec989a7d826",
+        "type": "ui-button",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "group": "b73dc5151c8cd587",
+        "name": "",
+        "label": "Send to ....",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "CSV",
+        "payloadType": "flow",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "994b8815bd5d29ac"
+            ]
+        ]
+    },
+    {
+        "id": "d4448932e0fe7a19",
+        "type": "change",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "CSV",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 400,
+        "wires": [
+            [
+                "99f07b6c3e38e0e4"
+            ]
+        ]
+    },
+    {
+        "id": "2362014ac10a6dd5",
+        "type": "debug",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "994b8815bd5d29ac",
+        "type": "change",
+        "z": "013503dd751f3a30",
+        "g": "874be12f42def019",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "CSV",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "2362014ac10a6dd5"
+            ]
         ]
     }
 ]
