@@ -47,7 +47,12 @@ sudo mkdir /data
 sudo mkdir /cases/plaso
 sudo mkdir /cases/processor
 sudo mkdir /cases/evtxproc
-sudo mkdir /cases/processor/host-triage
+sudo mkdir /cases/processor/hashes
+sudo mkdir /cases/processor/logfile
+sudo mkdir /cases/malware/
+sudo mkdir /cases/malware/hashes
+sudo mkdir /cases/processor/logfile
+
 sudo chmod -R 777 /cases
 sudo chmod -R 777 /data
 
@@ -75,6 +80,28 @@ sudo unzip hayabusa-2.15.0-all-platforms.zip
 sudo chmod 777 -R $OPT
 sudo mv /opt/hayabusa/hayabusa-2.15.0-lin-x64-musl /opt/hayabusa/hayabusa
 sudo chmod +x /opt/hayabusa/hayabusa
+
+# Install Capa
+sudo mkdir /opt/capa
+sudo chmod 777 -R /opt/capa
+cd /opt/capa/
+sudo wget https://github.com/mandiant/capa/releases/download/v7.0.1/capa-v7.0.1-linux.zip
+sudo unzip capa-v7.0.1-linux.zip
+sudo chmod 777 -R $OPT
+sudo chmod +x /opt/capa
+
+# Install Chainsaw
+cd /opt/
+sudo wget https://github.com/WithSecureLabs/chainsaw/releases/download/v2.9.0/chainsaw_all_platforms+rules.zip
+sudo unzip chainsaw_all_platforms+rules.zip
+sudo mv /opt/chainsaw/chainsaw_x86_64-unknown-linux-gnu /opt/chainsaw/chainsaw
+sudo chmod 777 -R $OPT
+sudo chmod +x /opt/chainsaw/chainsaw
+
+# Install ClamAV
+sudo apt install clamav
+sudo mkdir /cases/malware/results
+sudo chmod 777 -R $OPT
 
 # Download the loop.sh file for the plaso container
 sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/master/loop.sh -O /opt/timesketch/loop.sh
