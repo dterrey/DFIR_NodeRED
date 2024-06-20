@@ -23,6 +23,11 @@ OPT="/opt"
 CAPA="/opt/capa"
 APTHUNTER="/opt/apthunter"
 MALWARE="/cases/malware"
+MALWAREHASHES="/cases/malware/hashes"
+TRIAGEHASHES="/cases/processor/hashes"
+MALWARELOG="/cases/malware/logfile"
+TRIAGELOG="/cases/processor/logfile"
+
 
 # ---------------------------------------
 
@@ -37,10 +42,10 @@ sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release cargo unzip unrar docker.io python3-pip expect docker-compose docker-compose-plugin -y
 
 # Install Portainer for easier container management
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo docker pull portainer/portainer-ce:latest
-sudo docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce:latest
+#sudo systemctl start docker
+#sudo systemctl enable docker
+#sudo docker pull portainer/portainer-ce:latest
+#sudo docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce:latest
 
 echo "\n"
 echo "******************************************************************************************"
@@ -71,6 +76,10 @@ sudo mkdir $CAPA
 sudo mkdir $APTHUNTER
 sudo mkdir $MALWARE
 sudo mkdir $RESULTS
+sudo mkdir $TRIAGEHASHES
+sudo mkdir $TRIAGELOG
+sudo mkdir $MALWAREHASHES
+sudo mkdir $MALWARELOG
 sudo chmod -R 777 $CASES_DIR
 sudo chmod -R 777 $DATA_DIR
 
