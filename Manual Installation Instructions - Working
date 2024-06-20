@@ -59,9 +59,16 @@ sudo chmod -R 777 /data
 
 # Native Install Commented Out
 sudo add-apt-repository universe -y
-add-apt-repository ppa:gift/stable -y
-apt-get update
-apt-get install plaso-tools -y
+sudo add-apt-repository ppa:gift/stable -y
+sudo apt-get update
+sudo apt-get install plaso-tools -y
+
+# Ubuntu 24.04 LTS
+sudo add-apt-repository universe -y
+sudo add-apt-repository ppa:gift/testing
+sudo apt update
+sudo apt-get install plaso-tools -y
+
 
 # Install Timesketch import client to assist with larger plaso uploads
 sudo pip3 install timesketch-import-client
