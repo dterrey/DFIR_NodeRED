@@ -132,6 +132,14 @@ sudo systemctl start nodered.service
 # OLD --> sudo echo -e '\nWTF_CSRF_TIME_LIMIT = 3600' >> /opt/timesketch/etc/timesketch/timesketch.conf
 sudo sh -c "echo -e '\nWTF_CSRF_TIME_LIMIT = 3600' >> /opt/timesketch/timesketch/etc/timesketch/timesketch.conf"
 
+#NodeRed Install Custom Nodes
+npm install node-red-dashboard
+npm install @flowfuse/node-red-dashboard
+npm install node-red-contrib-fs-ops 
+npm install node-red-contrib-watchdirectory
+npm install node-red-contrib-simple-queue 
+npm install node-red-contrib-ui-upload
+
 
 "******************************************************************************************"
 printf "To Access Node-Red: localhost:1880 \n"
