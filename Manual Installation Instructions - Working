@@ -75,6 +75,8 @@ sudo pip3 install timesketch-import-client
 pip3 install timesketch-import-client
 
 # Download the latest tags file from dterrey forked repo
+sudo mkdir /opt/timesketch/etc
+sudo mkdir /opt/timesketch/etc/timesketch
 sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/master/tags.yaml -O /opt/timesketch/etc/timesketch/tags.yaml
 
 
@@ -82,10 +84,10 @@ sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/mast
 sudo mkdir /opt/hayabusa
 sudo chmod 777 -R /opt/hayabusa
 cd /opt/hayabusa/
-sudo wget https://github.com/Yamato-Security/hayabusa/releases/download/v2.15.0/hayabusa-2.15.0-all-platforms.zip
-sudo unzip hayabusa-2.15.0-all-platforms.zip
+sudo wget https://github.com/Yamato-Security/hayabusa/releases/download/v2.16.0/hayabusa-2.16.0-all-platforms.zip
+sudo unzip hayabusa-2.16.0-all-platforms.zip
 sudo chmod 777 -R $OPT
-sudo mv /opt/hayabusa/hayabusa-2.15.0-lin-x64-musl /opt/hayabusa/hayabusa
+sudo mv /opt/hayabusa/hayabusa-2.16.0-lin-x64-musl /opt/hayabusa/hayabusa
 sudo chmod +x /opt/hayabusa/hayabusa
 
 # Install Capa
@@ -111,10 +113,10 @@ sudo mkdir /cases/malware/results
 sudo chmod 777 -R $OPT
 
 # Download the loop.sh file for the plaso container
-sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/master/loop.sh -O /opt/timesketch/loop.sh
+sudo wget -Nq https://raw.githubusercontent.com/dterrey/DFIR_NodeRED/master/loop.sh -O /opt/timesketch/loop.sh
 
 # Create the first user account
-sudo docker-compose exec timesketch-web tsctl create-user $USER1_NAME --password $USER1_PASSWORD
+sudo docker-compose exec timesketch-web tsctl create-user dfir --password admin
 
 # Install Node-Red
 # Download the script
