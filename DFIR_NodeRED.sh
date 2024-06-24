@@ -21,7 +21,7 @@ HOST_TRIAGE_DIR="/cases/processor/host-triage"
 EVTXPROC="/cases/evtxproc"
 OPT="/opt"
 CAPA="/opt/capa"
-APTHUNTER="/opt/apthunter"
+CHAINSAW="/cases/evtxproc/chainsaw"
 MALWARE="/cases/malware"
 MALWAREHASHES="/cases/malware/hashes"
 TRIAGEHASHES="/cases/processor/hashes"
@@ -80,6 +80,7 @@ sudo mkdir $TRIAGEHASHES
 sudo mkdir $TRIAGELOG
 sudo mkdir $MALWAREHASHES
 sudo mkdir $MALWARELOG
+sudo mkdir $CHAINSAW
 sudo chmod -R 777 $CASES_DIR
 sudo chmod -R 777 $DATA_DIR
 
@@ -128,15 +129,6 @@ sudo unzip capa-v7.0.1-linux.zip
 sudo chmod 777 -R $OPT
 sudo chmod +x /opt/capa
 
-# Install APTHunter
-sudo mkdir /opt/apthunter
-sudo chmod 777 -R /opt/apthunter
-cd /opt/apthunter/
-sudo wget https://github.com/ahmedkhlief/APT-Hunter/archive/refs/tags/V3.2.zip
-sudo unzip APT-Hunter-3.2.zip
-sudo chmod 777 -R $OPT
-sudo chmod +x /opt/apthunter
-sudo pip install flatten_json
 
 # Download the loop.sh file for the plaso container
 sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/master/loop.sh -O /opt/timesketch/loop.sh
@@ -159,6 +151,7 @@ bash /tmp/update_script.sh
 sudo systemctl enable nodered.service
 sudo systemctl start nodered.service
 
+sudo chmod 777 -R /cases/malware/results/
 
 #Increase the CSRF token time limit
 # OLD --> sudo echo -e '\nWTF_CSRF_TIME_LIMIT = 3600' >> /opt/timesketch/etc/timesketch/timesketch.conf
