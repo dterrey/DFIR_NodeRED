@@ -149,6 +149,8 @@ sudo chmod 777 -R $OPT
 # Download the script
 curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered > /tmp/update_script.sh
 
+bash /tmp/update_script.sh
+
 sudo systemctl enable nodered.service
 sudo systemctl start nodered.service
 
