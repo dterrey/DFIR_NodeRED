@@ -146,42 +146,8 @@ sudo mkdir /cases/malware/results
 sudo chmod 777 -R $OPT
 
 
-
-# Get the username of the user who invoked sudo
-current_user="$SUDO_USER"
-
-# Check if SUDO_USER is empty (script was not invoked with sudo)
-if [ -z "$current_user" ]; then
-    echo "Please run this script with sudo."
-    exit 1
-fi
-
-# Move the file using the current username
-sudo chmod 777 -R /home/$current_user/AllthingsTimesketch
-#sudo curl -sSL https://install.python-poetry.org | python3 -
-#echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-#echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> ~/.bashrc
-#source ~/.bashrc
-#sudo chmod 777 -R /opt/dftimewolf
-#pip install poetry
-#poetry install
-#mv /home/$current_user/AllthingsTimesketch/dftimewolf_csv.sh /opt/dftimewolf/dftimewolf_csv.sh
-#mv /home/$current_user/AllthingsTimesketch/dftimewolf_csv.py /opt/dftimewolf/dftimewolf_csv.py
-#mv /home/$current_user/AllthingsTimesketch/dftimewolf_plaso.sh /opt/dftimewolf/dftimewolf_plaso.sh
-#mv /home/$current_user//AllthingsTimesketch/dftimewolf_plaso.py /opt/dftimewolf/dftimewolf_plaso.py
-#sudo chmod 777 -R /opt/dftimewolf
-
-#!/bin/bash
-
-# Install Node-Red as the user "ubuntu"
-sudo -u ubuntu bash -c '
-
 # Download the script
 curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered > /tmp/update_script.sh
-
-# Execute the downloaded script
-bash /tmp/update_script.sh
-'
 
 sudo systemctl enable nodered.service
 sudo systemctl start nodered.service
@@ -191,14 +157,15 @@ sudo systemctl start nodered.service
 # OLD --> sudo echo -e '\nWTF_CSRF_TIME_LIMIT = 3600' >> /opt/timesketch/etc/timesketch/timesketch.conf
 sudo sh -c "echo -e '\nWTF_CSRF_TIME_LIMIT = 3600' >> /opt/timesketch/timesketch/etc/timesketch/timesketch.conf"
 
+sudo sh -c "echo 'PATH=\$PATH:\$HOME/.local/bin' >> $HOME/.bashrc"
+source ~/.bashrc
 
+pip3 install --upgrade pip
 
-# Ingesting Plaso Logs into Elastic/Kibana
-#sudo pip install pyelasticsearch
+pip3 install notebook
 
-#Source - https://github.com/deviantony/docker-elk?tab=readme-ov-file#injecting-data
-
-
+cd ~/Downloads
+git clone https://github.com/dterrey/JupPlas_lib
 
 echo "\n"
 echo "******************************************************************************************"
