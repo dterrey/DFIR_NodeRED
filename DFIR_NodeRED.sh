@@ -168,7 +168,6 @@ cd ~/Downloads
 git clone https://github.com/dterrey/JupPlas_lib
 
 
-
 echo "\n"
 echo "******************************************************************************************"
 printf "To Access Node-Red: localhost:1880 \n"
