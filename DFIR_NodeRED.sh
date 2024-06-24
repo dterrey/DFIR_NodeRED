@@ -83,6 +83,11 @@ sudo mkdir $MALWARELOG
 sudo chmod -R 777 $CASES_DIR
 sudo chmod -R 777 $DATA_DIR
 
+touch /cases/malware/hashes/hashes.txt
+touch /cases/processor/hashes/hashes.txt
+touch /cases/malware/logfile/logfile.txt
+touch /cases/processor/logfile/logfile.txt
+
 
 # Native Install Commented Out
 sudo add-apt-repository universe -y
@@ -168,6 +173,8 @@ pip3 install notebook
 
 cd ~/Downloads
 git clone https://github.com/dterrey/JupPlas_lib
+
+
 
 echo "\n"
 echo "******************************************************************************************"
