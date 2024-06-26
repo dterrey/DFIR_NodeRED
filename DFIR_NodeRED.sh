@@ -131,7 +131,7 @@ sudo chmod +x /opt/capa
 
 
 # Download the loop.sh file for the plaso container
-sudo wget -Nq https://raw.githubusercontent.com/dterrey/AllthingsTimesketch/master/loop.sh -O /opt/timesketch/loop.sh
+sudo wget -Nq https://raw.githubusercontent.com/dterrey/DFIR_NodeRED/master/loop.sh -O /opt/timesketch/loop.sh
 
 # Create the first user account
 sudo docker-compose exec timesketch-web tsctl create-user $USER1_NAME --password $USER1_PASSWORD
